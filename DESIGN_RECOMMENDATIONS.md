@@ -321,6 +321,29 @@ About Us | Our Team | Blog | Mortgage Calculator | Areas We Serve
 
 ---
 
+## Production Deployment Notes
+
+### Image Hosting
+
+For production deployment, all external stock photo URLs should be downloaded and hosted locally to:
+- Improve page load performance
+- Avoid dependency on third-party CDNs
+- Ensure consistent availability
+- Comply with image licensing terms
+
+**Images to download:**
+1. Hero background: `images/hero-background.jpg`
+2. Listing photos: `images/listing-1.jpg`, `images/listing-2.jpg`, `images/listing-3.jpg`
+3. About page: `images/about-office.jpg`, `images/michael-seeto.jpg`
+
+**Update these files after downloading:**
+- `css/style.css` - Line 332 (hero background)
+- `index.html` - Listing image URLs
+- `search.html` - Property result image URLs
+- `about.html` - Office and founder images
+
+---
+
 ## Summary
 
 These recommendations prioritize:
