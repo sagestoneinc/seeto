@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Advanced property search for DFW and Houston. Filter by location, price, bedrooms, bathrooms, property type, school districts, and more. Find your dream home today.">
+    <meta name="keywords" content="property search, home search, Texas real estate search, DFW homes, Houston homes, MLS listings">
+    <title>Advanced Property Search - Seeto Realty | Find Your Dream Home</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <div class="logo">
+                        <a href="index.html">
+                            <span class="logo-text">SEETO REALTY</span>
+                        </a>
+                    </div>
+                    <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <ul class="nav-menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li class="dropdown">
+                            <a href="services.html">Services</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="buy.html">Buy</a></li>
+                                <li><a href="sell.html">Sell</a></li>
+                                <li><a href="foreclosures.html">Foreclosures</a></li>
+                                <li><a href="investments.html">Investments</a></li>
+                                <li><a href="property-management.html">Property Management</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="search.html" class="active">Property Search</a></li>
+                        <li><a href="listings.html">Featured Listings</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="team.html">Our Team</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary nav-cta">Get Started</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Advanced Property Search</h1>
+            <p class="subtitle">Find your perfect home with powerful search tools</p>
+        </div>
+    </section>
+
+    <!-- Search Interface -->
+    <section class="advanced-search-section">
+        <div class="container">
+            <div class="search-layout">
+                <!-- Search Filters Sidebar -->
+                <aside class="search-filters">
+                    <h2>Search Filters</h2>
+                    <form id="advancedSearchForm" class="filter-form">
+                        <!-- Location -->
+                        <div class="filter-group">
+                            <label for="location">Location</label>
+                            <input type="text" id="location" name="location" placeholder="City, ZIP, or Address">
+                        </div>
+
+                        <!-- Market Area -->
+                        <div class="filter-group">
+                            <label for="market">Market</label>
+                            <select id="market" name="market">
+                                <option value="">All Markets</option>
+                                <option value="dfw">Dallas-Fort Worth</option>
+                                <option value="houston">Greater Houston</option>
+                            </select>
+                        </div>
+
+                        <!-- Property Type -->
+                        <div class="filter-group">
+                            <label>Property Type</label>
+                            <div class="checkbox-group">
+                                <label><input type="checkbox" name="type" value="house"> House</label>
+                                <label><input type="checkbox" name="type" value="condo"> Condo</label>
+                                <label><input type="checkbox" name="type" value="townhouse"> Townhouse</label>
+                                <label><input type="checkbox" name="type" value="land"> Land</label>
+                                <label><input type="checkbox" name="type" value="multi-family"> Multi-Family</label>
+                            </div>
+                        </div>
+
+                        <!-- Price Range -->
+                        <div class="filter-group">
+                            <label>Price Range</label>
+                            <div class="range-inputs">
+                                <input type="number" name="minPrice" placeholder="Min Price" min="0" step="10000">
+                                <span>to</span>
+                                <input type="number" name="maxPrice" placeholder="Max Price" min="0" step="10000">
+                            </div>
+                        </div>
+
+                        <!-- Bedrooms -->
+                        <div class="filter-group">
+                            <label for="bedrooms">Bedrooms</label>
+                            <select id="bedrooms" name="bedrooms">
+                                <option value="">Any</option>
+                                <option value="1">1+</option>
+                                <option value="2">2+</option>
+                                <option value="3">3+</option>
+                                <option value="4">4+</option>
+                                <option value="5">5+</option>
+                            </select>
+                        </div>
+
+                        <!-- Bathrooms -->
+                        <div class="filter-group">
+                            <label for="bathrooms">Bathrooms</label>
+                            <select id="bathrooms" name="bathrooms">
+                                <option value="">Any</option>
+                                <option value="1">1+</option>
+                                <option value="2">2+</option>
+                                <option value="3">3+</option>
+                                <option value="4">4+</option>
+                            </select>
+                        </div>
+
+                        <!-- Square Footage -->
+                        <div class="filter-group">
+                            <label>Square Footage</label>
+                            <div class="range-inputs">
+                                <input type="number" name="minSqFt" placeholder="Min Sq Ft" min="0" step="100">
+                                <span>to</span>
+                                <input type="number" name="maxSqFt" placeholder="Max Sq Ft" min="0" step="100">
+                            </div>
+                        </div>
+
+                        <!-- School District -->
+                        <div class="filter-group">
+                            <label for="schoolDistrict">School District</label>
+                            <select id="schoolDistrict" name="schoolDistrict">
+                                <option value="">Any District</option>
+                                <option value="plano-isd">Plano ISD</option>
+                                <option value="frisco-isd">Frisco ISD</option>
+                                <option value="dallas-isd">Dallas ISD</option>
+                                <option value="houston-isd">Houston ISD</option>
+                                <option value="katy-isd">Katy ISD</option>
+                            </select>
+                        </div>
+
+                        <!-- Additional Features -->
+                        <div class="filter-group">
+                            <label>Additional Features</label>
+                            <div class="checkbox-group">
+                                <label><input type="checkbox" name="features" value="pool"> Pool</label>
+                                <label><input type="checkbox" name="features" value="garage"> Garage</label>
+                                <label><input type="checkbox" name="features" value="fireplace"> Fireplace</label>
+                                <label><input type="checkbox" name="features" value="waterfront"> Waterfront</label>
+                                <label><input type="checkbox" name="features" value="new-construction"> New Construction</label>
+                            </div>
+                        </div>
+
+                        <!-- Status -->
+                        <div class="filter-group">
+                            <label>Status</label>
+                            <div class="checkbox-group">
+                                <label><input type="checkbox" name="status" value="active" checked> Active</label>
+                                <label><input type="checkbox" name="status" value="pending"> Pending</label>
+                                <label><input type="checkbox" name="status" value="foreclosure"> Foreclosure</label>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block">Search Properties</button>
+                        <button type="button" id="saveSearch" class="btn btn-outline btn-block">Save This Search</button>
+                        <button type="reset" class="btn btn-outline btn-block">Clear Filters</button>
+                    </form>
+                </aside>
+
+                <!-- Search Results -->
+                <main class="search-results">
+                    <div class="results-header">
+                        <h2>Search Results</h2>
+                        <div class="results-info">
+                            <span id="resultCount">Loading properties...</span>
+                            <div class="view-toggle">
+                                <button class="view-btn active" data-view="grid" aria-label="Grid view">⊞</button>
+                                <button class="view-btn" data-view="list" aria-label="List view">☰</button>
+                                <button class="view-btn" data-view="map" aria-label="Map view">🗺️</button>
+                            </div>
+                        </div>
+                        <div class="sort-options">
+                            <label for="sortBy">Sort by:</label>
+                            <select id="sortBy" name="sortBy">
+                                <option value="newest">Newest First</option>
+                                <option value="price-low">Price: Low to High</option>
+                                <option value="price-high">Price: High to Low</option>
+                                <option value="beds">Most Bedrooms</option>
+                                <option value="sqft">Largest First</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Map View (Hidden by default) -->
+                    <div id="mapView" class="map-container" style="display: none;">
+                        <div id="propertyMap" class="property-map">
+                            <p style="text-align: center; padding: 100px 20px; color: var(--gray-600);">
+                                Interactive map will display here<br>
+                                <small>Integrate with mapping services like Mapbox or Google Maps for production</small>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Grid/List Results -->
+                    <div id="resultsGrid" class="results-grid">
+                        <!-- Sample Property Results -->
+                        <div class="property-result-card">
+                            <div class="property-image">
+                                <img src="images/placeholder-home-1.jpg" alt="4 Bed Home in Plano" loading="lazy">
+                                <button class="save-property" aria-label="Save property">❤️</button>
+                                <span class="property-badge">New Listing</span>
+                            </div>
+                            <div class="property-info">
+                                <div class="property-price">$585,000</div>
+                                <h3 class="property-title">Modern Family Home</h3>
+                                <p class="property-location">📍 123 Oak Street, Plano, TX 75024</p>
+                                <div class="property-features">
+                                    <span>🛏️ 4 Beds</span>
+                                    <span>🚿 3 Baths</span>
+                                    <span>📏 2,450 sq ft</span>
+                                </div>
+                                <p class="property-description">Beautiful modern home in highly sought-after Plano ISD. Updated kitchen with granite countertops, spacious master suite, large backyard with pool.</p>
+                                <div class="property-actions">
+                                    <a href="listing-detail.html?id=1" class="btn btn-primary btn-sm">View Details</a>
+                                    <a href="contact.html?property=1" class="btn btn-outline btn-sm">Schedule Tour</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="property-result-card">
+                            <div class="property-image">
+                                <img src="images/placeholder-home-2.jpg" alt="3 Bed Condo in Houston" loading="lazy">
+                                <button class="save-property" aria-label="Save property">❤️</button>
+                                <span class="property-badge featured">Featured</span>
+                            </div>
+                            <div class="property-info">
+                                <div class="property-price">$425,000</div>
+                                <h3 class="property-title">Downtown Luxury Condo</h3>
+                                <p class="property-location">📍 789 Main St, Houston, TX 77002</p>
+                                <div class="property-features">
+                                    <span>🛏️ 3 Beds</span>
+                                    <span>🚿 2 Baths</span>
+                                    <span>📏 1,850 sq ft</span>
+                                </div>
+                                <p class="property-description">Stunning high-rise condo in the heart of downtown Houston. Floor-to-ceiling windows, modern finishes, building amenities include gym and pool.</p>
+                                <div class="property-actions">
+                                    <a href="listing-detail.html?id=2" class="btn btn-primary btn-sm">View Details</a>
+                                    <a href="contact.html?property=2" class="btn btn-outline btn-sm">Schedule Tour</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="property-result-card">
+                            <div class="property-image">
+                                <img src="images/placeholder-home-3.jpg" alt="Investment Property in Dallas" loading="lazy">
+                                <button class="save-property" aria-label="Save property">❤️</button>
+                                <span class="property-badge investment">Investment</span>
+                            </div>
+                            <div class="property-info">
+                                <div class="property-price">$325,000</div>
+                                <h3 class="property-title">Prime Investment Property</h3>
+                                <p class="property-location">📍 456 Elm Avenue, Dallas, TX 75201</p>
+                                <div class="property-features">
+                                    <span>🛏️ 3 Beds</span>
+                                    <span>🚿 2 Baths</span>
+                                    <span>📏 1,600 sq ft</span>
+                                </div>
+                                <p class="property-description">Excellent investment opportunity in up-and-coming Dallas neighborhood. Currently tenant-occupied with strong rental income history.</p>
+                                <div class="property-actions">
+                                    <a href="listing-detail.html?id=3" class="btn btn-primary btn-sm">View Details</a>
+                                    <a href="contact.html?property=3" class="btn btn-outline btn-sm">Schedule Tour</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="pagination">
+                        <button class="pagination-btn" disabled>« Previous</button>
+                        <button class="pagination-btn active">1</button>
+                        <button class="pagination-btn">2</button>
+                        <button class="pagination-btn">3</button>
+                        <button class="pagination-btn">Next »</button>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="search-cta">
+        <div class="container">
+            <h2>Can't Find What You're Looking For?</h2>
+            <p>Let our expert agents help you find the perfect property</p>
+            <div class="cta-buttons">
+                <a href="contact.html" class="btn btn-primary btn-lg">Contact an Agent</a>
+                <a href="contact.html?type=valuation" class="btn btn-white btn-lg">Get Home Valuation</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Seeto Realty</h3>
+                    <p>Your trusted real estate partner in Texas since 2010.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Twitter">🐦</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="LinkedIn">💼</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="search.html">Property Search</a></li>
+                        <li><a href="listings.html">Featured Listings</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="team.html">Our Team</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="buy.html">Buy a Home</a></li>
+                        <li><a href="sell.html">Sell Your Home</a></li>
+                        <li><a href="foreclosures.html">Foreclosures</a></li>
+                        <li><a href="investments.html">Investments</a></li>
+                        <li><a href="property-management.html">Property Management</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul class="contact-info">
+                        <li><strong>Plano Office:</strong><br>123 Main St, Plano, TX 75024</li>
+                        <li><strong>Houston Office:</strong><br>456 Market St, Houston, TX 77002</li>
+                        <li>📞 (972) 555-SEETO</li>
+                        <li>✉️ info@seetorealty.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Seeto Realty. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+                <p class="disclaimer">Licensed in Texas. Equal Housing Opportunity.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chatbot Widget -->
+    <div class="chatbot-widget" id="chatbot">
+        <button class="chatbot-toggle" aria-label="Open chat">💬</button>
+        <div class="chatbot-window" style="display: none;">
+            <div class="chatbot-header">
+                <h4>Chat with Us</h4>
+                <button class="chatbot-close" aria-label="Close chat">×</button>
+            </div>
+            <div class="chatbot-body">
+                <p>Hello! Looking for a specific property? I can help!</p>
+            </div>
+            <div class="chatbot-input">
+                <input type="text" placeholder="Type your message...">
+                <button>Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/search.js"></script>
+</body>
+</html>
