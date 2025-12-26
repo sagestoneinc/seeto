@@ -151,8 +151,9 @@ ul {
 
 .nav-menu {
     display: flex;
-    gap: var(--spacing-md);
+    gap: var(--spacing-sm);
     align-items: center;
+    flex-wrap: nowrap;
 }
 
 .nav-menu > li {
@@ -162,8 +163,10 @@ ul {
 .nav-menu a {
     color: var(--gray-800);
     font-weight: 500;
-    padding: var(--spacing-xs) var(--spacing-sm);
+    padding: var(--spacing-xs);
     transition: color 0.3s ease;
+    white-space: nowrap;
+    font-size: 0.9rem;
 }
 
 .nav-menu a:hover,
@@ -1024,7 +1027,7 @@ ul {
     }
 }
 
-@media (max-width: 968px) {
+@media (max-width: 1100px) {
     .nav-menu {
         display: none;
         position: absolute;
@@ -1060,6 +1063,11 @@ ul {
         background-color: var(--gray-50);
         border-radius: var(--radius-md);
         margin-top: var(--spacing-sm);
+    }
+    
+    .nav-menu a {
+        font-size: 1rem;
+        padding: var(--spacing-xs) var(--spacing-sm);
     }
     
     .hero {
