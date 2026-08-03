@@ -14,7 +14,8 @@ This is **Plan 1 of 3**. Plan 2 adds the 13 remaining static pages; Plan 3 adds 
 
 - **Zero dependencies.** `package.json` must have no `dependencies` and no `devDependencies`. Tests use the Node built-in runner.
 - **ESM only.** `package.json` sets `"type": "module"`. All imports use `node:` prefixes for builtins.
-- **Verified NAP, used verbatim everywhere.** Phone `972-509-7100`, fax `972-509-7103`, address `700 W Spring Creek Pkwy #212, Plano, TX 75023`, founder `Michael Seeto`. These live in `data/site.json` and are never hard-coded into a template.
+- **Verified NAP, used verbatim everywhere.** Phone `972-509-7100`, fax `972-509-7103`, address `700 W Spring Creek Pkwy #212, Plano, TX 75023`, founder `Michael Seeto`. These live in `data/site.json` and are never hard-coded into a template — **including schema templates**, which render through the same engine.
+- **No inline `style` attributes** in any template, partial, or page source. Use the layout utilities defined in Task 3 (`.stack`, `.stack-lg`, `.row`, `.center`, `.lede`, `.panel`, `.muted`, `.section-alt`). Spacing must be adjustable in one place across all 50 pages. The sole exception is the chatbot window's `style="display: none;"`, which `js/main.js` requires.
 - **Banned strings.** The build fails if generated HTML contains `555-SEETO`, `123 Main Street`, or `456 Market St`. These are the retired placeholder values.
 - **Preserve these class names** — `js/main.js` queries them and breaks silently otherwise: `.header`, `.nav-menu`, `.mobile-menu-toggle`, `.chatbot-toggle`, `.chatbot-window`, `.chatbot-close`, `.search-form`, `.service-card`, `.listing-card`, `.testimonial-card`, `.feature-item`.
 - **No emoji** in any markup, heading, alt text, or content string. The current footer uses `📍 📞 ✉️` and the chatbot uses `👋`; all are replaced with inline SVG or removed.
@@ -402,7 +403,18 @@ export function buildAll() {
 
   for (const filename of pageFiles) {
     const { meta, body } = parsePage(read('src', 'pages', filename), filename);
-    const schema = read('src', 'schema', `${meta.schema}.json`);
+
+    // Schema files are templates too, so the NAP has exactly one source (data/site.json).
+    // They use raw {{{...}}} tokens because JSON-LD inside a <script> must not be
+    // HTML-escaped. Parsing here turns a malformed template into a build failure
+    // rather than invalid structured data shipped to Google.
+    const schema = render(read('src', 'schema', `${meta.schema}.json`), { site });
+    try {
+      JSON.parse(schema);
+    } catch (error) {
+      throw new Error(`src/schema/${meta.schema}.json: renders to invalid JSON — ${error.message}`);
+    }
+
     const context = {
       site,
       partials,
@@ -422,29 +434,36 @@ export function buildAll() {
 buildAll();
 ```
 
-- [ ] **Step 5: Create `src/schema/home.json`**
+- [ ] **Step 5: Create `src/schema/home.json` as a template**
+
+Every business value is a `{{{...}}}` token so `data/site.json` stays the only place the
+NAP is written. Raw tokens, not `{{...}}` — HTML-escaping would corrupt the JSON-LD.
 
 ```json
 {
   "@context": "https://schema.org",
   "@type": "RealEstateAgent",
-  "@id": "https://www.seetorealty.com/#organization",
-  "name": "Seeto Realty",
-  "url": "https://www.seetorealty.com",
-  "telephone": "972-509-7100",
-  "faxNumber": "972-509-7103",
-  "email": "info@seetorealty.com",
-  "foundingDate": "2010",
-  "founder": { "@type": "Person", "name": "Michael Seeto" },
+  "@id": "{{{site.baseUrl}}}/#organization",
+  "name": "{{{site.name}}}",
+  "url": "{{{site.baseUrl}}}",
+  "telephone": "{{{site.phone}}}",
+  "faxNumber": "{{{site.fax}}}",
+  "email": "{{{site.email}}}",
+  "foundingDate": "{{{site.founded}}}",
+  "founder": { "@type": "Person", "name": "{{{site.founder}}}" },
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "700 W Spring Creek Pkwy #212",
-    "addressLocality": "Plano",
-    "addressRegion": "TX",
-    "postalCode": "75023",
-    "addressCountry": "US"
+    "streetAddress": "{{{site.address.street}}}",
+    "addressLocality": "{{{site.address.locality}}}",
+    "addressRegion": "{{{site.address.region}}}",
+    "postalCode": "{{{site.address.postalCode}}}",
+    "addressCountry": "{{{site.address.country}}}"
   },
-  "geo": { "@type": "GeoCoordinates", "latitude": "33.0709", "longitude": "-96.7350" },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "{{{site.geo.latitude}}}",
+    "longitude": "{{{site.geo.longitude}}}"
+  },
   "areaServed": [
     { "@type": "City", "name": "Dallas" },
     { "@type": "City", "name": "Plano" },
@@ -454,6 +473,10 @@ buildAll();
   "priceRange": "$$"
 }
 ```
+
+Because these render raw, no value in `data/site.json` may contain a double quote or
+backslash. None currently do; the `JSON.parse` guard in `build/index.js` catches it if one
+is ever introduced.
 
 - [ ] **Step 6: Create the three partials as minimal stubs**
 
@@ -770,6 +793,12 @@ Append to `css/style.css`:
 .footer ul { list-style: none; display: grid; gap: 0.625rem; }
 .footer a { font-size: var(--text-sm); color: var(--ink-body); text-decoration: none; }
 .footer a:hover { text-decoration: underline; }
+.footer-nap {
+  font-style: normal;
+  font-size: var(--text-sm);
+  line-height: 1.7;
+  color: var(--ink-body);
+}
 .footer-bottom {
   margin-top: var(--space-5);
   padding-top: var(--space-3);
@@ -820,6 +849,30 @@ Append to `css/style.css`:
   border: 1px solid var(--border);
   border-radius: var(--radius);
 }
+
+/* --- Layout utilities ---
+   Markup uses these instead of inline style attributes, so spacing is adjustable
+   in one place across all 50 pages. Plans 2 and 3 reuse this vocabulary. */
+.stack > * + * { margin-top: var(--space-2); }
+.stack-lg > * + * { margin-top: var(--space-4); }
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  align-items: center;
+}
+.row-center { justify-content: center; }
+.center { text-align: center; }
+.center p { margin-inline: auto; }
+.lede { font-size: var(--text-lg); }
+.section-alt { background: var(--canvas-alt); border-block: 1px solid var(--border); }
+.panel { max-width: var(--measure); }
+.muted { color: var(--ink-muted); font-size: var(--text-sm); }
+
+/* --- FAQ accordion --- */
+.faq-item { border-bottom: 1px solid var(--border); padding-block: var(--space-3); }
+.faq-item summary { cursor: pointer; font-weight: 600; color: var(--ink); }
+.faq-item p { margin-top: var(--space-2); }
 
 /* --- Utility --- */
 .visually-hidden {
@@ -926,9 +979,9 @@ Note the NAP block uses no emoji and pulls every value from `site.json`.
 <footer class="footer">
   <div class="container">
     <div class="footer-grid">
-      <div>
+      <div class="stack">
         <p class="logo-text">Seeto Realty</p>
-        <p style="margin-top: var(--space-2); font-size: var(--text-sm); color: var(--ink-muted);">
+        <p class="muted">
           Helping Texas families buy, sell, and invest across Dallas-Fort Worth and Houston since {{site.founded}}.
         </p>
       </div>
@@ -940,15 +993,15 @@ Note the NAP block uses no emoji and pulls every value from `site.json`.
         <h4>Company</h4>
         <ul>{{#each site.footerCompany}}<li><a href="{{this.href}}">{{this.label}}</a></li>{{/each}}</ul>
       </div>
-      <div>
+      <div class="stack">
         <h4>Contact</h4>
-        <address style="font-style: normal; font-size: var(--text-sm); color: var(--ink-body);">
+        <address class="footer-nap">
           {{site.address.street}}<br>
           {{site.address.locality}}, {{site.address.region}} {{site.address.postalCode}}<br>
           <a href="tel:{{site.phoneHref}}">{{site.phone}}</a><br>
           <a href="mailto:{{site.email}}">{{site.email}}</a>
         </address>
-        <ul style="margin-top: var(--space-2);">
+        <ul>
           {{#each site.footerResources}}<li><a href="{{this.href}}">{{this.label}}</a></li>{{/each}}
         </ul>
       </div>
@@ -1024,25 +1077,25 @@ Replace everything below the front-matter block in `src/pages/index.html`. Keep 
 
 ```html
 <section class="hero">
-  <div class="container">
+  <div class="container stack">
     <p class="eyebrow">Dallas-Fort Worth &amp; Houston &middot; Since {{site.founded}}</p>
     <h1>Find your place in Texas.</h1>
-    <p style="font-size: var(--text-lg); margin-top: var(--space-3);">
+    <p class="lede">
       Seeto Realty is a boutique brokerage covering both of Texas's largest metros. We help
       buyers, sellers, and investors move with a clear read on the market.
     </p>
-    <div style="display: flex; gap: var(--space-2); flex-wrap: wrap; margin-top: var(--space-4);">
+    <div class="row">
       <a href="/search.html" class="btn btn-primary">Search homes</a>
       <a href="/contact.html?type=valuation" class="btn btn-outline">What's my home worth?</a>
     </div>
   </div>
 </section>
 
-<section class="quick-search" style="background: var(--canvas-alt); border-block: 1px solid var(--border);">
+<section class="quick-search section-alt">
   <div class="container">
-    <form class="search-form" action="/search.html" method="get">
+    <form class="search-form stack" action="/search.html" method="get">
       <h2>Search homes in DFW &amp; Houston</h2>
-      <div class="bento" style="margin-top: var(--space-3);">
+      <div class="bento">
         <label class="visually-hidden" for="q-location">Location</label>
         <input type="text" id="q-location" name="location" placeholder="City, neighborhood, or ZIP">
         <label class="visually-hidden" for="q-type">Property type</label>
@@ -1068,9 +1121,9 @@ Replace everything below the front-matter block in `src/pages/index.html`. Keep 
 </section>
 
 <section>
-  <div class="container">
+  <div class="container stack-lg">
     <h2>What we do</h2>
-    <div class="bento" style="margin-top: var(--space-4);">
+    <div class="bento">
       <article class="service-card">
         <h3>Buying</h3>
         <p>Guidance from first search through closing, with a realistic view of what your budget buys in each submarket.</p>
@@ -1105,45 +1158,49 @@ Replace everything below the front-matter block in `src/pages/index.html`. Keep 
   </div>
 </section>
 
-<section style="background: var(--canvas-alt); border-block: 1px solid var(--border);">
-  <div class="container">
-    <h2>Where we work</h2>
-    <p style="margin-top: var(--space-2);">Two metros, thirty-two cities. Start with the areas we know best.</p>
-    <div class="bento" style="margin-top: var(--space-4);">
-      <a class="service-card" href="/homes-for-sale/plano-tx/"><h3>Plano</h3><p>Collin County</p></a>
-      <a class="service-card" href="/homes-for-sale/frisco-tx/"><h3>Frisco</h3><p>Collin &amp; Denton County</p></a>
-      <a class="service-card" href="/homes-for-sale/dallas-tx/"><h3>Dallas</h3><p>Dallas County</p></a>
-      <a class="service-card" href="/homes-for-sale/houston-tx/"><h3>Houston</h3><p>Harris County</p></a>
+<section class="section-alt">
+  <div class="container stack-lg">
+    <div class="stack">
+      <h2>Where we work</h2>
+      <p>Two metros, thirty-two cities. Start with the areas we know best.</p>
     </div>
-    <p style="margin-top: var(--space-3);"><a href="/areas.html">See all 32 areas we serve</a></p>
+    <div class="bento">
+      <a class="service-card" href="/homes-for-sale/plano-tx/"><h3>Plano</h3><p class="muted">Collin County</p></a>
+      <a class="service-card" href="/homes-for-sale/frisco-tx/"><h3>Frisco</h3><p class="muted">Collin &amp; Denton County</p></a>
+      <a class="service-card" href="/homes-for-sale/dallas-tx/"><h3>Dallas</h3><p class="muted">Dallas County</p></a>
+      <a class="service-card" href="/homes-for-sale/houston-tx/"><h3>Houston</h3><p class="muted">Harris County</p></a>
+    </div>
+    <p><a href="/areas.html">See all 32 areas we serve</a></p>
   </div>
 </section>
 
 <section>
-  <div class="container">
+  <div class="container stack-lg">
     <h2>Common questions</h2>
-    <div style="margin-top: var(--space-4); max-width: var(--measure);">
-      <details style="border-bottom: 1px solid var(--border); padding-block: var(--space-3);">
-        <summary><strong>What areas does Seeto Realty serve?</strong></summary>
-        <p style="margin-top: var(--space-2);">Seeto Realty serves the Dallas-Fort Worth and Houston metropolitan areas, covering 32 cities across both regions. The brokerage is based at 700 W Spring Creek Pkwy #212 in Plano, Texas.</p>
+    <div class="panel">
+      <details class="faq-item">
+        <summary>What areas does Seeto Realty serve?</summary>
+        <p>Seeto Realty serves the Dallas-Fort Worth and Houston metropolitan areas, covering 32 cities across both regions. The brokerage is based at 700 W Spring Creek Pkwy #212 in Plano, Texas.</p>
       </details>
-      <details style="border-bottom: 1px solid var(--border); padding-block: var(--space-3);">
-        <summary><strong>How long has Seeto Realty been in business?</strong></summary>
-        <p style="margin-top: var(--space-2);">Seeto Realty has operated in Texas real estate since 2010. The brokerage was founded by Michael Seeto.</p>
+      <details class="faq-item">
+        <summary>How long has Seeto Realty been in business?</summary>
+        <p>Seeto Realty has operated in Texas real estate since 2010. The brokerage was founded by Michael Seeto.</p>
       </details>
-      <details style="border-bottom: 1px solid var(--border); padding-block: var(--space-3);">
-        <summary><strong>Does Seeto Realty work with first-time buyers?</strong></summary>
-        <p style="margin-top: var(--space-2);">Yes. Seeto Realty works with first-time buyers across DFW and Houston, including guidance on Texas-specific costs such as property tax rates and homestead exemptions.</p>
+      <details class="faq-item">
+        <summary>Does Seeto Realty work with first-time buyers?</summary>
+        <p>Yes. Seeto Realty works with first-time buyers across DFW and Houston, including guidance on Texas-specific costs such as property tax rates and homestead exemptions.</p>
       </details>
     </div>
   </div>
 </section>
 
-<section style="background: var(--canvas-alt); border-block: 1px solid var(--border);">
-  <div class="container" style="text-align: center;">
-    <h2>Ready to make a move?</h2>
-    <p style="margin: var(--space-3) auto 0;">Tell us what you're looking for and we'll come back with a plan.</p>
-    <div style="display: flex; gap: var(--space-2); justify-content: center; margin-top: var(--space-4);">
+<section class="section-alt">
+  <div class="container center stack-lg">
+    <div class="stack">
+      <h2>Ready to make a move?</h2>
+      <p>Tell us what you're looking for and we'll come back with a plan.</p>
+    </div>
+    <div class="row row-center">
       <a href="/contact.html" class="btn btn-primary">Talk to an agent</a>
       <a href="/search.html" class="btn btn-outline">Browse listings</a>
     </div>
@@ -1166,23 +1223,27 @@ is a structured-data violation, so if you change one, change both.
   "@graph": [
     {
       "@type": "RealEstateAgent",
-      "@id": "https://www.seetorealty.com/#organization",
-      "name": "Seeto Realty",
-      "url": "https://www.seetorealty.com",
-      "telephone": "972-509-7100",
-      "faxNumber": "972-509-7103",
-      "email": "info@seetorealty.com",
-      "foundingDate": "2010",
-      "founder": { "@type": "Person", "name": "Michael Seeto" },
+      "@id": "{{{site.baseUrl}}}/#organization",
+      "name": "{{{site.name}}}",
+      "url": "{{{site.baseUrl}}}",
+      "telephone": "{{{site.phone}}}",
+      "faxNumber": "{{{site.fax}}}",
+      "email": "{{{site.email}}}",
+      "foundingDate": "{{{site.founded}}}",
+      "founder": { "@type": "Person", "name": "{{{site.founder}}}" },
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "700 W Spring Creek Pkwy #212",
-        "addressLocality": "Plano",
-        "addressRegion": "TX",
-        "postalCode": "75023",
-        "addressCountry": "US"
+        "streetAddress": "{{{site.address.street}}}",
+        "addressLocality": "{{{site.address.locality}}}",
+        "addressRegion": "{{{site.address.region}}}",
+        "postalCode": "{{{site.address.postalCode}}}",
+        "addressCountry": "{{{site.address.country}}}"
       },
-      "geo": { "@type": "GeoCoordinates", "latitude": "33.0709", "longitude": "-96.7350" },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "{{{site.geo.latitude}}}",
+        "longitude": "{{{site.geo.longitude}}}"
+      },
       "areaServed": [
         { "@type": "City", "name": "Dallas" },
         { "@type": "City", "name": "Plano" },
@@ -1193,7 +1254,7 @@ is a structured-data violation, so if you change one, change both.
     },
     {
       "@type": "FAQPage",
-      "@id": "https://www.seetorealty.com/#faq",
+      "@id": "{{{site.baseUrl}}}/#faq",
       "mainEntity": [
         {
           "@type": "Question",
