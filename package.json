@@ -1,0 +1,11 @@
+{
+  "name": "seeto-realty",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Seeto Realty static site",
+  "scripts": {
+    "build": "node build/index.js",
+    "test": "node --test test/*.test.js"
+  }
+}
