@@ -55,3 +55,19 @@ test('render escapes item values inside each blocks', () => {
   const out = render('{{#each items}}{{this.v}}{{/each}}', { items: [{ v: '<script>' }] });
   assert.equal(out, '&lt;script&gt;');
 });
+
+test('render does not re-scan each-block output for template syntax', () => {
+  const out = render(
+    '{{#each items}}<li>{{this.label}}</li>{{/each}}',
+    { items: [{ label: '{{secret}}' }], secret: 'LEAKED' }
+  );
+  assert.equal(out, '<li>{{secret}}</li>');
+});
+
+test('render does not re-scan raw-token output for template syntax', () => {
+  const out = render(
+    '<script>{{{ldjson}}}</script>',
+    { ldjson: '{"note":"{{secret}}"}', secret: 'LEAKED' }
+  );
+  assert.equal(out, '<script>{"note":"{{secret}}"}</script>');
+});
