@@ -1,0 +1,78 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "{{{site.baseUrl}}}/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Property management",
+          "item": "{{{site.baseUrl}}}/property-management.html"
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "name": "Property management",
+      "description": "Tenant placement, maintenance coordination, and owner reporting for Texas rentals.",
+      "serviceType": "Property management",
+      "provider": {
+        "@id": "{{{site.baseUrl}}}/#organization"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Dallas"
+        },
+        {
+          "@type": "City",
+          "name": "Plano"
+        },
+        {
+          "@type": "City",
+          "name": "Frisco"
+        },
+        {
+          "@type": "City",
+          "name": "Houston"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What does property management cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Management fees are typically a percentage of collected rent, with a separate leasing fee when a new tenant is placed. We quote both in writing for your specific property before you commit."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who handles repairs and emergencies?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We coordinate vendors and handle emergency calls. You set a dollar threshold above which we contact you for approval before proceeding, so routine work does not stall and larger spending stays your decision."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens if a tenant stops paying?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We follow the notice and escalation process Texas law requires, keep you informed at each stage, and coordinate counsel if the matter proceeds to eviction. Consistent documentation from the start is what makes that process work."
+          }
+        }
+      ]
+    }
+  ]
+}

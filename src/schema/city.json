@@ -1,0 +1,67 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "{{{site.baseUrl}}}/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Areas we serve",
+          "item": "{{{site.baseUrl}}}/areas.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "{{{city.name}}}",
+          "item": "{{{site.baseUrl}}}/homes-for-sale/{{{city.slug}}}/"
+        }
+      ]
+    },
+    {
+      "@type": "Place",
+      "name": "{{{city.name}}}, Texas",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "{{{city.name}}}",
+        "addressRegion": "TX",
+        "addressCountry": "US"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What school district serves {{{city.name}}}, TX?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "{{{city.name}}} is served by {{{city.schools}}}. Attendance boundaries can differ from city limits, so confirm the assigned campus for a specific address before making an offer."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What county is {{{city.name}}}, TX in?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "{{{city.name}}} is located in {{{city.county}}}, in the {{{city.metroLabel}}} area of Texas."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Seeto Realty work with buyers and sellers in {{{city.name}}}?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Seeto Realty represents both buyers and sellers in {{{city.name}}} and across the {{{city.metroLabel}}} area. The brokerage is based in Plano and has operated in Texas real estate since 2010."
+          }
+        }
+      ]
+    }
+  ]
+}

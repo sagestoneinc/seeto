@@ -1,0 +1,78 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "{{{site.baseUrl}}}/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Foreclosures",
+          "item": "{{{site.baseUrl}}}/foreclosures.html"
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "name": "Foreclosure and distressed property purchase",
+      "description": "Guidance on bank-owned and distressed property purchases in Texas.",
+      "serviceType": "Foreclosure and distressed property purchase",
+      "provider": {
+        "@id": "{{{site.baseUrl}}}/#organization"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Dallas"
+        },
+        {
+          "@type": "City",
+          "name": "Plano"
+        },
+        {
+          "@type": "City",
+          "name": "Frisco"
+        },
+        {
+          "@type": "City",
+          "name": "Houston"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Are foreclosures actually cheaper?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sometimes, but not automatically. A lower purchase price can be offset by repair costs, carrying costs, and a longer closing. The comparison that matters is total cost against a standard resale in the same area, not list price alone."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I inspect a foreclosure before buying?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "On a listed bank-owned property, usually yes. At a courthouse auction, generally no. That difference is the main reason we steer most buyers toward listed distressed property rather than auctions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need cash to buy a foreclosure?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not for most listed bank-owned homes, which can often be financed. Courthouse auction purchases in Texas typically do require immediate certified funds."
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+<section class="hero">
+  <div class="container stack">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span aria-hidden="true">/</span>
+      <a href="/areas.html">Areas we serve</a> <span aria-hidden="true">/</span>
+      <span>{{city.name}}</span>
+    </nav>
+    <p class="eyebrow">{{city.county}} &middot; {{city.metroLabel}}</p>
+    <h1>Homes for Sale in {{city.name}}, Texas</h1>
+    <p class="lede">{{city.character}}</p>
+    <div class="row">
+      <a href="/search.html?location={{city.name}}" class="btn btn-primary">Search {{city.name}} listings</a>
+      <a href="/contact.html?type=valuation" class="btn btn-outline">What's my home worth?</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-alt">
+  <div class="container stack-lg">
+    <h2>The {{city.name}} market at a glance</h2>
+    <div class="bento bento-tight">
+      <div class="feature-item">
+        <h4>County</h4>
+        <p>{{city.county}}</p>
+      </div>
+      <div class="feature-item">
+        <h4>School district</h4>
+        <p>{{city.schools}}</p>
+      </div>
+      <div class="feature-item">
+        <h4>Metro</h4>
+        <p>{{city.metroLabel}}</p>
+      </div>
+      <div class="feature-item">
+        <h4>Typical range <span class="tag tag-sample">Sample</span></h4>
+        <p>{{city.priceBand}}</p>
+      </div>
+    </div>
+    <p class="muted">
+      The range above is illustrative and is not live market data. Ask us for current
+      comparable sales in {{city.name}} before pricing a purchase or a listing.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="container stack-lg">
+    <h2>Neighborhoods we work in</h2>
+    <div class="bento bento-tight">
+      {{#each city.neighborhoods}}<div class="service-card"><h3>{{this}}</h3></div>{{/each}}
+    </div>
+  </div>
+</section>
+
+<section class="section-alt">
+  <div class="container stack-lg">
+    <h2>Buying and selling in {{city.name}}</h2>
+    <div class="panel stack">
+      <p>
+        Seeto Realty has worked across {{city.county}} since 2010. Whether you are moving into
+        {{city.name}} from another part of Texas or selling a home you have owned for years,
+        the same two questions decide the outcome: what comparable homes actually closed at,
+        and how your property compares to what else is on the market right now.
+      </p>
+      <p>
+        We will walk {{city.name}} inventory with you, explain how {{city.schools}} attendance
+        boundaries affect resale, and give you a straight read on what your budget buys here
+        versus neighbouring cities.
+      </p>
+    </div>
+    <div class="row">
+      <a href="/buy.html" class="btn btn-primary">Buying in {{city.name}}</a>
+      <a href="/sell.html" class="btn btn-outline">Selling in {{city.name}}</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container stack-lg">
+    <h2>Common questions about {{city.name}}</h2>
+    <div class="panel">
+      <details class="faq-item">
+        <summary>What school district serves {{city.name}}, TX?</summary>
+        <p>{{city.name}} is served by {{city.schools}}. Attendance boundaries can differ from city limits, so confirm the assigned campus for a specific address before making an offer.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What county is {{city.name}}, TX in?</summary>
+        <p>{{city.name}} is located in {{city.county}}, in the {{city.metroLabel}} area of Texas.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Does Seeto Realty work with buyers and sellers in {{city.name}}?</summary>
+        <p>Yes. Seeto Realty represents both buyers and sellers in {{city.name}} and across the {{city.metroLabel}} area. The brokerage is based in Plano and has operated in Texas real estate since 2010.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="section-alt">
+  <div class="container stack-lg">
+    <h2>Nearby areas</h2>
+    <div class="bento bento-tight">
+      {{#each city.nearby}}<a class="service-card" href="/homes-for-sale/{{this.slug}}/"><h3>{{this.name}}</h3><p class="muted">{{this.county}}</p></a>{{/each}}
+    </div>
+    <p><a href="/areas.html">See all 32 areas we serve</a></p>
+  </div>
+</section>
+
+<section>
+  <div class="container center stack-lg">
+    <div class="stack">
+      <h2>Thinking about {{city.name}}?</h2>
+      <p>Tell us what you're looking for and we'll come back with a plan.</p>
+    </div>
+    <div class="row row-center">
+      <a href="/contact.html" class="btn btn-primary">Talk to an agent</a>
+      <a href="/search.html" class="btn btn-outline">Browse listings</a>
+    </div>
+  </div>
+</section>

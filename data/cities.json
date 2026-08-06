@@ -1,0 +1,227 @@
+[
+  {
+    "slug": "allen-tx", "name": "Allen", "metro": "DFW", "county": "Collin County",
+    "schools": "Allen ISD",
+    "character": "A single-high-school city of about 105,000 north of Plano, built out largely in the 1990s and 2000s. Housing is dominated by brick two-story homes on regular suburban lots, and the city is known for its concentration of retail along US-75.",
+    "neighborhoods": ["Twin Creeks", "Bethany Lakes", "Watters Crossing", "Star Creek"],
+    "priceBand": "$400K - $700K"
+  },
+  {
+    "slug": "carrollton-tx", "name": "Carrollton", "metro": "DFW", "county": "Dallas and Denton Counties",
+    "schools": "Carrollton-Farmers Branch ISD",
+    "character": "An inner-ring suburb straddling two counties with a genuine historic downtown square. Housing stock is older and more varied than the outer suburbs, which keeps entry prices lower and draws buyers priced out of Plano and Coppell.",
+    "neighborhoods": ["Downtown Carrollton", "Josey Ranch", "Country Place", "Prestonwood"],
+    "priceBand": "$325K - $550K"
+  },
+  {
+    "slug": "coppell-tx", "name": "Coppell", "metro": "DFW", "county": "Dallas County",
+    "schools": "Coppell ISD",
+    "character": "A small, essentially built-out city wedged against DFW Airport. Its school district is the main draw and inventory is persistently tight, since there is little undeveloped land left to build on.",
+    "neighborhoods": ["Old Town Coppell", "Riverchase", "Northlake Woodlands", "The Reserve"],
+    "priceBand": "$500K - $850K"
+  },
+  {
+    "slug": "dallas-tx", "name": "Dallas", "metro": "DFW", "county": "Dallas County",
+    "schools": "Dallas ISD and several suburban districts",
+    "character": "The metro's core city, spanning everything from downtown high-rise condos to postwar ranch neighborhoods and estate lots. Because Dallas covers so many distinct submarkets, pricing varies more within the city than across most whole suburbs.",
+    "neighborhoods": ["Lakewood", "Bishop Arts", "Preston Hollow", "Oak Lawn", "Lake Highlands"],
+    "priceBand": "$275K - $1.5M+"
+  },
+  {
+    "slug": "flower-mound-tx", "name": "Flower Mound", "metro": "DFW", "county": "Denton County",
+    "schools": "Lewisville ISD",
+    "character": "A town of roughly 80,000 on the shore of Grapevine Lake, with unusually strict development standards and a large protected open-space system. Lots run larger than in neighbouring cities and the town has deliberately limited dense construction.",
+    "neighborhoods": ["Bridlewood", "Wellington", "Canyon Falls", "Lakeside"],
+    "priceBand": "$450K - $900K"
+  },
+  {
+    "slug": "frisco-tx", "name": "Frisco", "metro": "DFW", "county": "Collin and Denton Counties",
+    "schools": "Frisco ISD",
+    "character": "One of the fastest-growing cities in the country through the 2010s, now home to corporate campuses and a cluster of professional sports facilities. Housing is overwhelmingly new construction, and Frisco ISD's practice of building many smaller high schools shapes how buyers compare neighborhoods.",
+    "neighborhoods": ["Starwood", "Newman Village", "Phillips Creek Ranch", "Frisco Lakes"],
+    "priceBand": "$450K - $1M+"
+  },
+  {
+    "slug": "garland-tx", "name": "Garland", "metro": "DFW", "county": "Dallas County",
+    "schools": "Garland ISD",
+    "character": "A large, established city northeast of Dallas with a substantial industrial base. Its mid-century housing stock makes it one of the more accessible entry points inside the LBJ loop for buyers who want space over newness.",
+    "neighborhoods": ["Firewheel", "Duck Creek", "Camelot", "Club Hill"],
+    "priceBand": "$250K - $450K"
+  },
+  {
+    "slug": "grand-prairie-tx", "name": "Grand Prairie", "metro": "DFW", "county": "Dallas and Tarrant Counties",
+    "schools": "Grand Prairie ISD",
+    "character": "A long, narrow city stretching between Dallas and Fort Worth, which gives it unusually varied housing — older neighborhoods in the north, newer master-planned development in the south near Joe Pool Lake.",
+    "neighborhoods": ["Lake Ridge", "Westchester", "Peninsula", "Mira Lagos"],
+    "priceBand": "$275K - $550K"
+  },
+  {
+    "slug": "irving-tx", "name": "Irving", "metro": "DFW", "county": "Dallas County",
+    "schools": "Irving ISD and Coppell ISD",
+    "character": "Home to Las Colinas, a large planned business district with canals and mid-rise housing, alongside considerably older neighborhoods elsewhere in the city. Its position next to DFW Airport makes it a common landing spot for corporate relocations.",
+    "neighborhoods": ["Las Colinas", "Valley Ranch", "Hackberry Creek", "Song"],
+    "priceBand": "$300K - $650K"
+  },
+  {
+    "slug": "lewisville-tx", "name": "Lewisville", "metro": "DFW", "county": "Denton County",
+    "schools": "Lewisville ISD",
+    "character": "Set along the southern edge of Lewisville Lake with a mix of apartment inventory, older single-family neighborhoods, and newer development on the west side. It tends to price below Flower Mound while sharing the same school district.",
+    "neighborhoods": ["Castle Hills", "Old Town Lewisville", "Vista Ridge", "Highland Village border"],
+    "priceBand": "$300K - $550K"
+  },
+  {
+    "slug": "little-elm-tx", "name": "Little Elm", "metro": "DFW", "county": "Denton County",
+    "schools": "Little Elm ISD and Frisco ISD",
+    "character": "A lakeside town on Lewisville Lake that grew rapidly as Frisco filled in. It has more shoreline than any other city in the area, and parts of it feed into Frisco ISD, which buyers watch closely.",
+    "neighborhoods": ["Frisco Ranch", "Sunset Pointe", "Paloma Creek", "Union Park"],
+    "priceBand": "$325K - $600K"
+  },
+  {
+    "slug": "mckinney-tx", "name": "McKinney", "metro": "DFW", "county": "Collin County",
+    "schools": "McKinney ISD, Prosper ISD, and Frisco ISD",
+    "character": "The Collin County seat, with a well-preserved 19th-century downtown square that gives it a distinct identity among north Dallas suburbs. Development runs from historic homes near the square to large new subdivisions west of US-75.",
+    "neighborhoods": ["Historic Downtown", "Stonebridge Ranch", "Craig Ranch", "Adriatica"],
+    "priceBand": "$375K - $800K"
+  },
+  {
+    "slug": "mesquite-tx", "name": "Mesquite", "metro": "DFW", "county": "Dallas County",
+    "schools": "Mesquite ISD",
+    "character": "An established city east of Dallas with a long rodeo tradition and a largely mid-century housing stock. It remains one of the more affordable places to buy a detached home within a short drive of downtown Dallas.",
+    "neighborhoods": ["Creek Crossing", "Westlake", "Town East", "Palos Verdes"],
+    "priceBand": "$225K - $400K"
+  },
+  {
+    "slug": "plano-tx", "name": "Plano", "metro": "DFW", "county": "Collin County",
+    "schools": "Plano ISD",
+    "character": "A large, essentially built-out city that anchors corporate north Dallas, with headquarters campuses along the Dallas North Tollway. Housing ranges from 1970s ranch homes in west Plano to newer construction and high-density development around Legacy West.",
+    "neighborhoods": ["West Plano", "Willow Bend", "Legacy West", "Downtown Plano"],
+    "priceBand": "$400K - $900K"
+  },
+  {
+    "slug": "prosper-tx", "name": "Prosper", "metro": "DFW", "county": "Collin and Denton Counties",
+    "schools": "Prosper ISD",
+    "character": "A town on the northern edge of the metro that has kept larger minimum lot sizes than its neighbors as it grows. Much of the inventory is recent construction, and the district's rapid expansion is a frequent topic for buyers with school-age children.",
+    "neighborhoods": ["Whitley Place", "Windsong Ranch", "Star Trail", "Lakes of Prosper"],
+    "priceBand": "$500K - $1.2M"
+  },
+  {
+    "slug": "richardson-tx", "name": "Richardson", "metro": "DFW", "county": "Dallas and Collin Counties",
+    "schools": "Richardson ISD and Plano ISD",
+    "character": "Home to the Telecom Corridor and the University of Texas at Dallas, with mature tree-lined neighborhoods close to two DART rail stations. Its mid-century housing appeals to buyers who want an established area rather than new construction.",
+    "neighborhoods": ["Canyon Creek", "Richardson Heights", "Prairie Creek", "Buckingham"],
+    "priceBand": "$350K - $650K"
+  },
+  {
+    "slug": "rowlett-tx", "name": "Rowlett", "metro": "DFW", "county": "Dallas and Rockwall Counties",
+    "schools": "Garland ISD and Rockwall ISD",
+    "character": "A peninsula city surrounded on three sides by Lake Ray Hubbard, which gives it more waterfront housing than anywhere else this close to Dallas. It has a DART rail terminus, unusual for a city this far east.",
+    "neighborhoods": ["Waterview", "Lakeside", "Springfield", "Bayside"],
+    "priceBand": "$300K - $600K"
+  },
+  {
+    "slug": "sachse-tx", "name": "Sachse", "metro": "DFW", "county": "Dallas and Collin Counties",
+    "schools": "Garland ISD and Wylie ISD",
+    "character": "A small city of roughly 27,000 between Garland and Wylie that stayed rural far longer than its neighbors. Development is recent and relatively compact, and it splits between two school districts.",
+    "neighborhoods": ["Woodbridge", "Creekside", "Heritage Park", "Ranch Estates"],
+    "priceBand": "$350K - $600K"
+  },
+  {
+    "slug": "the-colony-tx", "name": "The Colony", "metro": "DFW", "county": "Denton County",
+    "schools": "Lewisville ISD",
+    "character": "A narrow city along Lewisville Lake, best known for the Grandscape development and a long stretch of shoreline parks. Housing skews slightly smaller and more affordable than neighbouring Frisco while sharing similar access to the Tollway.",
+    "neighborhoods": ["Austin Waters", "The Tribute", "Legend Crest", "Stewart Peninsula"],
+    "priceBand": "$325K - $650K"
+  },
+  {
+    "slug": "wylie-tx", "name": "Wylie", "metro": "DFW", "county": "Collin County",
+    "schools": "Wylie ISD",
+    "character": "A city on the eastern edge of Collin County near Lavon Lake that has grown steadily while keeping a small-town downtown. It generally offers more square footage per dollar than Plano or Allen, at the cost of a longer commute.",
+    "neighborhoods": ["Woodbridge", "Inspiration", "Cascades", "Bozman Farms"],
+    "priceBand": "$325K - $550K"
+  },
+
+  {
+    "slug": "conroe-tx", "name": "Conroe", "metro": "Houston", "county": "Montgomery County",
+    "schools": "Conroe ISD",
+    "character": "The Montgomery County seat, sitting just north of Lake Conroe with a working historic downtown. It has absorbed much of the growth pushing north out of Houston while keeping larger lots than the inner suburbs.",
+    "neighborhoods": ["Grand Central Park", "April Sound", "Water Crest", "Downtown Conroe"],
+    "priceBand": "$250K - $550K"
+  },
+  {
+    "slug": "cypress-tx", "name": "Cypress", "metro": "Houston", "county": "Harris County",
+    "schools": "Cypress-Fairbanks ISD",
+    "character": "An unincorporated area northwest of Houston built almost entirely around master-planned communities. Cy-Fair is one of the largest school districts in Texas, and which school a home feeds into is often the deciding factor for buyers here.",
+    "neighborhoods": ["Bridgeland", "Towne Lake", "Fairfield", "Coles Crossing"],
+    "priceBand": "$300K - $700K"
+  },
+  {
+    "slug": "houston-tx", "name": "Houston", "metro": "Houston", "county": "Harris County",
+    "schools": "Houston ISD and several suburban districts",
+    "character": "The largest city in Texas and one with no traditional zoning, which produces sharper contrasts between adjacent blocks than buyers from other markets expect. Submarkets range from Inner Loop townhomes to large-lot neighborhoods well outside the Beltway.",
+    "neighborhoods": ["The Heights", "Montrose", "Memorial", "River Oaks", "EaDo"],
+    "priceBand": "$225K - $2M+"
+  },
+  {
+    "slug": "humble-tx", "name": "Humble", "metro": "Houston", "county": "Harris County",
+    "schools": "Humble ISD",
+    "character": "A small city northeast of Houston near Bush Intercontinental Airport, surrounded by a much larger unincorporated area that shares its name and school district. Proximity to the airport shapes both employment and traffic patterns.",
+    "neighborhoods": ["Atascocita", "Eagle Springs", "Fall Creek", "Old Humble"],
+    "priceBand": "$225K - $450K"
+  },
+  {
+    "slug": "katy-tx", "name": "Katy", "metro": "Houston", "county": "Harris, Fort Bend, and Waller Counties",
+    "schools": "Katy ISD",
+    "character": "A city spanning three counties west of Houston, with a small historic center surrounded by extensive master-planned development. Katy ISD's reputation is the dominant factor in the local market, and flood history varies meaningfully by neighborhood.",
+    "neighborhoods": ["Cinco Ranch", "Cross Creek Ranch", "Firethorne", "Old Katy"],
+    "priceBand": "$300K - $700K"
+  },
+  {
+    "slug": "kingwood-tx", "name": "Kingwood", "metro": "Houston", "county": "Harris County",
+    "schools": "Humble ISD",
+    "character": "A master-planned community marketed as the Livable Forest, annexed by Houston but distinct in character, with heavy tree cover and an extensive greenbelt trail network. Buyers here typically weigh flood history carefully given its position near the San Jacinto River.",
+    "neighborhoods": ["Kings Point", "Elm Grove", "Trailwood", "Royal Brook"],
+    "priceBand": "$250K - $550K"
+  },
+  {
+    "slug": "missouri-city-tx", "name": "Missouri City", "metro": "Houston", "county": "Fort Bend County",
+    "schools": "Fort Bend ISD",
+    "character": "A diverse suburb southwest of Houston, largely developed around golf-course communities from the 1970s onward. It sits within one of the most demographically varied counties in the United States.",
+    "neighborhoods": ["Sienna", "Quail Valley", "Lake Olympia", "Riverstone"],
+    "priceBand": "$275K - $600K"
+  },
+  {
+    "slug": "pearland-tx", "name": "Pearland", "metro": "Houston", "county": "Brazoria County",
+    "schools": "Pearland ISD and Alvin ISD",
+    "character": "A fast-growing city directly south of Houston with strong access to the Texas Medical Center, which drives much of its buyer demand. Development runs east to west along FM 518, with newer inventory concentrated on the west side.",
+    "neighborhoods": ["Shadow Creek Ranch", "Silverlake", "Old Townsite", "Pomona"],
+    "priceBand": "$275K - $600K"
+  },
+  {
+    "slug": "spring-tx", "name": "Spring", "metro": "Houston", "county": "Harris County",
+    "schools": "Spring ISD and Klein ISD",
+    "character": "A large unincorporated area north of Houston containing Old Town Spring's historic district alongside extensive suburban subdivisions. The ExxonMobil campus nearby reshaped demand across the northern corridor.",
+    "neighborhoods": ["Klein", "Old Town Spring", "Gleannloch Farms", "Augusta Pines"],
+    "priceBand": "$250K - $550K"
+  },
+  {
+    "slug": "stafford-tx", "name": "Stafford", "metro": "Houston", "county": "Fort Bend County",
+    "schools": "Stafford Municipal School District",
+    "character": "A small city notable for having no municipal property tax and for running its own school district, unusual in Texas. It is compact and heavily commercial for its size, with a limited stock of single-family homes.",
+    "neighborhoods": ["Stafford Run", "Sugar Creek border", "Colony Bend area", "Lakeside Place"],
+    "priceBand": "$250K - $450K"
+  },
+  {
+    "slug": "sugar-land-tx", "name": "Sugar Land", "metro": "Houston", "county": "Fort Bend County",
+    "schools": "Fort Bend ISD and Lamar CISD",
+    "character": "A planned city built on the former Imperial Sugar operation, now one of the most affluent suburbs in the Houston area. It is largely built out, with master-planned neighborhoods, a town square district, and consistently tight resale inventory.",
+    "neighborhoods": ["First Colony", "Sugar Creek", "Telfair", "Riverstone"],
+    "priceBand": "$350K - $850K"
+  },
+  {
+    "slug": "the-woodlands-tx", "name": "The Woodlands", "metro": "Houston", "county": "Montgomery County",
+    "schools": "Conroe ISD",
+    "character": "A large master-planned township north of Houston, developed from the 1970s under a plan that preserved substantial forest cover. It functions as its own employment center rather than a pure bedroom community, with a corporate district and waterway around the town center.",
+    "neighborhoods": ["Grogan's Mill", "Alden Bridge", "Creekside Park", "Sterling Ridge"],
+    "priceBand": "$350K - $1M+"
+  }
+]

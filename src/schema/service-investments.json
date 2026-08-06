@@ -1,0 +1,78 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "{{{site.baseUrl}}}/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Investments",
+          "item": "{{{site.baseUrl}}}/investments.html"
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "name": "Real estate investment services",
+      "description": "Rental and multi-family acquisition analysis in Texas.",
+      "serviceType": "Real estate investment services",
+      "provider": {
+        "@id": "{{{site.baseUrl}}}/#organization"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Dallas"
+        },
+        {
+          "@type": "City",
+          "name": "Plano"
+        },
+        {
+          "@type": "City",
+          "name": "Frisco"
+        },
+        {
+          "@type": "City",
+          "name": "Houston"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What returns should I expect on a Texas rental?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It varies widely by submarket, property age, and financing. Any specific figure quoted before analysing an actual property is guesswork. We build the numbers for the property in front of you and show you the assumptions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do Texas property taxes affect returns?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Texas has no state income tax but comparatively high property tax rates, and rates vary meaningfully between taxing jurisdictions. This is one of the largest line items in a Texas rental model and a common reason out-of-state investors overestimate returns."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you work with out-of-state investors?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Seeto Realty works with investors buying into the Dallas-Fort Worth and Houston markets from elsewhere, including coordinating inspections and walkthroughs remotely."
+          }
+        }
+      ]
+    }
+  ]
+}

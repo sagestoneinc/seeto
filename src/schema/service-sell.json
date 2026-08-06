@@ -1,0 +1,86 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "{{{site.baseUrl}}}/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Selling",
+          "item": "{{{site.baseUrl}}}/sell.html"
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "name": "Home selling representation",
+      "description": "Seller representation and listing services across Dallas-Fort Worth and Houston, Texas.",
+      "serviceType": "Home selling representation",
+      "provider": {
+        "@id": "{{{site.baseUrl}}}/#organization"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Dallas"
+        },
+        {
+          "@type": "City",
+          "name": "Plano"
+        },
+        {
+          "@type": "City",
+          "name": "Frisco"
+        },
+        {
+          "@type": "City",
+          "name": "Houston"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What does it cost to sell a home in Texas?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Typical seller costs include agent compensation as negotiated, title policy, survey if required, and any repair or closing-cost concessions agreed with the buyer. We give you a written net sheet estimate before you list, so there are no surprises at closing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I make repairs before listing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Some repairs return more than they cost and some do not. We walk the property with you and identify the short list worth doing. Deferred maintenance that an inspector will find is usually worth addressing before it becomes a negotiation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long will it take to sell?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It depends on price, condition, and location. Pricing accurately from the start is the single largest factor. Homes that need a price correction after several weeks typically take longer overall and net less."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What if my home does not appraise?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "If a financed buyer appraisal comes in below the contract price, the parties renegotiate, the buyer covers the difference, or the contract terminates under its terms. We prepare for this by pricing against evidence and supplying the appraiser with comparable sales."
+          }
+        }
+      ]
+    }
+  ]
+}
