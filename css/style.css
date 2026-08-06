@@ -56,6 +56,25 @@
   --container: 1180px;
 
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* --- TEMPORARY compatibility shim — delete in Plan 2 ---
+     js/search.js, js/contact.js, and js/mortgage-calculator.js inject stylesheets
+     that reference the retired navy-and-gold palette. Without these aliases those
+     rules resolve to nothing and render white text on a transparent background,
+     which is worse than the old design. The four pages still using them
+     (about, contact, search, mortgage-calculator) are rebuilt in Plan 2; remove
+     this block and the dead CSS in those three scripts at that point. */
+  --primary-color: var(--ink);
+  --primary-dark: var(--ink);
+  --accent-color: var(--ink-body);
+  --secondary-color: var(--pastel-yellow-bg);
+  --dark-color: var(--ink);
+  --light-color: var(--canvas-alt);
+  --white: var(--surface);
+  --gray-100: var(--canvas-alt);
+  --gray-200: var(--border);
+  --gray-600: var(--ink-muted);
+  --gray-800: var(--ink-body);
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -249,6 +268,9 @@ a.service-card { text-decoration: none; display: block; }
   gap: var(--space-3);
   align-items: start;
 }
+/* Four short tiles: 280px leaves room for only three per row at the 1180px
+   container, stranding the fourth. A lower floor fits all four. */
+.bento-tight { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
 
 /* --- Footer --- */
 .footer {
@@ -321,6 +343,23 @@ a.service-card { text-decoration: none; display: block; }
   border: 1px solid var(--border);
   border-radius: var(--radius);
 }
+
+/* --- Cookie banner (injected by js/main.js) --- */
+.cookie-banner {
+  position: fixed;
+  inset-inline: 0;
+  bottom: 0;
+  z-index: 90;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+}
+.cookie-banner p { max-width: 62ch; font-size: var(--text-sm); color: var(--ink-body); }
 
 /* --- Layout utilities ---
    Markup uses these instead of inline style attributes, so spacing is adjustable
