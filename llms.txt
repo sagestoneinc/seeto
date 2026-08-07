@@ -1,0 +1,59 @@
+# Seeto Realty
+
+> DFW's home buying and selling authority
+
+Seeto Realty is a real estate brokerage serving the Dallas-Fort Worth and Houston
+metropolitan areas in Texas. Phone: 972-509-7100.
+
+## Pages
+
+- [About Seeto Realty](/about.html): Seeto Realty is a boutique Texas brokerage founded by Michael Seeto in 2010, serving the Dallas-Fort Worth and Houston metropolitan areas.
+- [Areas We Serve in DFW & Houston](/areas.html): Seeto Realty serves 32 cities across the Dallas-Fort Worth and Houston metropolitan areas. Find local guidance for your city.
+- [Texas Real Estate Insights](/blog.html): Notes on buying, selling, and investing in Dallas-Fort Worth and Houston real estate from Seeto Realty.
+- [Buying a Home in DFW & Houston](/buy.html): Work with a Texas brokerage that explains what your budget actually buys. Seeto Realty guides buyers across Dallas-Fort Worth and Houston.
+- [Contact Seeto Realty](/contact.html): Contact Seeto Realty in Plano, Texas. Call 972-509-7100 or send a message about buying, selling, or investing in DFW and Houston.
+- [Texas Foreclosures & Bank-Owned Homes](/foreclosures.html): Foreclosure and bank-owned purchases carry different risks than a standard sale. Seeto Realty helps buyers evaluate distressed property in Texas.
+- [Seeto Realty](/): Search homes for sale across Dallas-Fort Worth and Houston. Seeto Realty has helped Texas families buy, sell, and invest since 2010.
+- [Texas Real Estate Investment Services](/investments.html): Rental and multi-family acquisition analysis grounded in local rent comps and carrying costs. Seeto Realty works with investors across Texas.
+- [Listing Details](/listing-detail.html): Property detail view for Seeto Realty listings across Dallas-Fort Worth and Houston.
+- [Featured Listings in DFW & Houston](/listings.html): Current featured listings from Seeto Realty across the Dallas-Fort Worth and Houston markets.
+- [Texas Mortgage Calculator](/mortgage-calculator.html): Estimate a Texas monthly mortgage payment including property tax and insurance. Free calculator from Seeto Realty in Plano.
+- [Privacy Policy](/privacy.html): How Seeto Realty collects, uses, and protects personal information submitted through this website.
+- [Property Management in DFW & Houston](/property-management.html): Tenant placement, maintenance coordination, and owner reporting for rental property in Dallas-Fort Worth and Houston.
+- [Search Homes for Sale in DFW & Houston](/search.html): Search homes for sale across Dallas-Fort Worth and Houston. Filter by city, price, bedrooms, and property type with Seeto Realty.
+- [Selling Your Home in DFW & Houston](/sell.html): Price on evidence, prepare properly, and negotiate well. Seeto Realty represents home sellers across Dallas-Fort Worth and Houston.
+- [Real Estate Services in DFW & Houston](/services.html): Buying, selling, foreclosures, investments, and property management across Dallas-Fort Worth and Houston, from a brokerage operating since 2010.
+- [Our Team](/team.html): Seeto Realty is a boutique Texas brokerage founded by Michael Seeto, serving Dallas-Fort Worth and Houston since 2010.
+- [Terms of Service](/terms.html): Terms governing use of the Seeto Realty website and the information published on it.
+- [Homes for sale in Allen, TX](/homes-for-sale/allen-tx/): Collin County, Dallas-Fort Worth. Served by Allen ISD.
+- [Homes for sale in Carrollton, TX](/homes-for-sale/carrollton-tx/): Dallas and Denton Counties, Dallas-Fort Worth. Served by Carrollton-Farmers Branch ISD.
+- [Homes for sale in Coppell, TX](/homes-for-sale/coppell-tx/): Dallas County, Dallas-Fort Worth. Served by Coppell ISD.
+- [Homes for sale in Dallas, TX](/homes-for-sale/dallas-tx/): Dallas County, Dallas-Fort Worth. Served by Dallas ISD and several suburban districts.
+- [Homes for sale in Flower Mound, TX](/homes-for-sale/flower-mound-tx/): Denton County, Dallas-Fort Worth. Served by Lewisville ISD.
+- [Homes for sale in Frisco, TX](/homes-for-sale/frisco-tx/): Collin and Denton Counties, Dallas-Fort Worth. Served by Frisco ISD.
+- [Homes for sale in Garland, TX](/homes-for-sale/garland-tx/): Dallas County, Dallas-Fort Worth. Served by Garland ISD.
+- [Homes for sale in Grand Prairie, TX](/homes-for-sale/grand-prairie-tx/): Dallas and Tarrant Counties, Dallas-Fort Worth. Served by Grand Prairie ISD.
+- [Homes for sale in Irving, TX](/homes-for-sale/irving-tx/): Dallas County, Dallas-Fort Worth. Served by Irving ISD and Coppell ISD.
+- [Homes for sale in Lewisville, TX](/homes-for-sale/lewisville-tx/): Denton County, Dallas-Fort Worth. Served by Lewisville ISD.
+- [Homes for sale in Little Elm, TX](/homes-for-sale/little-elm-tx/): Denton County, Dallas-Fort Worth. Served by Little Elm ISD and Frisco ISD.
+- [Homes for sale in McKinney, TX](/homes-for-sale/mckinney-tx/): Collin County, Dallas-Fort Worth. Served by McKinney ISD, Prosper ISD, and Frisco ISD.
+- [Homes for sale in Mesquite, TX](/homes-for-sale/mesquite-tx/): Dallas County, Dallas-Fort Worth. Served by Mesquite ISD.
+- [Homes for sale in Plano, TX](/homes-for-sale/plano-tx/): Collin County, Dallas-Fort Worth. Served by Plano ISD.
+- [Homes for sale in Prosper, TX](/homes-for-sale/prosper-tx/): Collin and Denton Counties, Dallas-Fort Worth. Served by Prosper ISD.
+- [Homes for sale in Richardson, TX](/homes-for-sale/richardson-tx/): Dallas and Collin Counties, Dallas-Fort Worth. Served by Richardson ISD and Plano ISD.
+- [Homes for sale in Rowlett, TX](/homes-for-sale/rowlett-tx/): Dallas and Rockwall Counties, Dallas-Fort Worth. Served by Garland ISD and Rockwall ISD.
+- [Homes for sale in Sachse, TX](/homes-for-sale/sachse-tx/): Dallas and Collin Counties, Dallas-Fort Worth. Served by Garland ISD and Wylie ISD.
+- [Homes for sale in The Colony, TX](/homes-for-sale/the-colony-tx/): Denton County, Dallas-Fort Worth. Served by Lewisville ISD.
+- [Homes for sale in Wylie, TX](/homes-for-sale/wylie-tx/): Collin County, Dallas-Fort Worth. Served by Wylie ISD.
+- [Homes for sale in Conroe, TX](/homes-for-sale/conroe-tx/): Montgomery County, Houston. Served by Conroe ISD.
+- [Homes for sale in Cypress, TX](/homes-for-sale/cypress-tx/): Harris County, Houston. Served by Cypress-Fairbanks ISD.
+- [Homes for sale in Houston, TX](/homes-for-sale/houston-tx/): Harris County, Houston. Served by Houston ISD and several suburban districts.
+- [Homes for sale in Humble, TX](/homes-for-sale/humble-tx/): Harris County, Houston. Served by Humble ISD.
+- [Homes for sale in Katy, TX](/homes-for-sale/katy-tx/): Harris, Fort Bend, and Waller Counties, Houston. Served by Katy ISD.
+- [Homes for sale in Kingwood, TX](/homes-for-sale/kingwood-tx/): Harris County, Houston. Served by Humble ISD.
+- [Homes for sale in Missouri City, TX](/homes-for-sale/missouri-city-tx/): Fort Bend County, Houston. Served by Fort Bend ISD.
+- [Homes for sale in Pearland, TX](/homes-for-sale/pearland-tx/): Brazoria County, Houston. Served by Pearland ISD and Alvin ISD.
+- [Homes for sale in Spring, TX](/homes-for-sale/spring-tx/): Harris County, Houston. Served by Spring ISD and Klein ISD.
+- [Homes for sale in Stafford, TX](/homes-for-sale/stafford-tx/): Fort Bend County, Houston. Served by Stafford Municipal School District.
+- [Homes for sale in Sugar Land, TX](/homes-for-sale/sugar-land-tx/): Fort Bend County, Houston. Served by Fort Bend ISD and Lamar CISD.
+- [Homes for sale in The Woodlands, TX](/homes-for-sale/the-woodlands-tx/): Montgomery County, Houston. Served by Conroe ISD.

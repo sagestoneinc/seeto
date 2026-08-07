@@ -1,0 +1,86 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "{{{site.baseUrl}}}/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Buying",
+          "item": "{{{site.baseUrl}}}/buy.html"
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "name": "Home buying representation",
+      "description": "Buyer representation across Dallas-Fort Worth and Houston, Texas.",
+      "serviceType": "Home buying representation",
+      "provider": {
+        "@id": "{{{site.baseUrl}}}/#organization"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Dallas"
+        },
+        {
+          "@type": "City",
+          "name": "Plano"
+        },
+        {
+          "@type": "City",
+          "name": "Frisco"
+        },
+        {
+          "@type": "City",
+          "name": "Houston"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How much do I need for a down payment in Texas?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It depends on the loan. Conventional loans commonly start around 3 to 5 percent, FHA at 3.5 percent, and VA loans can require nothing down for eligible buyers. Ask a lender to price several options against your situation before assuming you need 20 percent."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is an option period?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A Texas option period is a negotiated window, typically a few days to about a week, during which the buyer may terminate for any reason in exchange for a non-refundable option fee. It is when inspections happen and repairs are negotiated."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the buyer pay the agent?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Compensation is negotiable and is agreed in writing before you tour homes. We explain exactly what you would owe and what, if anything, a seller is offering, before you sign anything."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does buying take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Once an offer is accepted, a financed purchase in Texas commonly closes in about 30 to 45 days. Cash purchases can close faster. Finding the right home is usually the longer part of the process."
+          }
+        }
+      ]
+    }
+  ]
+}

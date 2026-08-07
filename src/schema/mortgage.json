@@ -1,0 +1,51 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "{{{site.baseUrl}}}/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Mortgage calculator",
+          "item": "{{{site.baseUrl}}}/mortgage-calculator.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What property tax rate should I use for Texas?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Rates vary by county, city, and school district, and commonly fall somewhere near 2 to 2.5 percent of assessed value in the Dallas-Fort Worth and Houston areas. Check the actual rate for the specific address rather than relying on an average."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does this include HOA dues?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. HOA dues are not included and can be significant in master-planned communities across both metros. Add them separately when comparing total monthly cost between neighborhoods."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a homestead exemption?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A Texas homestead exemption reduces the taxable value of your primary residence, lowering your annual property tax. It must be applied for with the county appraisal district, and it does not transfer automatically when a property changes hands."
+          }
+        }
+      ]
+    }
+  ]
+}

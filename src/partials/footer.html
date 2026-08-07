@@ -1,0 +1,33 @@
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="stack">
+        <p class="logo-text">Seeto Realty</p>
+        <p class="muted">
+          Helping Texas families buy, sell, and invest across Dallas-Fort Worth and Houston since {{site.founded}}.
+        </p>
+      </div>
+      <div class="stack">
+        <h4>Services</h4>
+        <ul>{{#each site.footerServices}}<li><a href="{{this.href}}">{{this.label}}</a></li>{{/each}}</ul>
+      </div>
+      <div class="stack">
+        <h4>Company</h4>
+        <ul>{{#each site.footerCompany}}<li><a href="{{this.href}}">{{this.label}}</a></li>{{/each}}</ul>
+      </div>
+      <div class="stack">
+        <h4>Contact</h4>
+        <address class="footer-nap">
+          {{site.address.street}}<br>
+          {{site.address.locality}}, {{site.address.region}} {{site.address.postalCode}}<br>
+          <a href="tel:{{site.phoneHref}}">{{site.phone}}</a><br>
+          <a href="mailto:{{site.email}}">{{site.email}}</a>
+        </address>
+        <ul>{{#each site.footerResources}}<li><a href="{{this.href}}">{{this.label}}</a></li>{{/each}}</ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 {{site.name}}. Licensed in Texas. Equal Housing Opportunity.</p>
+    </div>
+  </div>
+</footer>

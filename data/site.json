@@ -1,0 +1,47 @@
+{
+  "name": "Seeto Realty",
+  "baseUrl": "https://www.seetorealty.com",
+  "tagline": "DFW's home buying and selling authority",
+  "founded": "2010",
+  "founder": "Michael Seeto",
+  "phone": "972-509-7100",
+  "phoneHref": "+19725097100",
+  "fax": "972-509-7103",
+  "email": "info@seetorealty.com",
+  "address": {
+    "street": "700 W Spring Creek Pkwy #212",
+    "locality": "Plano",
+    "region": "TX",
+    "postalCode": "75023",
+    "country": "US"
+  },
+  "geo": { "latitude": "33.0709", "longitude": "-96.7350" },
+  "nav": [
+    { "label": "Buy", "href": "/buy.html" },
+    { "label": "Sell", "href": "/sell.html" },
+    { "label": "Search", "href": "/search.html" },
+    { "label": "Areas", "href": "/areas.html" },
+    { "label": "About", "href": "/about.html" }
+  ],
+  "footerServices": [
+    { "label": "Buy a home", "href": "/buy.html" },
+    { "label": "Sell your home", "href": "/sell.html" },
+    { "label": "Foreclosures", "href": "/foreclosures.html" },
+    { "label": "Investments", "href": "/investments.html" },
+    { "label": "Property management", "href": "/property-management.html" }
+  ],
+  "footerCompany": [
+    { "label": "About", "href": "/about.html" },
+    { "label": "Our team", "href": "/team.html" },
+    { "label": "Blog", "href": "/blog.html" },
+    { "label": "Areas we serve", "href": "/areas.html" },
+    { "label": "Contact", "href": "/contact.html" }
+  ],
+  "footerResources": [
+    { "label": "Property search", "href": "/search.html" },
+    { "label": "Featured listings", "href": "/listings.html" },
+    { "label": "Mortgage calculator", "href": "/mortgage-calculator.html" },
+    { "label": "Privacy policy", "href": "/privacy.html" },
+    { "label": "Terms of service", "href": "/terms.html" }
+  ]
+}

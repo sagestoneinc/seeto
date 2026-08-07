@@ -251,10 +251,10 @@ document.addEventListener('DOMContentLoaded', function() {
     if (!cookieConsent) {
         // Create cookie consent banner
         const banner = document.createElement('div');
-        banner.style.cssText = 'position: fixed; bottom: 0; left: 0; right: 0; background-color: var(--dark-color); color: white; padding: 1rem; text-align: center; z-index: 9999;';
+        banner.className = 'cookie-banner';
         banner.innerHTML = `
-            <p style="margin: 0 0 0.5rem 0;">We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.</p>
-            <button onclick="acceptCookies()" style="padding: 0.5rem 1rem; background-color: var(--primary-color); color: white; border: none; border-radius: 4px; cursor: pointer;">Accept</button>
+            <p>We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.</p>
+            <button onclick="acceptCookies()" class="btn btn-primary">Accept</button>
         `;
         document.body.appendChild(banner);
     }
@@ -262,7 +262,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function acceptCookies() {
     localStorage.setItem('cookieConsent', 'true');
-    const banner = document.querySelector('[style*="position: fixed"]');
+    const banner = document.querySelector('.cookie-banner');
     if (banner) {
         banner.remove();
     }

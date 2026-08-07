@@ -1,0 +1,46 @@
+<!--{
+  "title": "Areas We Serve in DFW & Houston | Seeto Realty",
+  "description": "Seeto Realty serves 32 cities across the Dallas-Fort Worth and Houston metropolitan areas. Find local guidance for your city.",
+  "canonical": "/areas.html",
+  "ogImage": "/images/og-home.jpg",
+  "schema": "areas"
+}-->
+<section class="hero">
+  <div class="container stack">
+    <p class="eyebrow">Areas</p>
+    <h1>Areas we serve</h1>
+    <p class="lede">Thirty-two cities across the two largest metropolitan areas in Texas.</p>
+    <div class="row"><a href="/search.html" class="btn btn-primary">Search listings</a> <a href="/contact.html" class="btn btn-outline">Talk to an agent</a></div>
+  </div>
+</section>
+
+<section>
+  <div class="container stack-lg">
+    <h2>Dallas-Fort Worth</h2>
+    <div class="bento bento-tight">
+{{#each dfw}}      <a class="service-card" href="/homes-for-sale/{{this.slug}}/"><h3>{{this.name}}</h3><p class="muted">{{this.county}}</p></a>
+{{/each}}    </div>
+  </div>
+</section>
+
+<section class="section-alt">
+  <div class="container stack-lg">
+    <h2>Houston</h2>
+    <div class="bento bento-tight">
+{{#each houston}}      <a class="service-card" href="/homes-for-sale/{{this.slug}}/"><h3>{{this.name}}</h3><p class="muted">{{this.county}}</p></a>
+{{/each}}    </div>
+  </div>
+</section>
+
+<section class="section-alt">
+  <div class="container center stack-lg">
+    <div class="stack">
+      <h2>Do not see your city?</h2>
+      <p>We work across both metros. Ask us about the area you are considering.</p>
+    </div>
+    <div class="row row-center">
+      <a href="/contact.html" class="btn btn-primary">Talk to an agent</a>
+      <a href="/search.html" class="btn btn-outline">Browse listings</a>
+    </div>
+  </div>
+</section>

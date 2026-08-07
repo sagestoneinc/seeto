@@ -1,0 +1,109 @@
+<!--{
+  "title": "Texas Mortgage Calculator | Seeto Realty",
+  "description": "Estimate a Texas monthly mortgage payment including property tax and insurance. Free calculator from Seeto Realty in Plano.",
+  "canonical": "/mortgage-calculator.html",
+  "ogImage": "/images/og-home.jpg",
+  "schema": "mortgage"
+}-->
+<section class="hero">
+  <div class="container stack">
+    <p class="eyebrow">Tools</p>
+    <h1>Texas mortgage calculator</h1>
+    <p class="lede">
+      Estimate a monthly payment including the property tax and insurance that make Texas
+      different from most other markets.
+    </p>
+  </div>
+</section>
+
+<section class="section-alt">
+  <div class="container">
+    <form class="calculator-form stack" id="mortgage-form">
+      <h2>Calculate your payment</h2>
+      <div class="bento">
+        <div class="field">
+          <label for="m-price">Home price</label>
+          <input type="number" id="m-price" name="price" value="450000" min="0" step="1000">
+        </div>
+        <div class="field">
+          <label for="m-down">Down payment</label>
+          <input type="number" id="m-down" name="down" value="90000" min="0" step="1000">
+        </div>
+        <div class="field">
+          <label for="m-rate">Interest rate (%)</label>
+          <input type="number" id="m-rate" name="rate" value="6.5" min="0" step="0.01">
+        </div>
+        <div class="field">
+          <label for="m-term">Term (years)</label>
+          <select id="m-term" name="term">
+            <option value="30">30</option>
+            <option value="20">20</option>
+            <option value="15">15</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="m-tax">Property tax rate (%)</label>
+          <input type="number" id="m-tax" name="tax" value="2.2" min="0" step="0.01">
+        </div>
+        <div class="field">
+          <label for="m-insurance">Annual insurance</label>
+          <input type="number" id="m-insurance" name="insurance" value="2400" min="0" step="100">
+        </div>
+      </div>
+      <div class="row"><button type="submit" class="btn btn-primary">Calculate</button></div>
+    </form>
+    <div id="mortgage-result" class="panel"></div>
+  </div>
+</section>
+
+<section>
+  <div class="container stack-lg">
+    <h2>Reading the result</h2>
+    <div class="panel stack">
+      <p>
+        Texas has no state income tax but comparatively high property tax rates, and rates
+        vary by taxing jurisdiction rather than being uniform statewide. A payment estimate
+        that leaves tax and insurance out will understate your real monthly cost, often
+        substantially.
+      </p>
+      <p class="muted">
+        This calculator produces an estimate for planning only. It is not a loan offer, and it
+        does not account for HOA dues, mortgage insurance, or your specific tax exemptions.
+        Get a written estimate from a lender before relying on any figure.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section-alt">
+  <div class="container stack-lg">
+    <h2>Common questions</h2>
+    <div class="panel">
+      <details class="faq-item">
+        <summary>What property tax rate should I use for Texas?</summary>
+        <p>Rates vary by county, city, and school district, and commonly fall somewhere near 2 to 2.5 percent of assessed value in the Dallas-Fort Worth and Houston areas. Check the actual rate for the specific address rather than relying on an average.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Does this include HOA dues?</summary>
+        <p>No. HOA dues are not included and can be significant in master-planned communities across both metros. Add them separately when comparing total monthly cost between neighborhoods.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What is a homestead exemption?</summary>
+        <p>A Texas homestead exemption reduces the taxable value of your primary residence, lowering your annual property tax. It must be applied for with the county appraisal district, and it does not transfer automatically when a property changes hands.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="section-alt">
+  <div class="container center stack-lg">
+    <div class="stack">
+      <h2>Ready to get pre-approved?</h2>
+      <p>We can connect you with lenders who work in both metros.</p>
+    </div>
+    <div class="row row-center">
+      <a href="/contact.html" class="btn btn-primary">Talk to an agent</a>
+      <a href="/search.html" class="btn btn-outline">Browse listings</a>
+    </div>
+  </div>
+</section>

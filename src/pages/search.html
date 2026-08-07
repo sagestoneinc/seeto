@@ -1,0 +1,92 @@
+<!--{
+  "title": "Search Homes for Sale in DFW & Houston | Seeto Realty",
+  "description": "Search homes for sale across Dallas-Fort Worth and Houston. Filter by city, price, bedrooms, and property type with Seeto Realty.",
+  "canonical": "/search.html",
+  "ogImage": "/images/og-home.jpg",
+  "schema": "search"
+}-->
+<section class="hero">
+  <div class="container stack">
+    <p class="eyebrow">Property search</p>
+    <h1>Search homes across Texas</h1>
+    <p class="lede">Filter by city, price, and property type across both metros.</p>
+  </div>
+</section>
+
+<section class="section-alt">
+  <div class="container">
+    <form class="search-form stack" action="/search.html" method="get">
+      <h2>Search filters</h2>
+      <div class="bento">
+        <div class="field">
+          <label for="s-location">Location</label>
+          <input type="text" id="s-location" name="location" placeholder="City, neighborhood, or ZIP">
+        </div>
+        <div class="field">
+          <label for="s-type">Property type</label>
+          <select id="s-type" name="type">
+            <option value="">Any type</option>
+            <option value="house">House</option>
+            <option value="condo">Condo</option>
+            <option value="townhouse">Townhouse</option>
+            <option value="land">Land</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="s-price">Price range</label>
+          <select id="s-price" name="price">
+            <option value="">Any price</option>
+            <option value="0-300000">Under $300K</option>
+            <option value="300000-500000">$300K - $500K</option>
+            <option value="500000-750000">$500K - $750K</option>
+            <option value="750000+">$750K+</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="s-beds">Bedrooms</label>
+          <select id="s-beds" name="beds">
+            <option value="">Any</option>
+            <option value="2">2+</option>
+            <option value="3">3+</option>
+            <option value="4">4+</option>
+            <option value="5">5+</option>
+          </select>
+        </div>
+      </div>
+      <div class="row"><button type="submit" class="btn btn-primary">Search</button></div>
+    </form>
+  </div>
+</section>
+
+<section>
+  <div class="container stack-lg">
+    <h2>Results <span class="tag tag-sample">Sample</span></h2>
+    <div class="panel stack">
+      <p>
+        This site is not connected to an MLS or IDX feed yet, so this search does not return
+        live properties. Filters are wired and functional; only the data source is missing.
+      </p>
+      <p class="muted">
+        Showing invented properties for a real brokerage would misrepresent available
+        inventory, so nothing is displayed until a feed is connected.
+      </p>
+    </div>
+    <div class="row">
+      <a href="/contact.html" class="btn btn-primary">Ask what is available</a>
+      <a href="/areas.html" class="btn btn-outline">Browse by city</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-alt">
+  <div class="container center stack-lg">
+    <div class="stack">
+      <h2>Cannot find what you are looking for?</h2>
+      <p>Tell us the area and budget and we will search on your behalf.</p>
+    </div>
+    <div class="row row-center">
+      <a href="/contact.html" class="btn btn-primary">Talk to an agent</a>
+      <a href="/search.html" class="btn btn-outline">Browse listings</a>
+    </div>
+  </div>
+</section>
