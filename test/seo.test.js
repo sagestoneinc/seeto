@@ -1,5 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
 import { buildSitemap, buildRobots, buildLlmsTxt } from '../build/seo.js';
 
 const BASE = 'https://www.seetorealty.com';
@@ -33,6 +34,19 @@ test('buildRobots allows all crawlers and points at the sitemap', () => {
   assert.match(txt, /User-agent: \*/);
   assert.match(txt, /Allow: \//);
   assert.match(txt, /Sitemap: https:\/\/www\.seetorealty\.com\/sitemap\.xml/);
+});
+
+test('buildRobots in demo mode disallows everything and omits the sitemap', () => {
+  const txt = buildRobots(BASE, true);
+  assert.match(txt, /Disallow: \//);
+  assert.ok(!/Allow: \//.test(txt));
+  assert.ok(!/Sitemap:/.test(txt), 'a disallowed site must not advertise a sitemap');
+});
+
+test('the shipped site.json keeps demo mode on', () => {
+  const site = JSON.parse(readFileSync('data/site.json', 'utf8'));
+  assert.equal(site.demo, true, 'this is a pitch demo carrying a real brokerage name');
+  assert.equal(typeof site.demoUrl, 'string');
 });
 
 test('buildLlmsTxt leads with the business name as an h1 and lists entries as links', () => {

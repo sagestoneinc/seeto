@@ -1,4 +1,7 @@
 {
+  "_demo": "While true, every page renders noindex,nofollow, robots.txt disallows all crawling, and canonical/OG URLs use demoUrl instead of baseUrl. This is a pitch demo carrying a real brokerage's name over sample data; it must not be indexed. To go live: set demo to false, confirm baseUrl is the production domain, and rebuild.",
+  "demo": true,
+  "demoUrl": "https://seetorealty.vercel.app",
   "name": "Seeto Realty",
   "baseUrl": "https://www.seetorealty.com",
   "tagline": "DFW's home buying and selling authority",

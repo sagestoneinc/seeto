@@ -1,4 +1,3 @@
+# Pitch demo. Not the live site. Do not index.
 User-agent: *
-Allow: /
-
-Sitemap: https://www.seetorealty.com/sitemap.xml
+Disallow: /

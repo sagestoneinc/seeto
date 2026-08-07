@@ -22,7 +22,19 @@ export function buildSitemap(entries, baseUrl) {
   ].join('\n');
 }
 
-export function buildRobots(baseUrl) {
+export function buildRobots(baseUrl, demo = false) {
+  // In demo mode there is deliberately no Sitemap: line. Advertising a sitemap while
+  // disallowing the whole site is a contradictory signal, and the sitemap would invite
+  // crawling of a site carrying a real business's name over sample data.
+  if (demo) {
+    return [
+      '# Pitch demo. Not the live site. Do not index.',
+      'User-agent: *',
+      'Disallow: /',
+      '',
+    ].join('\n');
+  }
+
   return ['User-agent: *', 'Allow: /', '', `Sitemap: ${trimSlash(baseUrl)}/sitemap.xml`, ''].join(
     '\n'
   );

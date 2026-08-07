@@ -11,6 +11,13 @@ const REQUIRED_META = ['title', 'description', 'canonical', 'ogImage', 'schema']
 
 const read = (...parts) => readFileSync(join(ROOT, ...parts), 'utf8');
 
+// Demo mode wins over everything. This site carries a real brokerage's name over sample
+// data, so while data/site.json sets demo:true nothing here may tell a crawler to index.
+export function robotsValue(site, pageNoindex) {
+  if (site.demo === true) return 'noindex, nofollow';
+  return pageNoindex ? 'noindex, follow' : 'index, follow';
+}
+
 function parsePage(source, filename) {
   const match = FRONT_MATTER.exec(source);
   if (match === null) {
@@ -104,6 +111,7 @@ function buildCities(site, layout, partials, generated, index, indexable) {
       site,
       partials,
       page: {
+        robots: robotsValue(site, false),
         title: `Homes for Sale in ${city.name}, TX | Seeto Realty`,
         // Deliberately does not interpolate schools or county: several records hold
         // multi-district strings long enough to push this past the 155-character limit.
@@ -131,7 +139,16 @@ function buildCities(site, layout, partials, generated, index, indexable) {
 }
 
 export function buildAll() {
-  const site = JSON.parse(read('data', 'site.json'));
+  const raw = JSON.parse(read('data', 'site.json'));
+  // Canonicals, OG URLs, the sitemap, and llms.txt must all describe the host the page
+  // is actually served from. While demo is true that is demoUrl, not the production
+  // domain — otherwise a shared demo link previews someone else's URL, and the
+  // canonicals point at city pages that do not exist on the live site.
+  const site = {
+    ...raw,
+    baseUrl: raw.demo === true && raw.demoUrl ? raw.demoUrl : raw.baseUrl,
+    productionUrl: raw.baseUrl,
+  };
 
   const partials = {};
   for (const name of readdirSync(join(ROOT, 'src', 'partials')).filter((n) => n.endsWith('.html'))) {
@@ -170,7 +187,7 @@ export function buildAll() {
       partials,
       page: {
         ...meta,
-        robots: meta.noindex === true ? 'noindex, follow' : 'index, follow',
+        robots: robotsValue(site, meta.noindex === true),
         schema,
         content: render(body, { site, ...byMetro }),
       },
@@ -203,7 +220,7 @@ export function buildAll() {
     }));
 
   writeFileSync(join(ROOT, 'sitemap.xml'), buildSitemap(entries, site.baseUrl));
-  writeFileSync(join(ROOT, 'robots.txt'), buildRobots(site.baseUrl));
+  writeFileSync(join(ROOT, 'robots.txt'), buildRobots(site.baseUrl, site.demo === true));
   writeFileSync(join(ROOT, 'llms.txt'), buildLlmsTxt(site, index));
   console.log('built sitemap.xml, robots.txt, llms.txt');
 
