@@ -1,0 +1,11 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "name": "Page Not Found",
+      "url": "{{{site.baseUrl}}}/404.html",
+      "isPartOf": { "@id": "{{{site.baseUrl}}}/#organization" }
+    }
+  ]
+}

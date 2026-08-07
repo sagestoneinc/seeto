@@ -74,7 +74,7 @@ export function nearbyFor(city, all) {
   return picked.map(({ slug, name, county }) => ({ slug, name, county }));
 }
 
-function buildCities(site, layout, partials, generated, index) {
+function buildCities(site, layout, partials, generated, index, indexable) {
   const all = JSON.parse(read('data', 'cities.json'));
   const { ready, skipped } = selectCities(all);
 
@@ -119,6 +119,7 @@ function buildCities(site, layout, partials, generated, index) {
     mkdirSync(dirname(outPath), { recursive: true });
     writeFileSync(outPath, html);
     generated.set(`${canonical}index.html`, html);
+    indexable.add(`${canonical}index.html`);
     index.push({
       loc: canonical,
       title: `Homes for sale in ${city.name}, TX`,
@@ -141,6 +142,7 @@ export function buildAll() {
   const pageFiles = readdirSync(join(ROOT, 'src', 'pages')).filter((n) => n.endsWith('.html'));
   const generated = new Map();
   const index = [];
+  const indexable = new Set();
 
   // areas.html iterates these; every other page simply ignores them.
   const { ready: cities } = selectCities(JSON.parse(read('data', 'cities.json')));
@@ -166,27 +168,39 @@ export function buildAll() {
     const html = render(layout, {
       site,
       partials,
-      page: { ...meta, schema, content: render(body, { site, ...byMetro }) },
+      page: {
+        ...meta,
+        robots: meta.noindex === true ? 'noindex, follow' : 'index, follow',
+        schema,
+        content: render(body, { site, ...byMetro }),
+      },
     });
 
     const outPath = join(ROOT, filename);
     mkdirSync(dirname(outPath), { recursive: true });
     writeFileSync(outPath, html);
     generated.set(`/${filename}`, html);
-    index.push({
-      loc: filename === 'index.html' ? '/' : `/${filename}`,
-      title: meta.title.split('|')[0].trim(),
-      summary: meta.description,
-    });
+    // noindex pages (the 404) still get link-verified, but stay out of the sitemap
+    // and llms.txt — listing a page you have told crawlers to ignore is a mixed signal.
+    if (meta.noindex !== true) {
+      index.push({
+        loc: filename === 'index.html' ? '/' : `/${filename}`,
+        title: meta.title.split('|')[0].trim(),
+        summary: meta.description,
+      });
+      indexable.add(`/${filename}`);
+    }
     console.log(`built ${filename}`);
   }
 
-  buildCities(site, layout, partials, generated, index);
+  buildCities(site, layout, partials, generated, index, indexable);
 
-  const entries = [...generated.keys()].map((loc) => ({
-    loc: loc === '/index.html' ? '/' : loc.replace(/\/index\.html$/, '/'),
-    priority: loc === '/index.html' ? '1.0' : '0.8',
-  }));
+  const entries = [...generated.keys()]
+    .filter((loc) => indexable.has(loc))
+    .map((loc) => ({
+      loc: loc === '/index.html' ? '/' : loc.replace(/\/index\.html$/, '/'),
+      priority: loc === '/index.html' ? '1.0' : '0.8',
+    }));
 
   writeFileSync(join(ROOT, 'sitemap.xml'), buildSitemap(entries, site.baseUrl));
   writeFileSync(join(ROOT, 'robots.txt'), buildRobots(site.baseUrl));

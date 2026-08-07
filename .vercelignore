@@ -1,0 +1,25 @@
+# Everything here is excluded from the Vercel deployment.
+#
+# Generated HTML is committed to the repo root, so Vercel serves it directly as a
+# static site with no build step. That means the deploy root is the repo root, and
+# anything not excluded here becomes publicly fetchable — and crawlable, since
+# robots.txt allows everything.
+
+# Build system and sources — the output is already committed.
+build/
+src/
+data/
+test/
+package.json
+package-lock.json
+
+# Internal documentation. PLACEHOLDER_CONTENT.md in particular is a risk register
+# naming unreviewed legal pages and unwired forms; it must not be public.
+docs/
+.superpowers/
+*.md
+
+# Repo metadata
+.git/
+.gitignore
+.claude/
