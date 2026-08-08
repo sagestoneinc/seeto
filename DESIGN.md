@@ -408,3 +408,69 @@ rather than a gap.
 Several agents use personal Gmail addresses rather than `@seetorealty.com`. Brand kit p.8
 flags this as housekeeping. **Recommend showing a single firm contact route** on the site
 rather than publishing mixed personal addresses.
+
+---
+
+## 19. Hero photography
+
+Source: `sunset-g296d65247_1920.jpg`, already hosted on the client's live site — the same
+Dallas skyline the client supplied. Original 1920×751.
+
+Delivered as `images/hero/dallas-skyline-{480,768,1280,1920}.{webp,jpg}` — WebP first with a
+progressive JPEG fallback, served via `<picture>` + `srcset`/`sizes`. Total 472 KB across all
+eight files. Explicit `width`/`height` prevent layout shift.
+
+**Scrim opacity is measured, not chosen.** The brightest pixel inside the headline region of
+the photograph is effectively white, giving Bone text 1.12:1 over the raw image — a clear
+failure. Compositing Roofline Ink over it at:
+
+| Scrim | Bone contrast | |
+|---|---|---|
+| 0.60 | 4.32:1 | fails AA |
+| 0.65 | 5.08:1 | AA |
+| **0.75** | **7.34:1** | **AAA** |
+
+The desktop gradient therefore never drops below **0.76** across the text column
+(0.90 → 0.82 → 0.76 → 0.32 left to right, so the skyline stays visible on the right).
+On mobile the gradient rotates to vertical and strengthens, because the headline would
+otherwise sit over bright sky rather than the darker foreground.
+
+`images/og-home.jpg` (1200×630) is cropped from the same photograph, closing the last
+social-preview gap.
+
+## 20. Deviations from the brand kit
+
+Recorded rather than silently applied.
+
+| Deviation | Reason |
+|---|---|
+| **Display floor 42px below 640px**, against the kit's 54–82 scale | 54px is a desktop figure. At 375px it cost three lines and pushed both CTAs below the fold. The 54px floor still applies from 640px up. |
+| Header CTA hidden below 900px | It overflowed a 375px viewport. The hero's primary CTA carries the action on mobile. |
+| Prairie Gold used for hero eyebrow and contact-band labels | Gold fails on Bone (2.1:1) but measures **7.64:1 on Ink**, so it is confined to Ink fields. |
+
+## 21. UI/UX Pro Max — conflicts, and what was taken
+
+The skill's `--design-system` output was **not applied to the visual system**, because it
+contradicts both the brand kit and the client's stated non-negotiables:
+
+| Skill recommended | Conflict |
+|---|---|
+| Palette `#0F766E` teal / `#0369A1` blue | Brief: "Do not use generic blue real estate styling"; brand is Seeto Red |
+| Cinzel + Josefin Sans | Brand kit specifies Archivo + Source Serif 4 + Zilla Slab |
+| Skeuomorphism, rated "Performance ❌ Poor" | Brief: avoid heavy decoration; kit is flat with hairline borders |
+| Pattern "Real-Time / Operations Landing" | Wrong product type for a brokerage |
+
+**What was taken from the skill:** its accessibility, touch-target, performance, layout and
+motion checklists, which drove the measured scrim, the 44px hit-area pass, the WebP/`srcset`
+work, the single staged hero reveal, and the 375/768/1024/1440 sweep.
+
+## 22. Guards added
+
+Two defects reached production or near-production because nothing checked them locally.
+Both now have tests.
+
+- `test/vercel-config.test.js` — a `_comment` key inside a `vercel.json` header entry broke
+  four consecutive production deploys, failing before the build so it produced no logs.
+- `test/css-tokens.test.js` — `var(--roofline-ink)` against a token named `--ink` resolved to
+  nothing, rendering a full-width Ink band transparent with invisible text. Also asserts the
+  brand hex values have not drifted and that no blue/purple hex is introduced.

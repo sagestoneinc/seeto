@@ -5,10 +5,22 @@
   "ogImage": "/images/og-home.jpg",
   "schema": "home"
 }-->
-<section class="hero hero-split">
-  <div class="container hero-inner">
-    <div class="hero-copy stack">
-      <p class="eyebrow">{{site.descriptor}}</p>
+<section class="hero-photo">
+  <picture>
+    <source type="image/webp"
+      srcset="/images/hero/dallas-skyline-480.webp 480w, /images/hero/dallas-skyline-768.webp 768w, /images/hero/dallas-skyline-1280.webp 1280w, /images/hero/dallas-skyline-1920.webp 1920w"
+      sizes="100vw">
+    <img class="hero-photo-img"
+      src="/images/hero/dallas-skyline-1920.jpg"
+      srcset="/images/hero/dallas-skyline-480.jpg 480w, /images/hero/dallas-skyline-768.jpg 768w, /images/hero/dallas-skyline-1280.jpg 1280w, /images/hero/dallas-skyline-1920.jpg 1920w"
+      sizes="100vw"
+      alt="The Dallas skyline at sunset, seen from the west with the Reunion Tower and the Margaret Hunt Hill Bridge in view"
+      width="1920" height="751" fetchpriority="high" decoding="async">
+  </picture>
+  <div class="hero-photo-scrim" aria-hidden="true"></div>
+  <div class="container hero-photo-inner">
+    <div class="hero-copy stack reveal-hero">
+      <p class="eyebrow eyebrow-invert">{{site.descriptor}}</p>
       <h1>The deal behind the door.</h1>
       <p class="lede">
         Anyone can show you a house. We read the numbers underneath it — what it's worth,
@@ -16,26 +28,30 @@
       </p>
       <div class="row">
         <a href="/contact.html" class="btn btn-primary btn-lg">Talk to the broker</a>
-        <a href="/rentals.html" class="btn btn-outline btn-lg">See available rentals</a>
+        <a href="/rentals.html" class="btn btn-ghost btn-lg">See available rentals</a>
       </div>
-      <p class="hero-meta">
-        <a href="tel:{{site.phoneHref}}">{{site.phone}}</a>
-        &middot; {{site.address.locality}}, {{site.address.region}}
-        &middot; TREC #{{site.license.number}}
-      </p>
     </div>
-    <aside class="hero-panel">
-      <p class="hero-panel-label">Texas broker since</p>
-      <p class="hero-panel-figure">{{site.license.since}}</p>
-      <p class="hero-panel-note">
-        {{site.license.broker}} has held an active Texas Real Estate Commission broker
-        licence for over two decades, with no disciplinary actions on record.
-      </p>
-      <hr class="hero-panel-rule">
-      <p class="hero-panel-label">Firm founded</p>
-      <p class="hero-panel-figure">{{site.founded}}</p>
-      <p class="hero-panel-note">{{site.reach}}. One office, in {{site.address.locality}}.</p>
-    </aside>
+  </div>
+</section>
+
+<section class="contact-band">
+  <div class="container contact-band-inner">
+    <div class="contact-band-item">
+      <h4>Office</h4>
+      <p>{{site.address.street}}, {{site.address.locality}}, {{site.address.region}} {{site.address.postalCode}}</p>
+    </div>
+    <div class="contact-band-item">
+      <h4>Call</h4>
+      <p><a href="tel:{{site.phoneHref}}">{{site.phone}}</a></p>
+    </div>
+    <div class="contact-band-item">
+      <h4>Email</h4>
+      <p><a href="mailto:{{site.email}}">{{site.email}}</a></p>
+    </div>
+    <div class="contact-band-item">
+      <h4>Licensed</h4>
+      <p>TREC #{{site.license.number}} &middot; since {{site.license.since}}</p>
+    </div>
   </div>
 </section>
 

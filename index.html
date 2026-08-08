@@ -131,10 +131,22 @@
 </header>
 
 <main id="main">
-<section class="hero hero-split">
-  <div class="container hero-inner">
-    <div class="hero-copy stack">
-      <p class="eyebrow">Boutique brokerage · Plano, Texas · Since 2010</p>
+<section class="hero-photo">
+  <picture>
+    <source type="image/webp"
+      srcset="/images/hero/dallas-skyline-480.webp 480w, /images/hero/dallas-skyline-768.webp 768w, /images/hero/dallas-skyline-1280.webp 1280w, /images/hero/dallas-skyline-1920.webp 1920w"
+      sizes="100vw">
+    <img class="hero-photo-img"
+      src="/images/hero/dallas-skyline-1920.jpg"
+      srcset="/images/hero/dallas-skyline-480.jpg 480w, /images/hero/dallas-skyline-768.jpg 768w, /images/hero/dallas-skyline-1280.jpg 1280w, /images/hero/dallas-skyline-1920.jpg 1920w"
+      sizes="100vw"
+      alt="The Dallas skyline at sunset, seen from the west with the Reunion Tower and the Margaret Hunt Hill Bridge in view"
+      width="1920" height="751" fetchpriority="high" decoding="async">
+  </picture>
+  <div class="hero-photo-scrim" aria-hidden="true"></div>
+  <div class="container hero-photo-inner">
+    <div class="hero-copy stack reveal-hero">
+      <p class="eyebrow eyebrow-invert">Boutique brokerage · Plano, Texas · Since 2010</p>
       <h1>The deal behind the door.</h1>
       <p class="lede">
         Anyone can show you a house. We read the numbers underneath it — what it's worth,
@@ -142,26 +154,30 @@
       </p>
       <div class="row">
         <a href="/contact.html" class="btn btn-primary btn-lg">Talk to the broker</a>
-        <a href="/rentals.html" class="btn btn-outline btn-lg">See available rentals</a>
+        <a href="/rentals.html" class="btn btn-ghost btn-lg">See available rentals</a>
       </div>
-      <p class="hero-meta">
-        <a href="tel:+19725097100">972-509-7100</a>
-        &middot; Plano, TX
-        &middot; TREC #496025-B
-      </p>
     </div>
-    <aside class="hero-panel">
-      <p class="hero-panel-label">Texas broker since</p>
-      <p class="hero-panel-figure">2002</p>
-      <p class="hero-panel-note">
-        Michael Seeto has held an active Texas Real Estate Commission broker
-        licence for over two decades, with no disciplinary actions on record.
-      </p>
-      <hr class="hero-panel-rule">
-      <p class="hero-panel-label">Firm founded</p>
-      <p class="hero-panel-figure">2010</p>
-      <p class="hero-panel-note">Serving DFW and Greater Houston. One office, in Plano.</p>
-    </aside>
+  </div>
+</section>
+
+<section class="contact-band">
+  <div class="container contact-band-inner">
+    <div class="contact-band-item">
+      <h4>Office</h4>
+      <p>700 W Spring Creek Pkwy #212, Plano, TX 75023</p>
+    </div>
+    <div class="contact-band-item">
+      <h4>Call</h4>
+      <p><a href="tel:+19725097100">972-509-7100</a></p>
+    </div>
+    <div class="contact-band-item">
+      <h4>Email</h4>
+      <p><a href="mailto:info@seetorealty.com">info@seetorealty.com</a></p>
+    </div>
+    <div class="contact-band-item">
+      <h4>Licensed</h4>
+      <p>TREC #496025-B &middot; since 2002</p>
+    </div>
   </div>
 </section>
 

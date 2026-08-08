@@ -63,6 +63,27 @@
   --container: 1180px;
 
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Brand aliases — the kit names these colours Roofline Ink, Bone, Sand, Stone.
+     Kept as aliases so markup can use the brand's own vocabulary. */
+  --roofline-ink: var(--ink);
+
+  /* Semantic tokens (required by the redesign brief). These are the names components
+     should reach for; the raw brand values above are the single source. */
+  --color-primary:        var(--seeto-red);
+  --color-primary-hover:  var(--brick);
+  --color-secondary:      var(--ink);
+  --color-accent:         var(--prairie-gold);
+  --color-background:     var(--bone);
+  --color-surface:        var(--surface);
+  --color-surface-alt:    var(--sand);
+  --color-surface-invert: var(--ink);
+  --color-text-primary:   var(--ink);
+  --color-text-secondary: var(--stone);
+  --color-text-invert:    var(--bone);
+  --color-border:         var(--border);
+  --color-border-strong:  var(--border-strong);
+  --color-focus:          var(--seeto-red);
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -88,7 +109,11 @@ h1, h2, h3 {
   text-wrap: balance;
 }
 
-h1 { font-size: clamp(3.375rem, 6vw, var(--text-display)); font-weight: 800; }
+/* The brand kit's display floor is 54px, which is a desktop figure. At 375px it costs
+   three lines and pushes the CTAs below the fold, so small screens step down to 42px.
+   Deliberate deviation, recorded in DESIGN.md §6. */
+h1 { font-size: clamp(2.625rem, 7vw, var(--text-display)); font-weight: 800; }
+@media (min-width: 640px) { h1 { font-size: clamp(3.375rem, 6vw, var(--text-display)); } }
 h2 { font-size: clamp(1.6875rem, 3.4vw, var(--text-head)); }
 h3 { font-size: var(--text-lg); font-weight: 600; }
 
@@ -467,6 +492,8 @@ a.service-card { text-decoration: none; display: block; }
   :root { --space-section: 4.5rem; }
   .mobile-menu-toggle { display: flex; }
   .nav-phone { display: none; }
+  .nav-cta { display: none; }        /* overflows small viewports; the hero CTA carries it */
+  .nav-actions { gap: var(--space-2); }
   .logo img { height: 38px; }
   .nav-menu {
     display: none;
@@ -696,4 +723,107 @@ a.service-card { text-decoration: none; display: block; }
 @media (max-width: 900px) {
   .hero-inner { grid-template-columns: 1fr; gap: var(--space-4); }
   .hero-panel { order: 2; }
+}
+
+/* ===== Image-led hero =====
+   Scrim opacity is not eyeballed: the brightest pixel in the text region of the source
+   photograph is near-white, and Bone text over Ink at 0.75 measures 7.34:1 (AAA). The
+   gradient never drops below 0.75 across the text column. */
+.hero-photo {
+  position: relative;
+  display: grid;
+  align-items: center;
+  min-height: clamp(30rem, 68vh, 40rem);
+  padding-block: var(--space-6);
+  overflow: hidden;
+  background: var(--roofline-ink);
+}
+.hero-photo picture { position: absolute; inset: 0; }
+.hero-photo-img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 62%; }
+.hero-photo-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(23, 19, 15, 0.90) 0%,
+    rgba(23, 19, 15, 0.82) 45%,
+    rgba(23, 19, 15, 0.76) 58%,
+    rgba(23, 19, 15, 0.32) 100%
+  );
+}
+.hero-photo-inner { position: relative; }
+.hero-photo .hero-copy { max-width: 56%; }
+.hero-photo h1 { color: var(--bone); }
+.hero-photo .lede { color: rgba(245, 241, 234, 0.90); max-width: 44ch; }
+.eyebrow-invert { color: var(--prairie-gold); }
+
+/* One staged reveal on the hero only — skill §7 excessive-motion. */
+.reveal-hero > * {
+  opacity: 0;
+  transform: translateY(12px);
+  animation: heroIn 600ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.reveal-hero > *:nth-child(1) { animation-delay: 60ms; }
+.reveal-hero > *:nth-child(2) { animation-delay: 140ms; }
+.reveal-hero > *:nth-child(3) { animation-delay: 220ms; }
+.reveal-hero > *:nth-child(4) { animation-delay: 300ms; }
+@keyframes heroIn { to { opacity: 1; transform: none; } }
+
+/* --- Contact band --- */
+.contact-band { background: var(--roofline-ink); padding-block: var(--space-4); }
+.contact-band-inner {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-3) var(--space-4);
+}
+.contact-band-item h4 { color: var(--prairie-gold); margin-bottom: 0.25rem; }
+.contact-band-item p { font-size: var(--text-sm); color: rgba(245, 241, 234, 0.88); }
+.contact-band-item a { color: var(--bone); text-decoration: none; border-bottom: 1px solid rgba(245,241,234,0.35); }
+.contact-band-item a:hover { border-bottom-color: var(--bone); }
+
+@media (max-width: 900px) {
+  /* Mobile recomposes rather than shrinking: the scrim goes vertical so the headline
+     sits over the darkest part of the frame instead of the bright sky. */
+  .hero-photo { min-height: clamp(26rem, 76vh, 34rem); }
+  .hero-photo .hero-copy { max-width: 100%; }
+  .hero-photo-scrim {
+    background: linear-gradient(
+      180deg,
+      rgba(23, 19, 15, 0.72) 0%,
+      rgba(23, 19, 15, 0.86) 55%,
+      rgba(23, 19, 15, 0.92) 100%
+    );
+  }
+  .hero-photo-img { object-position: 50% 45%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-hero > * { opacity: 1 !important; transform: none !important; animation: none !important; }
+}
+
+/* ===== Touch targets =====
+   Standalone links need a 44px hit area on touch devices (Apple HIG / Material 48dp).
+   Inline links inside running prose are exempt — padding them would break the line box —
+   so this targets only links that stand alone as controls. */
+@media (pointer: coarse), (max-width: 900px) {
+  .contact-band-item a,
+  .service-card > a,
+  .pathway-go,
+  .footer a,
+  .breadcrumb a,
+  .hero-meta a,
+  .person a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+  .footer ul { gap: 0; }
+  .footer li { display: flex; }
+  .chatbot-toggle { width: 56px; height: 56px; }
+  .chatbot-close { min-width: 44px; min-height: 44px; }
+  .skip-link { min-height: 44px; display: inline-flex; align-items: center; }
+  .logo { min-height: 44px; }
+  /* A link that is the sole content of its paragraph is a standalone control. */
+  p > a:only-child { display: inline-flex; align-items: center; min-height: 44px; }
+  .faq-item summary { display: flex; align-items: center; min-height: 44px; }
 }
