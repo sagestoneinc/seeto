@@ -7,7 +7,7 @@ illustrative, or not yet connected to a data source. Resolve them before launch.
 
 | Item | Where | What is needed |
 |---|---|---|
-| No MLS/IDX feed for **sales** | `listings.html`, `listing-detail.html`, `search.html` | For-sale search returns nothing. These pages say so plainly rather than showing invented inventory. Connect an IDX feed. **Rentals are already live** via AppFolio on `rentals.html`. |
+| No MLS/IDX feed for **sales** | `listings.html`, `listing-detail.html`, `search.html`, `search-advanced.html` | For-sale search returns nothing; the pages say so rather than inventing inventory. A data adapter now exists at `build/data/properties.js` with the `Property` shape, a field mapper and a provider seam, so connecting a feed means implementing one function. **Still required: which MLS (NTREIS / HARMLS), a signed IDX agreement, and API credentials.** Identifiers on file: agent `0496025`, office `SEET01`. **Rentals are already live** via AppFolio. |
 | Contact form has no hosted handler | `contact.html` | **No longer silently lost.** With `formEndpoint` empty the form composes a pre-filled email to jess@seetorealty.com and opens the visitor's mail app. To get true background submission, provision a form service and set `formEndpoint` in `data/site.json` — the POST path is already built and tested. |
 | Legal pages are not lawyer-reviewed | `privacy.html`, `terms.html` | Both are placeholder text carrying a visible "Sample" tag. A Texas attorney must draft or approve them, including TREC-required disclosures. |
 | TREC disclosures missing | site-wide | Texas Real Estate Commission requires the Information About Brokerage Services notice and Consumer Protection Notice. Neither is published yet. |
