@@ -278,13 +278,21 @@
   "formEmail": "jess@seetorealty.com",
   "formEndpoint": "",
   "mls": {
-    "_note": "Identifiers only. These name the brokerage to an MLS; they are not credentials and cannot fetch data. A feed additionally needs a signed IDX agreement plus RESO Web API client id/secret (or a vendor account) issued by each MLS.",
+    "_note": "Identifiers only. These name the brokerage to NTREIS; they are not credentials and cannot fetch data. A live feed additionally needs a signed IDX agreement and RESO Web API client id/secret issued by NTREIS. Houston (HARMLS) is not covered by these identifiers — a separate membership and agreement would be required.",
     "brokerLicense": "496025-B",
     "agentMlsId": "0496025",
     "officeMlsId": "SEET01",
-    "associations": [],
+    "associations": [
+      "NTREIS"
+    ],
     "idxAgreementOnFile": null,
     "provider": "",
     "apiBaseUrl": ""
+  },
+  "appfolio": {
+    "_note": "Rental inventory. The public widget is an iframe embed with no data API: /listings.json is 404 and /listings?format=json returns 401, so structured access requires credentials from AppFolio. Do not parse the rendered page — listings change daily and this build is static, so parsed data would go stale between deploys.",
+    "host": "seetorealty.appfolio.com",
+    "widget": true,
+    "apiCredentials": false
   }
 }

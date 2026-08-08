@@ -16,6 +16,17 @@ test('MLS identifiers are recorded and internally consistent', () => {
   assert.equal(m.agentMlsId.replace(/^0+/, ''), m.brokerLicense.split('-')[0]);
 });
 
+test('NTREIS is recorded, and Houston is not silently assumed to be covered', () => {
+  assert.deepEqual(site.mls.associations, ['NTREIS']);
+  assert.ok(!site.mls.associations.includes('HARMLS'),
+    'HARMLS needs its own membership and IDX agreement; do not imply coverage');
+});
+
+test('AppFolio is recorded as widget-only until API credentials exist', () => {
+  assert.equal(site.appfolio.widget, true);
+  assert.equal(site.appfolio.apiCredentials, false);
+});
+
 test('no IDX provider is configured, so nothing claims to be live', () => {
   assert.equal(isProviderConfigured(site), false);
 });
