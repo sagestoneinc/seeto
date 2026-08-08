@@ -21,42 +21,55 @@
 
 <section>
   <div class="container stack-lg">
-    <h2>Send us a message</h2>
-    <form class="contact-form panel stack" action="#" method="post">
+    <h2 class="section-rule">Send us a message</h2>
+    <form class="contact-form panel stack" id="contact-form"
+          data-endpoint="{{site.formEndpoint}}" data-email="{{site.formEmail}}" novalidate>
       <div class="field">
-        <label for="c-name">Name</label>
+        <label for="c-name">Name <span aria-hidden="true">*</span></label>
         <input type="text" id="c-name" name="name" required autocomplete="name">
+        <p class="field-error" id="c-name-error" hidden></p>
       </div>
       <div class="field">
-        <label for="c-email">Email</label>
-        <input type="email" id="c-email" name="email" required autocomplete="email">
+        <label for="c-email">Email <span aria-hidden="true">*</span></label>
+        <input type="email" id="c-email" name="email" required autocomplete="email"
+               inputmode="email" aria-describedby="c-email-help">
+        <p class="field-help" id="c-email-help">So we can reply.</p>
+        <p class="field-error" id="c-email-error" hidden></p>
       </div>
       <div class="field">
         <label for="c-phone">Phone</label>
-        <input type="tel" id="c-phone" name="phone" autocomplete="tel">
+        <input type="tel" id="c-phone" name="phone" autocomplete="tel" inputmode="tel">
       </div>
       <div class="field">
-        <label for="c-type">What can we help with?</label>
-        <select id="c-type" name="type">
-          <option value="buying">Buying a home</option>
-          <option value="selling">Selling a home</option>
-          <option value="valuation">A home valuation</option>
-          <option value="investment">Investment property</option>
-          <option value="management">Property management</option>
-          <option value="other">Something else</option>
+        <label for="c-type">What can we help with? <span aria-hidden="true">*</span></label>
+        <select id="c-type" name="inquiryType" required>
+          <option value="">Choose one</option>
+          <option value="Buying">Buying a home</option>
+          <option value="Selling">Selling a home</option>
+          <option value="Renting">Renting a home</option>
+          <option value="Property management">Property management</option>
+          <option value="Investment">Investment property</option>
+          <option value="Foreclosure / REO">Foreclosure or distressed property</option>
+          <option value="Other">Something else</option>
         </select>
+        <p class="field-error" id="c-type-error" hidden></p>
       </div>
       <div class="field">
-        <label for="c-message">Message</label>
-        <textarea id="c-message" name="message" rows="5"></textarea>
+        <label for="c-message">Message <span aria-hidden="true">*</span></label>
+        <textarea id="c-message" name="message" rows="5" required
+                  aria-describedby="c-message-help"></textarea>
+        <p class="field-help" id="c-message-help">Budget, timeline and area are the useful details.</p>
+        <p class="field-error" id="c-message-error" hidden></p>
       </div>
       <div class="row">
-        <button type="submit" class="btn btn-primary">Send message</button>
+        <button type="submit" class="btn btn-primary btn-lg" id="contact-submit">Send message</button>
       </div>
-      <p class="muted">
-        <span class="tag tag-sample">Sample</span>
-        This form is not connected to a mail handler yet. Submissions are not delivered
-        anywhere. Wire it to a backend or form service before publishing.
+      <p class="form-status" id="contact-status" role="status" aria-live="polite"></p>
+      <p class="muted" id="contact-fallback-note">
+        Submissions open a pre-filled email to {{site.formEmail}} from your own mail app,
+        so nothing is lost while the hosted form handler is being connected. Prefer to skip
+        the form? Email <a href="mailto:{{site.formEmail}}">{{site.formEmail}}</a> or call
+        <a href="tel:{{site.phoneHref}}">{{site.phone}}</a>.
       </p>
     </form>
   </div>

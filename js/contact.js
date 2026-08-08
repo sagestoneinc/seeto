@@ -104,8 +104,8 @@ function showSuccessMessage(form) {
         transform: translate(-50%, -50%);
         background-color: white;
         padding: 2rem;
-        border-radius: var(--radius-lg);
-        box-shadow: var(--shadow-xl);
+        border-radius: var(--radius-card);
+        box-shadow: var(--shadow-hover);
         z-index: 10000;
         text-align: center;
         max-width: 400px;

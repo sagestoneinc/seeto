@@ -8,7 +8,7 @@ illustrative, or not yet connected to a data source. Resolve them before launch.
 | Item | Where | What is needed |
 |---|---|---|
 | No MLS/IDX feed for **sales** | `listings.html`, `listing-detail.html`, `search.html` | For-sale search returns nothing. These pages say so plainly rather than showing invented inventory. Connect an IDX feed. **Rentals are already live** via AppFolio on `rentals.html`. |
-| Contact form is not wired | `contact.html` | The form posts nowhere. Submissions are silently lost. Connect a backend or form service. |
+| Contact form has no hosted handler | `contact.html` | **No longer silently lost.** With `formEndpoint` empty the form composes a pre-filled email to jess@seetorealty.com and opens the visitor's mail app. To get true background submission, provision a form service and set `formEndpoint` in `data/site.json` — the POST path is already built and tested. |
 | Legal pages are not lawyer-reviewed | `privacy.html`, `terms.html` | Both are placeholder text carrying a visible "Sample" tag. A Texas attorney must draft or approve them, including TREC-required disclosures. |
 | TREC disclosures missing | site-wide | Texas Real Estate Commission requires the Information About Brokerage Services notice and Consumer Protection Notice. Neither is published yet. |
 

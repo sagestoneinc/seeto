@@ -75,8 +75,10 @@ function validatePhone(phone) {
 
 // Add form validation to all forms
 document.addEventListener('DOMContentLoaded', function() {
-    const forms = document.querySelectorAll('form');
-    
+    // #contact-form has its own accessible validation below; the generic pass would
+    // double-report and inject a second set of error nodes.
+    const forms = document.querySelectorAll('form:not(#contact-form)');
+
     forms.forEach(form => {
         form.addEventListener('submit', function(e) {
             let isValid = true;
@@ -121,12 +123,12 @@ document.addEventListener('DOMContentLoaded', function() {
 function showError(input, message) {
     const errorDiv = document.createElement('div');
     errorDiv.className = 'error-message';
-    errorDiv.style.color = 'var(--danger)';
+    errorDiv.style.color = 'var(--seeto-red)';
     errorDiv.style.fontSize = '0.875rem';
     errorDiv.style.marginTop = '0.25rem';
     errorDiv.textContent = message;
     input.parentNode.insertBefore(errorDiv, input.nextSibling);
-    input.style.borderColor = 'var(--danger)';
+    input.style.borderColor = 'var(--seeto-red)';
 }
 
 // Lazy Loading for Images
@@ -297,3 +299,120 @@ window.SeetoRealty = {
     formatPrice,
     acceptCookies
 };
+
+/* ============================================================
+   Contact form
+   Two paths, chosen by data-endpoint on the form:
+     - endpoint set  -> POST JSON to a hosted form handler, with real
+                        loading / success / error states.
+     - endpoint empty -> compose a pre-filled email to data-email and open
+                        the visitor's mail client. Not as slick, but the
+                        message actually reaches a person instead of being
+                        silently discarded, which is what action="#" did.
+   ============================================================ */
+document.addEventListener('DOMContentLoaded', function () {
+  const form = document.getElementById('contact-form');
+  if (!form) return;
+
+  const status = document.getElementById('contact-status');
+  const submit = document.getElementById('contact-submit');
+  const note = document.getElementById('contact-fallback-note');
+  const endpoint = (form.dataset.endpoint || '').trim();
+  const email = (form.dataset.email || '').trim();
+
+  if (endpoint && note) note.hidden = true;
+
+  const setStatus = (text, state) => {
+    status.textContent = text;
+    status.dataset.state = state || '';
+  };
+
+  const showError = (field, message) => {
+    const el = document.getElementById(field.id + '-error');
+    if (!el) return;
+    el.textContent = message;
+    el.hidden = false;
+    field.setAttribute('aria-invalid', 'true');
+    field.setAttribute('aria-describedby', el.id);
+  };
+
+  const clearError = (field) => {
+    const el = document.getElementById(field.id + '-error');
+    if (el) { el.hidden = true; el.textContent = ''; }
+    field.removeAttribute('aria-invalid');
+  };
+
+  // Validate on blur rather than on keystroke, so errors appear once the
+  // visitor has finished a field instead of scolding them mid-word.
+  const required = [...form.querySelectorAll('[required]')];
+  required.forEach((f) => f.addEventListener('blur', () => validate(f)));
+
+  function validate(field) {
+    clearError(field);
+    const value = field.value.trim();
+    if (!value) {
+      const label = form.querySelector('label[for="' + field.id + '"]');
+      const name = label ? label.textContent.replace('*', '').trim() : 'This field';
+      showError(field, name + ' is required.');
+      return false;
+    }
+    if (field.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value)) {
+      showError(field, 'Enter an email address we can reply to, like name@example.com.');
+      return false;
+    }
+    return true;
+  }
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    const invalid = required.filter((f) => !validate(f));
+    if (invalid.length) {
+      setStatus(invalid.length + ' field' + (invalid.length > 1 ? 's need' : ' needs') +
+        ' attention before this can send.', 'error');
+      invalid[0].focus();                       // move focus to the first problem
+      return;
+    }
+
+    const data = Object.fromEntries(new FormData(form).entries());
+
+    if (!endpoint) {
+      const subject = 'Website enquiry — ' + (data.inquiryType || 'General');
+      const body = [
+        'Name: ' + data.name,
+        'Email: ' + data.email,
+        'Phone: ' + (data.phone || '—'),
+        'Enquiry type: ' + data.inquiryType,
+        '',
+        data.message,
+      ].join('\n');
+      window.location.href = 'mailto:' + email +
+        '?subject=' + encodeURIComponent(subject) +
+        '&body=' + encodeURIComponent(body);
+      setStatus('Opening your email app with the message ready to send to ' + email + '.', 'success');
+      return;
+    }
+
+    submit.disabled = true;
+    const original = submit.textContent;
+    submit.textContent = 'Sending…';
+    setStatus('Sending your message…', 'pending');
+
+    try {
+      const res = await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(data),
+      });
+      if (!res.ok) throw new Error('Request failed with status ' + res.status);
+      form.reset();
+      required.forEach(clearError);
+      setStatus('Thanks — your message is on its way. We reply within one business day.', 'success');
+    } catch (err) {
+      setStatus('That did not send. Please email ' + email + ' or call us and we will pick it up.', 'error');
+    } finally {
+      submit.disabled = false;
+      submit.textContent = original;
+    }
+  });
+});

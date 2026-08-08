@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { readFileSync } from 'node:fs';
+import { readFileSync, readdirSync } from 'node:fs';
 
 const css = readFileSync('css/style.css', 'utf8');
 
@@ -12,6 +12,21 @@ test('every var() reference resolves to a defined custom property', () => {
   const defined = new Set([...css.matchAll(/^\s*(--[\w-]+)\s*:/gm)].map((m) => m[1]));
   const missing = [...used].filter((v) => !defined.has(v)).sort();
   assert.deepEqual(missing, [], `undefined CSS custom properties: ${missing.join(', ')}`);
+});
+
+// js/ files inject inline styles that reference custom properties too. --danger,
+// --radius-lg and --shadow-xl were all referenced from JS and defined nowhere, so those
+// rules silently did nothing. The stylesheet-only check missed them.
+test('every var() referenced from js/ also resolves', () => {
+  const defined = new Set([...css.matchAll(/^\s*(--[\w-]+)\s*:/gm)].map((m) => m[1]));
+  const missing = new Set();
+  for (const f of readdirSync('js').filter((n) => n.endsWith('.js'))) {
+    const src = readFileSync(`js/${f}`, 'utf8');
+    for (const m of src.matchAll(/var\(\s*(--[\w-]+)/g)) {
+      if (!defined.has(m[1])) missing.add(`${f}: ${m[1]}`);
+    }
+  }
+  assert.deepEqual([...missing], [], `js references undefined CSS custom properties`);
 });
 
 test('the brand palette keeps the exact hex values from the brand kit', () => {
