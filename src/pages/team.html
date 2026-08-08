@@ -1,6 +1,6 @@
 <!--{
   "title": "Our Team | Seeto Realty",
-  "description": "Seeto Realty is owner-operated. Michael Seeto leads from Plano and David Seeto runs the Houston division, focused on HUD and distressed property.",
+  "description": "Meet the Seeto Realty team. Broker/Owner Michael Seeto, TREC licence 496025-B, with agents across DFW and Greater Houston.",
   "canonical": "/team.html",
   "ogImage": "/images/og-home.jpg",
   "schema": "team"
@@ -10,52 +10,60 @@
     <p class="eyebrow">Team</p>
     <h1>The broker who built the firm is the one on your call.</h1>
     <p class="lede">
-      Owner-operated since {{site.founded}}. Small enough that the principal answers the phone,
-      with a network of wholesalers, contractors and lenders behind him.
+      Owner-operated since {{site.founded}}. Small enough that the principal answers the
+      phone, with agents on the ground across both metros.
     </p>
     <div class="row">
-      <a href="/contact.html" class="btn btn-primary">Get in touch</a>
-      <a href="/about.html" class="btn btn-outline">About the firm</a>
+      <a href="/contact.html" class="btn btn-primary">Talk to the broker</a>
+      <a href="tel:{{site.phoneHref}}" class="btn btn-outline">Call {{site.phone}}</a>
     </div>
   </div>
 </section>
 
 <section class="section-alt">
   <div class="container stack-lg">
-    <h2 class="section-rule">Leadership</h2>
-    <div class="bento">
-      {{#each site.people}}<article class="service-card person-card">
-        <h3>{{this.name}}</h3>
-        <h4>{{this.role}} &middot; {{this.office}}</h4>
-        <p>{{this.bio}}</p>
-      </article>{{/each}}
+    <h2 class="section-rule">Licensed and accountable</h2>
+    <div class="bento bento-tight">
+      <div class="feature-item"><p class="stat-figure">{{site.license.since}}</p><h4>Texas broker since</h4></div>
+      <div class="feature-item"><p class="stat-figure">{{site.founded}}</p><h4>Firm founded in Plano</h4></div>
+      <div class="feature-item"><p class="stat-figure">13</p><h4>Agents across two metros</h4></div>
+      <div class="feature-item"><p class="stat-figure">1</p><h4>Office &middot; {{site.address.locality}}</h4></div>
     </div>
     <p class="muted">
-      <span class="tag tag-sample">Sample</span>
-      Headshots and TREC licence numbers are not published yet. Both are required before
-      launch — the brand kit calls them out as the site's missing trust signals.
+      {{site.license.broker}} holds Texas Real Estate Commission licence
+      #{{site.license.number}} ({{site.license.type}}), status {{site.license.status}},
+      originally issued {{site.license.since}}. No disciplinary actions on record.
     </p>
   </div>
 </section>
 
 <section>
   <div class="container stack-lg">
-    <h2 class="section-rule">What the firm handles</h2>
-    <div class="bento">
-      {{#each site.capabilities}}<div class="feature-item"><h3>{{this}}</h3></div>{{/each}}
+    <h2 class="section-rule">The people</h2>
+    <div class="team-grid">
+      {{#each site.people}}<article class="person">
+        <img class="person-photo" src="{{this.photo}}" alt="{{this.name}}, {{this.role}} at Seeto Realty" width="{{this.photoW}}" height="{{this.photoH}}" loading="lazy">
+        <h3>{{this.name}}</h3>
+        <p class="person-role">{{this.role}}</p>
+      </article>{{/each}}
     </div>
+    <p class="muted">
+      <span class="tag tag-sample">Incomplete</span>
+      Three team members are shown with initials until photographs are supplied, and
+      individual TREC licence numbers are still outstanding for agents other than the broker.
+    </p>
   </div>
 </section>
 
 <section class="section-alt">
   <div class="container center stack-lg">
     <div class="stack">
-      <h2>Want to talk to someone?</h2>
-      <p>Call {{site.phone}} and you will reach the firm, not a call centre.</p>
+      <h2>Talk to a person, not a queue.</h2>
+      <p>Call the office and you reach the firm.</p>
     </div>
     <div class="row row-center">
-      <a href="/contact.html" class="btn btn-primary">Talk to an agent</a>
-      <a href="tel:{{site.phoneHref}}" class="btn btn-outline">Call {{site.phone}}</a>
+      <a href="/contact.html" class="btn btn-primary">Get in touch</a>
+      <a href="tel:{{site.phoneHref}}" class="btn btn-outline">{{site.phone}}</a>
     </div>
   </div>
 </section>

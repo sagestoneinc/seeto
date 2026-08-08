@@ -26,7 +26,7 @@
           "name": "Where is Seeto Realty located?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Seeto Realty has offices in Plano and Houston. The Plano office is at {{site.address.street}}, {{site.address.locality}}, {{site.address.region}} {{site.address.postalCode}}, reachable at {{site.phone}}."
+            "text": "Seeto Realty works from one office at {{site.address.street}}, {{site.address.locality}}, {{site.address.region}} {{site.address.postalCode}}, reachable at {{site.phone}}. The firm serves both the Dallas-Fort Worth and Greater Houston markets."
           }
         },
         {
@@ -34,7 +34,7 @@
           "name": "Who founded Seeto Realty?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Seeto Realty was founded by {{site.founder}} in {{site.founded}}. He holds a finance degree from the University of Oklahoma and managed multi-million-dollar portfolios at Smith Barney before founding the firm."
+            "text": "Seeto Realty was founded by {{site.founder}} in {{site.founded}}. He has held an active Texas Real Estate Commission broker licence (#{{site.license.number}}) since {{site.license.since}}, with no disciplinary actions on record."
           }
         },
         {

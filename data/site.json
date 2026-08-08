@@ -115,39 +115,116 @@
     }
   ],
   "brandIdea": "The deal behind the door.",
-  "descriptor": "Boutique brokerage · Plano & Houston · Since 2010",
-  "boilerplate": "Seeto Realty is a boutique Texas brokerage founded in Plano in 2010, with offices in Plano and Houston. The firm handles residential sales, foreclosures and distressed property, investment acquisition and property management across DFW and Greater Houston.",
+  "descriptor": "Boutique brokerage · Plano, Texas · Since 2010",
+  "boilerplate": "Seeto Realty is a boutique Texas brokerage founded in Plano in 2010. The firm handles residential sales, foreclosures and distressed property, investment acquisition and property management across DFW and Greater Houston.",
   "yearsCombined": "20+",
-  "offices": [
-    {
-      "name": "Plano",
-      "street": "700 W Spring Creek Pkwy #212",
-      "locality": "Plano",
-      "region": "TX",
-      "postalCode": "75023",
-      "primary": true
-    },
-    {
-      "name": "Houston",
-      "street": null,
-      "locality": "Houston",
-      "region": "TX",
-      "postalCode": null,
-      "primary": false
-    }
-  ],
   "people": [
     {
       "name": "Michael Seeto",
       "role": "Broker / Owner",
-      "office": "Plano",
-      "bio": "Finance degree from the University of Oklahoma, five years managing multi-million-dollar portfolios at Smith Barney, and Relocation Director at Prudential Ultima before founding Seeto Realty in 2010."
+      "market": "DFW",
+      "photo": "/images/team/ms.jpg",
+      "photoW": 480,
+      "photoH": 480
     },
     {
       "name": "David Seeto",
       "role": "Associate Broker",
-      "office": "Houston",
-      "bio": "Leads the Houston division, focused on HUD, distressed, residential and commercial acquisition. Twenty-plus years across finance and real estate, specialising in undervalued property."
+      "market": "DFW",
+      "photo": "/images/team/dave.jpg",
+      "photoW": 480,
+      "photoH": 480
+    },
+    {
+      "name": "Jennifer Kirk",
+      "role": "Investment Specialist & DFW Agent",
+      "market": "DFW",
+      "photo": "/images/team/jennifer.jpg",
+      "photoW": 480,
+      "photoH": 480
+    },
+    {
+      "name": "Dan Greer",
+      "role": "DFW Agent",
+      "market": "DFW",
+      "photo": "/images/team/dan.jpg",
+      "photoW": 480,
+      "photoH": 480
+    },
+    {
+      "name": "Steven Situ",
+      "role": "DFW Agent",
+      "market": "DFW",
+      "photo": "/images/team/steven_situ.jpg",
+      "photoW": 480,
+      "photoH": 480
+    },
+    {
+      "name": "Thomas Kunnumpurath",
+      "role": "DFW Agent",
+      "market": "DFW",
+      "photo": "/images/team/thomas_k.jpg",
+      "photoW": 480,
+      "photoH": 480
+    },
+    {
+      "name": "John Choi",
+      "role": "DFW Agent",
+      "market": "DFW",
+      "photo": "/images/team/john_choi.jpg",
+      "photoW": 480,
+      "photoH": 480
+    },
+    {
+      "name": "Michael Hancock",
+      "role": "DFW Agent",
+      "market": "DFW",
+      "photo": "/images/team/mike.jpg",
+      "photoW": 480,
+      "photoH": 480
+    },
+    {
+      "name": "Anthony Thien Nguyen",
+      "role": "DFW Agent",
+      "market": "DFW",
+      "photo": "/images/team/anthony_nguyen.jpg",
+      "photoW": 480,
+      "photoH": 480
+    },
+    {
+      "name": "Chao Gao",
+      "role": "Houston Realtor",
+      "market": "Houston",
+      "photo": "/images/team/chao_gao.jpg",
+      "photoW": 480,
+      "photoH": 480
+    },
+    {
+      "name": "Mio Yamada",
+      "role": "Houston Agent",
+      "market": "Houston",
+      "photo": "/images/team/mio_yamada.jpg",
+      "photoW": 480,
+      "photoH": 480,
+      "photoPlaceholder": true
+    },
+    {
+      "name": "Sharon Bartlett",
+      "role": "DFW Agent",
+      "market": "DFW",
+      "photo": "/images/team/sharon_bartlett.jpg",
+      "photoW": 480,
+      "photoH": 480,
+      "photoPlaceholder": true
+    },
+    {
+      "name": "Carlos Figueroa",
+      "role": "DFW Agent",
+      "market": "DFW",
+      "photo": "/images/team/carlos_figueroa.jpg",
+      "photoW": 480,
+      "photoH": 480,
+      "photoPlaceholder": true
     }
   ],
   "capabilities": [
@@ -159,5 +236,38 @@
     "Leasing",
     "Renovation & construction",
     "In-house legal counsel"
-  ]
+  ],
+  "reach": "Serving DFW and Greater Houston",
+  "license": {
+    "broker": "Michael Seeto",
+    "number": "496025-B",
+    "type": "Broker Individual",
+    "status": "Active",
+    "since": "2002",
+    "authority": "Texas Real Estate Commission"
+  },
+  "testimonials": [
+    {
+      "quote": "We used Seeto Realty as a tenant of a property. They were very responsive to our maintenance requests as well as informative about the property. We have used about 10 different property management companies and they have been the best.",
+      "name": "Christopher Gilbert",
+      "source": "Google",
+      "rating": "5",
+      "context": "Tenant"
+    },
+    {
+      "quote": "I was in the midst of trying to purchase a home. Got told 4 times no by 4 different mortgage companies. Gave up and searched for a rental. Came across Dan and guess what, bought a home within 45 days! His work is amazing. He's very helpful and informative throughout every step! I very highly recommend Seeto Realty.",
+      "name": "Olivia Rosales",
+      "source": "Google",
+      "rating": "5",
+      "context": "Buyer"
+    },
+    {
+      "quote": "Natalie is just wonderful and helped us locate our rental home. She was great with helping us book showings and keeping us posted on new properties as they came on the market.",
+      "name": "Dezaree Taylor",
+      "source": "Google",
+      "rating": "5",
+      "context": "Renter"
+    }
+  ],
+  "authorityShort": ""
 }

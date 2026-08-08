@@ -1,88 +1,122 @@
 <!--{
-  "title": "Seeto Realty | Homes for Sale in DFW & Houston, TX",
-  "description": "Search homes for sale across Dallas-Fort Worth and Houston. Seeto Realty has helped Texas families buy, sell, and invest since 2010.",
+  "title": "Seeto Realty | Texas Real Estate Brokerage in Plano",
+  "description": "Boutique Texas brokerage since 2010. Buying, selling, foreclosures, investment and property management across DFW and Greater Houston. Call 972-509-7100.",
   "canonical": "/",
   "ogImage": "/images/og-home.jpg",
   "schema": "home"
 }-->
-<section class="hero">
-  <div class="container stack">
-    <p class="eyebrow">{{site.descriptor}}</p>
-    <h1>The deal behind the door.</h1>
-    <p class="lede">
-      Anyone can show you a house. Seeto reads the numbers underneath it — what it's worth,
-      what it costs to fix, and what it earns. Boutique service, investor-grade judgment.
-    </p>
-    <div class="row">
-      <a href="/search.html" class="btn btn-primary">Search homes</a>
-      <a href="/contact.html?type=valuation" class="btn btn-outline">What's my home worth?</a>
+<section class="hero hero-split">
+  <div class="container hero-inner">
+    <div class="hero-copy stack">
+      <p class="eyebrow">{{site.descriptor}}</p>
+      <h1>The deal behind the door.</h1>
+      <p class="lede">
+        Anyone can show you a house. We read the numbers underneath it — what it's worth,
+        what it costs to fix, and what it earns.
+      </p>
+      <div class="row">
+        <a href="/contact.html" class="btn btn-primary btn-lg">Talk to the broker</a>
+        <a href="/rentals.html" class="btn btn-outline btn-lg">See available rentals</a>
+      </div>
+      <p class="hero-meta">
+        <a href="tel:{{site.phoneHref}}">{{site.phone}}</a>
+        &middot; {{site.address.locality}}, {{site.address.region}}
+        &middot; TREC #{{site.license.number}}
+      </p>
     </div>
+    <aside class="hero-panel">
+      <p class="hero-panel-label">Texas broker since</p>
+      <p class="hero-panel-figure">{{site.license.since}}</p>
+      <p class="hero-panel-note">
+        {{site.license.broker}} has held an active Texas Real Estate Commission broker
+        licence for over two decades, with no disciplinary actions on record.
+      </p>
+      <hr class="hero-panel-rule">
+      <p class="hero-panel-label">Firm founded</p>
+      <p class="hero-panel-figure">{{site.founded}}</p>
+      <p class="hero-panel-note">{{site.reach}}. One office, in {{site.address.locality}}.</p>
+    </aside>
   </div>
 </section>
 
-<section class="quick-search section-alt">
-  <div class="container">
-    <form class="search-form stack" action="/search.html" method="get">
-      <h2>Search homes in DFW &amp; Houston</h2>
-      <div class="bento">
-        <label class="visually-hidden" for="q-location">Location</label>
-        <input type="text" id="q-location" name="location" placeholder="City, neighborhood, or ZIP">
-        <label class="visually-hidden" for="q-type">Property type</label>
-        <select id="q-type" name="type">
-          <option value="">Property type</option>
-          <option value="house">House</option>
-          <option value="condo">Condo</option>
-          <option value="townhouse">Townhouse</option>
-          <option value="land">Land</option>
-        </select>
-        <label class="visually-hidden" for="q-price">Price range</label>
-        <select id="q-price" name="price">
-          <option value="">Price range</option>
-          <option value="0-300000">Under $300K</option>
-          <option value="300000-500000">$300K - $500K</option>
-          <option value="500000-750000">$500K - $750K</option>
-          <option value="750000+">$750K+</option>
-        </select>
-        <button type="submit" class="btn btn-primary">Search</button>
-      </div>
-    </form>
+<section class="section-alt">
+  <div class="container stack-lg">
+    <h2 class="section-rule">Start where you are</h2>
+    <div class="pathways">
+      <a class="pathway" href="/buy.html">
+        <h3>I'm buying</h3>
+        <p>A straight read on what your budget actually buys, submarket by submarket.</p>
+        <span class="pathway-go">Buying &rarr;</span>
+      </a>
+      <a class="pathway" href="/sell.html">
+        <h3>I'm selling</h3>
+        <p>Priced against closed comparables, not wishful list prices.</p>
+        <span class="pathway-go">Selling &rarr;</span>
+      </a>
+      <a class="pathway" href="/investments.html">
+        <h3>I'm investing</h3>
+        <p>Rent comps, carrying costs and capex modelled before you offer.</p>
+        <span class="pathway-go">Investing &rarr;</span>
+      </a>
+      <a class="pathway" href="/property-management.html">
+        <h3>I own a rental</h3>
+        <p>Leasing, maintenance and reporting handled by the management division.</p>
+        <span class="pathway-go">Owner services &rarr;</span>
+      </a>
+    </div>
   </div>
 </section>
 
 <section>
   <div class="container stack-lg">
-    <h2 class="section-rule">What we do</h2>
+    <div class="stack">
+      <h2 class="section-rule">The work most brokerages hand off</h2>
+      <p class="lede">
+        Foreclosures, HUD, REO and distressed acquisition are handled in-house — not
+        referred out to someone you have never met.
+      </p>
+    </div>
     <div class="bento">
       <article class="service-card">
-        <h3>Buying</h3>
-        <p>Guidance from first search through closing, with a realistic view of what your budget buys in each submarket.</p>
-        <a href="/buy.html">Explore buying</a>
+        <h3>Foreclosures &amp; HUD</h3>
+        <p>Bank-owned and distressed purchases, with the title, condition and financing diligence these deals actually require.</p>
+        <a href="/foreclosures.html">How we handle them</a>
       </article>
       <article class="service-card">
-        <h3>Selling</h3>
-        <p>Pricing strategy, preparation, and negotiation built around what comparable homes actually closed at.</p>
-        <a href="/sell.html">Explore selling</a>
-      </article>
-      <article class="service-card">
-        <h3>Foreclosures</h3>
-        <p>Distressed and bank-owned listings, with the diligence work these purchases require.</p>
-        <a href="/foreclosures.html">Explore foreclosures</a>
-      </article>
-      <article class="service-card">
-        <h3>Investments</h3>
-        <p>Rental and multi-family acquisition analysis grounded in local rent comps and carrying costs.</p>
-        <a href="/investments.html">Explore investments</a>
+        <h3>Investment strategy</h3>
+        <p>Acquisition analysis built on local rent comparables and real Texas carrying costs, including the tax rate for that specific address.</p>
+        <a href="/investments.html">Run the numbers</a>
       </article>
       <article class="service-card">
         <h3>Property management</h3>
-        <p>Tenant placement, maintenance coordination, and reporting for owners holding Texas rentals.</p>
-        <a href="/property-management.html">Explore management</a>
+        <p>Tenant placement, maintenance coordination and owner reporting that keeps the asset working after closing.</p>
+        <a href="/property-management.html">Owner services</a>
       </article>
-      <article class="service-card">
-        <h3>Leasing &amp; rentals</h3>
-        <p>Current rental inventory from our management division, with applications handled in the same system.</p>
-        <a href="/rentals.html">View rentals</a>
-      </article>
+    </div>
+  </div>
+</section>
+
+<section class="band-invert">
+  <div class="container stack-lg">
+    <h2 class="section-rule-invert">How it goes</h2>
+    <ol class="process">
+      <li><span class="process-n">01</span><h3>We talk first</h3><p>Budget, timeline, and what you are actually trying to accomplish. No tour before that.</p></li>
+      <li><span class="process-n">02</span><h3>We show you the numbers</h3><p>Comps, carrying costs, and repair estimates in writing, before an offer exists.</p></li>
+      <li><span class="process-n">03</span><h3>We negotiate the whole deal</h3><p>Price is one term. Option period, financing, closing date and repairs decide what you net.</p></li>
+      <li><span class="process-n">04</span><h3>We stay after closing</h3><p>Management and leasing if you are holding the asset, not a handshake at the title company.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <div class="container stack-lg">
+    <h2 class="section-rule">What clients say</h2>
+    <div class="quotes">
+      {{#each site.testimonials}}<figure class="quote">
+        <p class="quote-stars" aria-label="{{this.rating}} out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+        <blockquote>{{this.quote}}</blockquote>
+        <figcaption>{{this.name}} <span class="muted">&middot; {{this.context}} &middot; via {{this.source}}</span></figcaption>
+      </figure>{{/each}}
     </div>
   </div>
 </section>
@@ -91,7 +125,7 @@
   <div class="container stack-lg">
     <div class="stack">
       <h2 class="section-rule">Where we work</h2>
-      <p>Two metros, thirty-two cities. Start with the areas we know best.</p>
+      <p>Thirty-two cities across both metros. One office, in {{site.address.locality}}.</p>
     </div>
     <div class="bento bento-tight">
       <a class="service-card" href="/homes-for-sale/plano-tx/"><h3>Plano</h3><p class="muted">Collin County</p></a>
@@ -108,30 +142,30 @@
     <h2 class="section-rule">Common questions</h2>
     <div class="panel">
       <details class="faq-item">
-        <summary>What areas does Seeto Realty serve?</summary>
-        <p>Seeto Realty serves the Dallas-Fort Worth and Houston metropolitan areas, covering 32 cities across both regions. The firm has offices in Plano and Houston, with the Plano office at 700 W Spring Creek Pkwy #212.</p>
+        <summary>Where is Seeto Realty located?</summary>
+        <p>Seeto Realty works from a single office at 700 W Spring Creek Pkwy #212, Plano, TX 75023, and serves both the Dallas-Fort Worth and Greater Houston markets. The office line is 972-509-7100.</p>
       </details>
       <details class="faq-item">
-        <summary>How long has Seeto Realty been in business?</summary>
-        <p>Seeto Realty has operated in Texas real estate since 2010, founded in Plano by Michael Seeto. The firm's brokers bring more than twenty years of combined experience across finance and real estate.</p>
+        <summary>Is Seeto Realty licensed in Texas?</summary>
+        <p>Yes. Michael Seeto holds Texas Real Estate Commission broker licence #496025-B, originally issued in 2002 and currently active, with no disciplinary actions on record.</p>
       </details>
       <details class="faq-item">
-        <summary>Does Seeto Realty work with first-time buyers?</summary>
-        <p>Yes. Seeto Realty works with first-time buyers across DFW and Houston, including guidance on Texas-specific costs such as property tax rates and homestead exemptions.</p>
+        <summary>Does Seeto Realty handle distressed property?</summary>
+        <p>Yes. Foreclosure, HUD and REO work is handled in-house rather than referred out, alongside investment acquisition and property management.</p>
       </details>
     </div>
   </div>
 </section>
 
-<section class="section-alt">
+<section class="band-invert">
   <div class="container center stack-lg">
     <div class="stack">
-      <h2>Ready to make a move?</h2>
-      <p>Tell us what you're looking for and we'll come back with a plan.</p>
+      <h2>Tell us what you're trying to do.</h2>
+      <p>We'll come back with the numbers, not a brochure.</p>
     </div>
     <div class="row row-center">
-      <a href="/contact.html" class="btn btn-primary">Talk to an agent</a>
-      <a href="/search.html" class="btn btn-outline">Browse listings</a>
+      <a href="/contact.html" class="btn btn-primary btn-lg">Talk to the broker</a>
+      <a href="tel:{{site.phoneHref}}" class="btn btn-ghost btn-lg">{{site.phone}}</a>
     </div>
   </div>
 </section>

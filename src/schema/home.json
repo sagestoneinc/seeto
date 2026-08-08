@@ -52,26 +52,26 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "What areas does Seeto Realty serve?",
+          "name": "Where is Seeto Realty located?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Seeto Realty serves the Dallas-Fort Worth and Houston metropolitan areas, covering 32 cities across both regions. The firm has offices in Plano and Houston, with the Plano office at 700 W Spring Creek Pkwy #212."
+            "text": "Seeto Realty works from a single office at 700 W Spring Creek Pkwy #212, Plano, TX 75023, and serves both the Dallas-Fort Worth and Greater Houston markets. The office line is 972-509-7100."
           }
         },
         {
           "@type": "Question",
-          "name": "How long has Seeto Realty been in business?",
+          "name": "Is Seeto Realty licensed in Texas?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Seeto Realty has operated in Texas real estate since 2010, founded in Plano by Michael Seeto. The firm's brokers bring more than twenty years of combined experience across finance and real estate."
+            "text": "Yes. Michael Seeto holds Texas Real Estate Commission broker licence #496025-B, originally issued in 2002 and currently active, with no disciplinary actions on record."
           }
         },
         {
           "@type": "Question",
-          "name": "Does Seeto Realty work with first-time buyers?",
+          "name": "Does Seeto Realty handle distressed property?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. Seeto Realty works with first-time buyers across DFW and Houston, including guidance on Texas-specific costs such as property tax rates and homestead exemptions."
+            "text": "Yes. Foreclosure, HUD and REO work is handled in-house rather than referred out, alongside investment acquisition and property management."
           }
         }
       ]

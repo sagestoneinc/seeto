@@ -1,14 +1,19 @@
 <header class="header">
   <nav class="container" aria-label="Main">
     <div class="nav-wrapper">
-      <a href="/" class="logo-text">Seeto Realty</a>
-      <button class="mobile-menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <a href="/" class="logo" aria-label="{{site.name}} — home">
+        <img src="/images/brand/seeto-logo.png" alt="{{site.name}}" width="199" height="134" fetchpriority="high">
+      </a>
+      <button class="mobile-menu-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu">
         <span></span><span></span><span></span>
       </button>
-      <ul class="nav-menu">
+      <ul class="nav-menu" id="nav-menu">
         {{#each site.nav}}<li><a href="{{this.href}}">{{this.label}}</a></li>{{/each}}
       </ul>
-      <a href="/contact.html" class="btn btn-primary nav-cta">Talk to an agent</a>
+      <div class="nav-actions">
+        <a class="nav-phone" href="tel:{{site.phoneHref}}">{{site.phone}}</a>
+        <a href="/contact.html" class="btn btn-primary nav-cta">Talk to the broker</a>
+      </div>
     </div>
   </nav>
 </header>
