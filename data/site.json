@@ -278,7 +278,7 @@
   "formEmail": "jess@seetorealty.com",
   "formEndpoint": "",
   "mls": {
-    "_note": "Identifiers only. These name the brokerage to NTREIS; they are not credentials and cannot fetch data. A live feed additionally needs a signed IDX agreement and RESO Web API client id/secret issued by NTREIS. Houston (HARMLS) is not covered by these identifiers — a separate membership and agreement would be required.",
+    "_note": "Identity, not access. NTREIS is the MLS; MAR is the shareholder association; SEET01 is the office id; MTX9315 is the association member id; 0496025 is the agent MLS id; 496025-B is the TREC licence. None of these authenticate an API call. A live feed still requires a signed IDX agreement plus RESO Web API client id and secret issued by NTREIS. Houston (HARMLS) is a separate membership and agreement and is NOT covered by any id here.",
     "brokerLicense": "496025-B",
     "agentMlsId": "0496025",
     "officeMlsId": "SEET01",
@@ -287,7 +287,11 @@
     ],
     "idxAgreementOnFile": null,
     "provider": "",
-    "apiBaseUrl": ""
+    "apiBaseUrl": "",
+    "mls": "NTREIS",
+    "association": "MAR",
+    "associationNameUnverified": "MetroTex Association of REALTORS (inferred from the MTX prefix on the member id — confirm with NTREIS before using in writing)",
+    "memberId": "MTX9315"
   },
   "appfolio": {
     "_note": "Rental inventory. The public widget is an iframe embed with no data API: /listings.json is 404 and /listings?format=json returns 401, so structured access requires credentials from AppFolio. Do not parse the rendered page — listings change daily and this build is static, so parsed data would go stale between deploys.",

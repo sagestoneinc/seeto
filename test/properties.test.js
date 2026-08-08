@@ -16,10 +16,26 @@ test('MLS identifiers are recorded and internally consistent', () => {
   assert.equal(m.agentMlsId.replace(/^0+/, ''), m.brokerLicense.split('-')[0]);
 });
 
-test('NTREIS is recorded, and Houston is not silently assumed to be covered', () => {
+test('the full NTREIS identity set is recorded', () => {
+  const m = site.mls;
+  assert.equal(m.mls, 'NTREIS');
+  assert.equal(m.association, 'MAR');
+  assert.equal(m.officeMlsId, 'SEET01');
+  assert.equal(m.memberId, 'MTX9315');
+});
+
+test('Houston is not silently assumed to be covered', () => {
   assert.deepEqual(site.mls.associations, ['NTREIS']);
   assert.ok(!site.mls.associations.includes('HARMLS'),
     'HARMLS needs its own membership and IDX agreement; do not imply coverage');
+});
+
+test('identifiers alone never make the provider look configured', () => {
+  // Every id can be present and the feed is still not usable. Guards against someone
+  // reading a full-looking mls block as "connected".
+  assert.equal(isProviderConfigured(site), false);
+  assert.equal(site.mls.apiBaseUrl, '');
+  assert.equal(site.mls.idxAgreementOnFile, null);
 });
 
 test('AppFolio is recorded as widget-only until API credentials exist', () => {
