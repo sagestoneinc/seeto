@@ -1,0 +1,89 @@
+<!--{
+  "title": "Available Rentals in DFW & Houston | Seeto Realty",
+  "description": "Current rental listings from Seeto Realty's property management division across Dallas-Fort Worth and Greater Houston. Apply online.",
+  "canonical": "/rentals.html",
+  "ogImage": "/images/og-home.jpg",
+  "schema": "rentals"
+}-->
+<section class="hero">
+  <div class="container stack">
+    <p class="eyebrow">Rentals</p>
+    <h1>Available rentals</h1>
+    <p class="lede">
+      Live inventory from our property management division. Listings update automatically,
+      and applications are submitted through the same system our owners are managed on.
+    </p>
+    <div class="row">
+      <a href="/property-management.html" class="btn btn-outline">Owner services</a>
+      <a href="/contact.html" class="btn btn-outline">Ask about a unit</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-alt">
+  <div class="container stack-lg">
+    <h2 class="section-rule">Current listings</h2>
+    <!--
+      AppFolio listing widget. The embed is AppFolio's own supported snippet: the first
+      script document.writes a <script src> tag, which must execute during parse so that
+      listing.js is loaded before Appfolio.Listing() runs on the next line. Do not move
+      these into a deferred or async bundle — the ordering is what makes it work.
+      themeColor is Seeto Red per the brand kit rather than AppFolio's default grey.
+    -->
+    <div class="appfolio-embed">
+      <script type="text/javascript" charset="utf-8">
+        document.write(unescape("%3Cscript src='" + (('https:' == document.location.protocol) ? 'https:' : 'http:') + "//seetorealty.appfolio.com/javascripts/listing.js' type='text/javascript'%3E%3C/script%3E"));
+      </script>
+      <script type="text/javascript" charset="utf-8">
+        Appfolio.Listing({
+          hostUrl: 'seetorealty.appfolio.com',
+          themeColor: '#8E1B1B',
+          height: '760px',
+          width: '100%',
+          defaultOrder: 'date_posted'
+        });
+      </script>
+      <noscript>
+        <p>
+          Rental listings require JavaScript. You can view them directly at
+          <a href="https://seetorealty.appfolio.com/listings" rel="noopener">seetorealty.appfolio.com/listings</a>,
+          or call <a href="tel:{{site.phoneHref}}">{{site.phone}}</a> and we will send what is available.
+        </p>
+      </noscript>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container stack-lg">
+    <h2 class="section-rule">Renting with Seeto</h2>
+    <div class="bento">
+      <article class="service-card">
+        <h3>Applications</h3>
+        <p>Applications are submitted and screened through AppFolio. Income verification and rental history are reviewed against the same written criteria for every applicant.</p>
+      </article>
+      <article class="service-card">
+        <h3>Maintenance</h3>
+        <p>Residents submit maintenance requests through their portal, and our management division coordinates the vendor directly.</p>
+      </article>
+      <article class="service-card">
+        <h3>Owners</h3>
+        <p>If you own a rental and want it managed rather than listed, our management division handles leasing, maintenance, and reporting.</p>
+        <a href="/property-management.html">Owner services</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section-alt">
+  <div class="container center stack-lg">
+    <div class="stack">
+      <h2>Looking to buy instead?</h2>
+      <p>We handle sales, foreclosures, and investment purchases across both metros.</p>
+    </div>
+    <div class="row row-center">
+      <a href="/search.html" class="btn btn-primary">Search homes for sale</a>
+      <a href="/contact.html" class="btn btn-outline">Talk to an agent</a>
+    </div>
+  </div>
+</section>

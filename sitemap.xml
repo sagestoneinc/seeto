@@ -53,6 +53,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://seetorealty.vercel.app/rentals.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://seetorealty.vercel.app/search.html</loc>
     <priority>0.8</priority>
   </url>

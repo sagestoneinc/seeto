@@ -10,7 +10,10 @@
       "faxNumber": "{{{site.fax}}}",
       "email": "{{{site.email}}}",
       "foundingDate": "{{{site.founded}}}",
-      "founder": { "@type": "Person", "name": "{{{site.founder}}}" },
+      "founder": {
+        "@type": "Person",
+        "name": "{{{site.founder}}}"
+      },
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "{{{site.address.street}}}",
@@ -25,23 +28,34 @@
         "longitude": "{{{site.geo.longitude}}}"
       },
       "areaServed": [
-        { "@type": "City", "name": "Dallas" },
-        { "@type": "City", "name": "Plano" },
-        { "@type": "City", "name": "Frisco" },
-        { "@type": "City", "name": "Houston" }
+        {
+          "@type": "City",
+          "name": "Dallas"
+        },
+        {
+          "@type": "City",
+          "name": "Plano"
+        },
+        {
+          "@type": "City",
+          "name": "Frisco"
+        },
+        {
+          "@type": "City",
+          "name": "Houston"
+        }
       ],
       "priceRange": "$$"
     },
     {
       "@type": "FAQPage",
-      "@id": "{{{site.baseUrl}}}/#faq",
       "mainEntity": [
         {
           "@type": "Question",
           "name": "What areas does Seeto Realty serve?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Seeto Realty serves the Dallas-Fort Worth and Houston metropolitan areas, covering 32 cities across both regions. The brokerage is based at 700 W Spring Creek Pkwy #212 in Plano, Texas."
+            "text": "Seeto Realty serves the Dallas-Fort Worth and Houston metropolitan areas, covering 32 cities across both regions. The firm has offices in Plano and Houston, with the Plano office at 700 W Spring Creek Pkwy #212."
           }
         },
         {
@@ -49,7 +63,7 @@
           "name": "How long has Seeto Realty been in business?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Seeto Realty has operated in Texas real estate since 2010. The brokerage was founded by Michael Seeto."
+            "text": "Seeto Realty has operated in Texas real estate since 2010, founded in Plano by Michael Seeto. The firm's brokers bring more than twenty years of combined experience across finance and real estate."
           }
         },
         {

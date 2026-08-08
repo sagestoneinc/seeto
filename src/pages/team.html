@@ -1,6 +1,6 @@
 <!--{
   "title": "Our Team | Seeto Realty",
-  "description": "Seeto Realty is a boutique Texas brokerage founded by Michael Seeto, serving Dallas-Fort Worth and Houston since 2010.",
+  "description": "Seeto Realty is owner-operated. Michael Seeto leads from Plano and David Seeto runs the Houston division, focused on HUD and distressed property.",
   "canonical": "/team.html",
   "ogImage": "/images/og-home.jpg",
   "schema": "team"
@@ -8,29 +8,41 @@
 <section class="hero">
   <div class="container stack">
     <p class="eyebrow">Team</p>
-    <h1>The people you work with</h1>
-    <p class="lede">Seeto Realty is a boutique brokerage. You work with the person you hired, not a call centre.</p>
-    <div class="row"><a href="/contact.html" class="btn btn-primary">Get in touch</a> <a href="/about.html" class="btn btn-outline">About the firm</a></div>
+    <h1>The broker who built the firm is the one on your call.</h1>
+    <p class="lede">
+      Owner-operated since {{site.founded}}. Small enough that the principal answers the phone,
+      with a network of wholesalers, contractors and lenders behind him.
+    </p>
+    <div class="row">
+      <a href="/contact.html" class="btn btn-primary">Get in touch</a>
+      <a href="/about.html" class="btn btn-outline">About the firm</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-alt">
+  <div class="container stack-lg">
+    <h2 class="section-rule">Leadership</h2>
+    <div class="bento">
+      {{#each site.people}}<article class="service-card person-card">
+        <h3>{{this.name}}</h3>
+        <h4>{{this.role}} &middot; {{this.office}}</h4>
+        <p>{{this.bio}}</p>
+      </article>{{/each}}
+    </div>
+    <p class="muted">
+      <span class="tag tag-sample">Sample</span>
+      Headshots and TREC licence numbers are not published yet. Both are required before
+      launch — the brand kit calls them out as the site's missing trust signals.
+    </p>
   </div>
 </section>
 
 <section>
   <div class="container stack-lg">
-    <h2>Leadership</h2>
+    <h2 class="section-rule">What the firm handles</h2>
     <div class="bento">
-      <article class="service-card">
-        <h3>Michael Seeto</h3>
-        <p class="muted">Founder and Broker</p>
-        <p>Founded Seeto Realty in 2010 and has led the firm across both the Dallas-Fort Worth and Houston markets since.</p>
-      </article>
-    </div>
-    <div class="panel stack">
-      <p><span class="tag tag-sample">Sample</span></p>
-      <p class="muted">
-        Additional agent profiles are not yet published. Individual biographies, photographs,
-        and Texas licence numbers must be supplied by the brokerage before this page is used
-        publicly. Nothing on this page should be treated as a complete roster.
-      </p>
+      {{#each site.capabilities}}<div class="feature-item"><h3>{{this}}</h3></div>{{/each}}
     </div>
   </div>
 </section>
@@ -39,11 +51,11 @@
   <div class="container center stack-lg">
     <div class="stack">
       <h2>Want to talk to someone?</h2>
-      <p>Send us a note and we will get back to you.</p>
+      <p>Call {{site.phone}} and you will reach the firm, not a call centre.</p>
     </div>
     <div class="row row-center">
       <a href="/contact.html" class="btn btn-primary">Talk to an agent</a>
-      <a href="/search.html" class="btn btn-outline">Browse listings</a>
+      <a href="tel:{{site.phoneHref}}" class="btn btn-outline">Call {{site.phone}}</a>
     </div>
   </div>
 </section>

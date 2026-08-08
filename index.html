@@ -19,7 +19,7 @@
 <meta name="twitter:image" content="https://seetorealty.vercel.app/images/og-home.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Zilla+Slab:wght@600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/style.css">
 <script type="application/ld+json">{
   "@context": "https://schema.org",
@@ -33,7 +33,10 @@
       "faxNumber": "972-509-7103",
       "email": "info@seetorealty.com",
       "foundingDate": "2010",
-      "founder": { "@type": "Person", "name": "Michael Seeto" },
+      "founder": {
+        "@type": "Person",
+        "name": "Michael Seeto"
+      },
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "700 W Spring Creek Pkwy #212",
@@ -48,23 +51,34 @@
         "longitude": "-96.7350"
       },
       "areaServed": [
-        { "@type": "City", "name": "Dallas" },
-        { "@type": "City", "name": "Plano" },
-        { "@type": "City", "name": "Frisco" },
-        { "@type": "City", "name": "Houston" }
+        {
+          "@type": "City",
+          "name": "Dallas"
+        },
+        {
+          "@type": "City",
+          "name": "Plano"
+        },
+        {
+          "@type": "City",
+          "name": "Frisco"
+        },
+        {
+          "@type": "City",
+          "name": "Houston"
+        }
       ],
       "priceRange": "$$"
     },
     {
       "@type": "FAQPage",
-      "@id": "https://seetorealty.vercel.app/#faq",
       "mainEntity": [
         {
           "@type": "Question",
           "name": "What areas does Seeto Realty serve?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Seeto Realty serves the Dallas-Fort Worth and Houston metropolitan areas, covering 32 cities across both regions. The brokerage is based at 700 W Spring Creek Pkwy #212 in Plano, Texas."
+            "text": "Seeto Realty serves the Dallas-Fort Worth and Houston metropolitan areas, covering 32 cities across both regions. The firm has offices in Plano and Houston, with the Plano office at 700 W Spring Creek Pkwy #212."
           }
         },
         {
@@ -72,7 +86,7 @@
           "name": "How long has Seeto Realty been in business?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Seeto Realty has operated in Texas real estate since 2010. The brokerage was founded by Michael Seeto."
+            "text": "Seeto Realty has operated in Texas real estate since 2010, founded in Plano by Michael Seeto. The firm's brokers bring more than twenty years of combined experience across finance and real estate."
           }
         },
         {
@@ -99,7 +113,7 @@
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-menu">
-        <li><a href="/buy.html">Buy</a></li><li><a href="/sell.html">Sell</a></li><li><a href="/search.html">Search</a></li><li><a href="/areas.html">Areas</a></li><li><a href="/about.html">About</a></li>
+        <li><a href="/buy.html">Buy</a></li><li><a href="/sell.html">Sell</a></li><li><a href="/rentals.html">Rentals</a></li><li><a href="/areas.html">Areas</a></li><li><a href="/about.html">About</a></li>
       </ul>
       <a href="/contact.html" class="btn btn-primary nav-cta">Talk to an agent</a>
     </div>
@@ -109,11 +123,11 @@
 <main id="main">
 <section class="hero">
   <div class="container stack">
-    <p class="eyebrow">Dallas-Fort Worth &amp; Houston &middot; Since 2010</p>
-    <h1>Find your place in Texas.</h1>
+    <p class="eyebrow">Boutique brokerage · Plano &amp; Houston · Since 2010</p>
+    <h1>The deal behind the door.</h1>
     <p class="lede">
-      Seeto Realty is a boutique brokerage covering both of Texas's largest metros. We help
-      buyers, sellers, and investors move with a clear read on the market.
+      Anyone can show you a house. Seeto reads the numbers underneath it — what it's worth,
+      what it costs to fix, and what it earns. Boutique service, investor-grade judgment.
     </p>
     <div class="row">
       <a href="/search.html" class="btn btn-primary">Search homes</a>
@@ -153,7 +167,7 @@
 
 <section>
   <div class="container stack-lg">
-    <h2>What we do</h2>
+    <h2 class="section-rule">What we do</h2>
     <div class="bento">
       <article class="service-card">
         <h3>Buying</h3>
@@ -181,9 +195,9 @@
         <a href="/property-management.html">Explore management</a>
       </article>
       <article class="service-card">
-        <h3>Mortgage tools</h3>
-        <p>Estimate payments including Texas property tax and insurance before you tour anything.</p>
-        <a href="/mortgage-calculator.html">Open the calculator</a>
+        <h3>Leasing &amp; rentals</h3>
+        <p>Current rental inventory from our management division, with applications handled in the same system.</p>
+        <a href="/rentals.html">View rentals</a>
       </article>
     </div>
   </div>
@@ -192,7 +206,7 @@
 <section class="section-alt">
   <div class="container stack-lg">
     <div class="stack">
-      <h2>Where we work</h2>
+      <h2 class="section-rule">Where we work</h2>
       <p>Two metros, thirty-two cities. Start with the areas we know best.</p>
     </div>
     <div class="bento bento-tight">
@@ -207,15 +221,15 @@
 
 <section>
   <div class="container stack-lg">
-    <h2>Common questions</h2>
+    <h2 class="section-rule">Common questions</h2>
     <div class="panel">
       <details class="faq-item">
         <summary>What areas does Seeto Realty serve?</summary>
-        <p>Seeto Realty serves the Dallas-Fort Worth and Houston metropolitan areas, covering 32 cities across both regions. The brokerage is based at 700 W Spring Creek Pkwy #212 in Plano, Texas.</p>
+        <p>Seeto Realty serves the Dallas-Fort Worth and Houston metropolitan areas, covering 32 cities across both regions. The firm has offices in Plano and Houston, with the Plano office at 700 W Spring Creek Pkwy #212.</p>
       </details>
       <details class="faq-item">
         <summary>How long has Seeto Realty been in business?</summary>
-        <p>Seeto Realty has operated in Texas real estate since 2010. The brokerage was founded by Michael Seeto.</p>
+        <p>Seeto Realty has operated in Texas real estate since 2010, founded in Plano by Michael Seeto. The firm's brokers bring more than twenty years of combined experience across finance and real estate.</p>
       </details>
       <details class="faq-item">
         <summary>Does Seeto Realty work with first-time buyers?</summary>
@@ -244,23 +258,29 @@
     <div class="footer-grid">
       <div class="stack">
         <p class="logo-text">Seeto Realty</p>
-        <p class="muted">
-          Helping Texas families buy, sell, and invest across Dallas-Fort Worth and Houston since 2010.
-        </p>
+        <p class="footer-tagline">For all your real estate needs. Texas-wide.</p>
+        <p class="muted">Seeto Realty is a boutique Texas brokerage founded in Plano in 2010, with offices in Plano and Houston. The firm handles residential sales, foreclosures and distressed property, investment acquisition and property management across DFW and Greater Houston.</p>
       </div>
       <div class="stack">
         <h4>Services</h4>
-        <ul><li><a href="/buy.html">Buy a home</a></li><li><a href="/sell.html">Sell your home</a></li><li><a href="/foreclosures.html">Foreclosures</a></li><li><a href="/investments.html">Investments</a></li><li><a href="/property-management.html">Property management</a></li></ul>
+        <ul><li><a href="/buy.html">Buy a home</a></li><li><a href="/sell.html">Sell your home</a></li><li><a href="/foreclosures.html">Foreclosures &amp; HUD</a></li><li><a href="/investments.html">Investments</a></li><li><a href="/property-management.html">Property management</a></li><li><a href="/rentals.html">Rentals</a></li></ul>
       </div>
       <div class="stack">
         <h4>Company</h4>
         <ul><li><a href="/about.html">About</a></li><li><a href="/team.html">Our team</a></li><li><a href="/blog.html">Blog</a></li><li><a href="/areas.html">Areas we serve</a></li><li><a href="/contact.html">Contact</a></li></ul>
       </div>
       <div class="stack">
-        <h4>Contact</h4>
+        <h4>Offices</h4>
         <address class="footer-nap">
+          <strong>Plano</strong><br>
           700 W Spring Creek Pkwy #212<br>
-          Plano, TX 75023<br>
+          Plano, TX 75023
+        </address>
+        <address class="footer-nap">
+          <strong>Houston</strong><br>
+          Greater Houston division
+        </address>
+        <address class="footer-nap">
           <a href="tel:+19725097100">972-509-7100</a><br>
           <a href="mailto:info@seetorealty.com">info@seetorealty.com</a>
         </address>

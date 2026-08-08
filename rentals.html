@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Terms of Service | Seeto Realty</title>
-<meta name="description" content="Terms governing use of the Seeto Realty website and the information published on it.">
-<link rel="canonical" href="https://seetorealty.vercel.app/terms.html">
+<title>Available Rentals in DFW &amp; Houston | Seeto Realty</title>
+<meta name="description" content="Current rental listings from Seeto Realty&#39;s property management division across Dallas-Fort Worth and Greater Houston. Apply online.">
+<link rel="canonical" href="https://seetorealty.vercel.app/rentals.html">
 <meta name="robots" content="noindex, nofollow">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Seeto Realty">
-<meta property="og:title" content="Terms of Service | Seeto Realty">
-<meta property="og:description" content="Terms governing use of the Seeto Realty website and the information published on it.">
-<meta property="og:url" content="https://seetorealty.vercel.app/terms.html">
+<meta property="og:title" content="Available Rentals in DFW &amp; Houston | Seeto Realty">
+<meta property="og:description" content="Current rental listings from Seeto Realty&#39;s property management division across Dallas-Fort Worth and Greater Houston. Apply online.">
+<meta property="og:url" content="https://seetorealty.vercel.app/rentals.html">
 <meta property="og:image" content="https://seetorealty.vercel.app/images/og-home.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Terms of Service | Seeto Realty">
-<meta name="twitter:description" content="Terms governing use of the Seeto Realty website and the information published on it.">
+<meta name="twitter:title" content="Available Rentals in DFW &amp; Houston | Seeto Realty">
+<meta name="twitter:description" content="Current rental listings from Seeto Realty&#39;s property management division across Dallas-Fort Worth and Greater Houston. Apply online.">
 <meta name="twitter:image" content="https://seetorealty.vercel.app/images/og-home.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,19 +27,16 @@
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://seetorealty.vercel.app/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Legal",
-          "item": "https://seetorealty.vercel.app/privacy.html"
-        }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://seetorealty.vercel.app/" },
+        { "@type": "ListItem", "position": 2, "name": "Rentals", "item": "https://seetorealty.vercel.app/rentals.html" }
       ]
+    },
+    {
+      "@type": "Service",
+      "name": "Residential leasing",
+      "description": "Rental listings and leasing across Dallas-Fort Worth and Greater Houston.",
+      "serviceType": "Residential leasing",
+      "provider": { "@id": "https://seetorealty.vercel.app/#organization" }
     }
   ]
 }
@@ -65,31 +62,83 @@
 <main id="main">
 <section class="hero">
   <div class="container stack">
-    <p class="eyebrow">Legal</p>
-    <h1>Terms of service</h1>
-    <p class="lede">Terms governing your use of this website.</p>
+    <p class="eyebrow">Rentals</p>
+    <h1>Available rentals</h1>
+    <p class="lede">
+      Live inventory from our property management division. Listings update automatically,
+      and applications are submitted through the same system our owners are managed on.
+    </p>
+    <div class="row">
+      <a href="/property-management.html" class="btn btn-outline">Owner services</a>
+      <a href="/contact.html" class="btn btn-outline">Ask about a unit</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-alt">
+  <div class="container stack-lg">
+    <h2 class="section-rule">Current listings</h2>
+    <!--
+      AppFolio listing widget. The embed is AppFolio's own supported snippet: the first
+      script document.writes a <script src> tag, which must execute during parse so that
+      listing.js is loaded before Appfolio.Listing() runs on the next line. Do not move
+      these into a deferred or async bundle — the ordering is what makes it work.
+      themeColor is Seeto Red per the brand kit rather than AppFolio's default grey.
+    -->
+    <div class="appfolio-embed">
+      <script type="text/javascript" charset="utf-8">
+        document.write(unescape("%3Cscript src='" + (('https:' == document.location.protocol) ? 'https:' : 'http:') + "//seetorealty.appfolio.com/javascripts/listing.js' type='text/javascript'%3E%3C/script%3E"));
+      </script>
+      <script type="text/javascript" charset="utf-8">
+        Appfolio.Listing({
+          hostUrl: 'seetorealty.appfolio.com',
+          themeColor: '#8E1B1B',
+          height: '760px',
+          width: '100%',
+          defaultOrder: 'date_posted'
+        });
+      </script>
+      <noscript>
+        <p>
+          Rental listings require JavaScript. You can view them directly at
+          <a href="https://seetorealty.appfolio.com/listings" rel="noopener">seetorealty.appfolio.com/listings</a>,
+          or call <a href="tel:+19725097100">972-509-7100</a> and we will send what is available.
+        </p>
+      </noscript>
+    </div>
   </div>
 </section>
 
 <section>
   <div class="container stack-lg">
-    <div class="panel stack">
-      <p><span class="tag tag-sample">Sample</span></p>
-      <p class="muted">
-        This is placeholder text. It has not been reviewed by counsel and is not a legal
-        document. A qualified attorney must draft or approve the final terms before this site
-        is published.
-      </p>
-      <h2>Information is not advice</h2>
-      <p>Content on this site is general information about real estate in Texas. It is not legal, tax, or financial advice, and it does not create a brokerage relationship. A brokerage relationship is created only by a written agreement.</p>
-      <h2>Accuracy</h2>
-      <p>Property information, market commentary, and any figures shown are believed accurate but are not guaranteed. Independent verification is your responsibility before acting on anything published here.</p>
-      <h2>Fair housing</h2>
-      <p>Seeto Realty is committed to equal housing opportunity and complies with federal, state, and local fair housing law.</p>
-      <h2>Licensing</h2>
-      <p>Seeto Realty is licensed in Texas. Licence details and the disclosures required by the Texas Real Estate Commission must be published here before launch.</p>
-      <h2>Changes</h2>
-      <p>These terms may be updated. Continued use of the site after an update constitutes acceptance of the revised terms.</p>
+    <h2 class="section-rule">Renting with Seeto</h2>
+    <div class="bento">
+      <article class="service-card">
+        <h3>Applications</h3>
+        <p>Applications are submitted and screened through AppFolio. Income verification and rental history are reviewed against the same written criteria for every applicant.</p>
+      </article>
+      <article class="service-card">
+        <h3>Maintenance</h3>
+        <p>Residents submit maintenance requests through their portal, and our management division coordinates the vendor directly.</p>
+      </article>
+      <article class="service-card">
+        <h3>Owners</h3>
+        <p>If you own a rental and want it managed rather than listed, our management division handles leasing, maintenance, and reporting.</p>
+        <a href="/property-management.html">Owner services</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section-alt">
+  <div class="container center stack-lg">
+    <div class="stack">
+      <h2>Looking to buy instead?</h2>
+      <p>We handle sales, foreclosures, and investment purchases across both metros.</p>
+    </div>
+    <div class="row row-center">
+      <a href="/search.html" class="btn btn-primary">Search homes for sale</a>
+      <a href="/contact.html" class="btn btn-outline">Talk to an agent</a>
     </div>
   </div>
 </section>

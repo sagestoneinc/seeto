@@ -3,9 +3,8 @@
     <div class="footer-grid">
       <div class="stack">
         <p class="logo-text">Seeto Realty</p>
-        <p class="muted">
-          Helping Texas families buy, sell, and invest across Dallas-Fort Worth and Houston since {{site.founded}}.
-        </p>
+        <p class="footer-tagline">{{site.tagline}}</p>
+        <p class="muted">{{site.boilerplate}}</p>
       </div>
       <div class="stack">
         <h4>Services</h4>
@@ -16,10 +15,17 @@
         <ul>{{#each site.footerCompany}}<li><a href="{{this.href}}">{{this.label}}</a></li>{{/each}}</ul>
       </div>
       <div class="stack">
-        <h4>Contact</h4>
+        <h4>Offices</h4>
         <address class="footer-nap">
+          <strong>Plano</strong><br>
           {{site.address.street}}<br>
-          {{site.address.locality}}, {{site.address.region}} {{site.address.postalCode}}<br>
+          {{site.address.locality}}, {{site.address.region}} {{site.address.postalCode}}
+        </address>
+        <address class="footer-nap">
+          <strong>Houston</strong><br>
+          Greater Houston division
+        </address>
+        <address class="footer-nap">
           <a href="tel:{{site.phoneHref}}">{{site.phone}}</a><br>
           <a href="mailto:{{site.email}}">{{site.email}}</a>
         </address>

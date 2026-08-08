@@ -1,0 +1,19 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{{site.baseUrl}}}/" },
+        { "@type": "ListItem", "position": 2, "name": "Rentals", "item": "{{{site.baseUrl}}}/rentals.html" }
+      ]
+    },
+    {
+      "@type": "Service",
+      "name": "Residential leasing",
+      "description": "Rental listings and leasing across Dallas-Fort Worth and Greater Houston.",
+      "serviceType": "Residential leasing",
+      "provider": { "@id": "{{{site.baseUrl}}}/#organization" }
+    }
+  ]
+}

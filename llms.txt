@@ -1,6 +1,6 @@
 # Seeto Realty
 
-> DFW's home buying and selling authority
+> For all your real estate needs. Texas-wide.
 
 Seeto Realty is a real estate brokerage serving the Dallas-Fort Worth and Houston
 metropolitan areas in Texas. Phone: 972-509-7100.
@@ -20,10 +20,11 @@ metropolitan areas in Texas. Phone: 972-509-7100.
 - [Texas Mortgage Calculator](/mortgage-calculator.html): Estimate a Texas monthly mortgage payment including property tax and insurance. Free calculator from Seeto Realty in Plano.
 - [Privacy Policy](/privacy.html): How Seeto Realty collects, uses, and protects personal information submitted through this website.
 - [Property Management in DFW & Houston](/property-management.html): Tenant placement, maintenance coordination, and owner reporting for rental property in Dallas-Fort Worth and Houston.
+- [Available Rentals in DFW & Houston](/rentals.html): Current rental listings from Seeto Realty's property management division across Dallas-Fort Worth and Greater Houston. Apply online.
 - [Search Homes for Sale in DFW & Houston](/search.html): Search homes for sale across Dallas-Fort Worth and Houston. Filter by city, price, bedrooms, and property type with Seeto Realty.
 - [Selling Your Home in DFW & Houston](/sell.html): Price on evidence, prepare properly, and negotiate well. Seeto Realty represents home sellers across Dallas-Fort Worth and Houston.
 - [Real Estate Services in DFW & Houston](/services.html): Buying, selling, foreclosures, investments, and property management across Dallas-Fort Worth and Houston, from a brokerage operating since 2010.
-- [Our Team](/team.html): Seeto Realty is a boutique Texas brokerage founded by Michael Seeto, serving Dallas-Fort Worth and Houston since 2010.
+- [Our Team](/team.html): Seeto Realty is owner-operated. Michael Seeto leads from Plano and David Seeto runs the Houston division, focused on HUD and distressed property.
 - [Terms of Service](/terms.html): Terms governing use of the Seeto Realty website and the information published on it.
 - [Homes for sale in Allen, TX](/homes-for-sale/allen-tx/): Collin County, Dallas-Fort Worth. Served by Allen ISD.
 - [Homes for sale in Carrollton, TX](/homes-for-sale/carrollton-tx/): Dallas and Denton Counties, Dallas-Fort Worth. Served by Carrollton-Farmers Branch ISD.

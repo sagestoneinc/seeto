@@ -4,7 +4,7 @@
   "demoUrl": "https://seetorealty.vercel.app",
   "name": "Seeto Realty",
   "baseUrl": "https://www.seetorealty.com",
-  "tagline": "DFW's home buying and selling authority",
+  "tagline": "For all your real estate needs. Texas-wide.",
   "founded": "2010",
   "founder": "Michael Seeto",
   "phone": "972-509-7100",
@@ -18,33 +18,146 @@
     "postalCode": "75023",
     "country": "US"
   },
-  "geo": { "latitude": "33.0709", "longitude": "-96.7350" },
+  "geo": {
+    "latitude": "33.0709",
+    "longitude": "-96.7350"
+  },
   "nav": [
-    { "label": "Buy", "href": "/buy.html" },
-    { "label": "Sell", "href": "/sell.html" },
-    { "label": "Search", "href": "/search.html" },
-    { "label": "Areas", "href": "/areas.html" },
-    { "label": "About", "href": "/about.html" }
+    {
+      "label": "Buy",
+      "href": "/buy.html"
+    },
+    {
+      "label": "Sell",
+      "href": "/sell.html"
+    },
+    {
+      "label": "Rentals",
+      "href": "/rentals.html"
+    },
+    {
+      "label": "Areas",
+      "href": "/areas.html"
+    },
+    {
+      "label": "About",
+      "href": "/about.html"
+    }
   ],
   "footerServices": [
-    { "label": "Buy a home", "href": "/buy.html" },
-    { "label": "Sell your home", "href": "/sell.html" },
-    { "label": "Foreclosures", "href": "/foreclosures.html" },
-    { "label": "Investments", "href": "/investments.html" },
-    { "label": "Property management", "href": "/property-management.html" }
+    {
+      "label": "Buy a home",
+      "href": "/buy.html"
+    },
+    {
+      "label": "Sell your home",
+      "href": "/sell.html"
+    },
+    {
+      "label": "Foreclosures & HUD",
+      "href": "/foreclosures.html"
+    },
+    {
+      "label": "Investments",
+      "href": "/investments.html"
+    },
+    {
+      "label": "Property management",
+      "href": "/property-management.html"
+    },
+    {
+      "label": "Rentals",
+      "href": "/rentals.html"
+    }
   ],
   "footerCompany": [
-    { "label": "About", "href": "/about.html" },
-    { "label": "Our team", "href": "/team.html" },
-    { "label": "Blog", "href": "/blog.html" },
-    { "label": "Areas we serve", "href": "/areas.html" },
-    { "label": "Contact", "href": "/contact.html" }
+    {
+      "label": "About",
+      "href": "/about.html"
+    },
+    {
+      "label": "Our team",
+      "href": "/team.html"
+    },
+    {
+      "label": "Blog",
+      "href": "/blog.html"
+    },
+    {
+      "label": "Areas we serve",
+      "href": "/areas.html"
+    },
+    {
+      "label": "Contact",
+      "href": "/contact.html"
+    }
   ],
   "footerResources": [
-    { "label": "Property search", "href": "/search.html" },
-    { "label": "Featured listings", "href": "/listings.html" },
-    { "label": "Mortgage calculator", "href": "/mortgage-calculator.html" },
-    { "label": "Privacy policy", "href": "/privacy.html" },
-    { "label": "Terms of service", "href": "/terms.html" }
+    {
+      "label": "Property search",
+      "href": "/search.html"
+    },
+    {
+      "label": "Featured listings",
+      "href": "/listings.html"
+    },
+    {
+      "label": "Mortgage calculator",
+      "href": "/mortgage-calculator.html"
+    },
+    {
+      "label": "Privacy policy",
+      "href": "/privacy.html"
+    },
+    {
+      "label": "Terms of service",
+      "href": "/terms.html"
+    }
+  ],
+  "brandIdea": "The deal behind the door.",
+  "descriptor": "Boutique brokerage · Plano & Houston · Since 2010",
+  "boilerplate": "Seeto Realty is a boutique Texas brokerage founded in Plano in 2010, with offices in Plano and Houston. The firm handles residential sales, foreclosures and distressed property, investment acquisition and property management across DFW and Greater Houston.",
+  "yearsCombined": "20+",
+  "offices": [
+    {
+      "name": "Plano",
+      "street": "700 W Spring Creek Pkwy #212",
+      "locality": "Plano",
+      "region": "TX",
+      "postalCode": "75023",
+      "primary": true
+    },
+    {
+      "name": "Houston",
+      "street": null,
+      "locality": "Houston",
+      "region": "TX",
+      "postalCode": null,
+      "primary": false
+    }
+  ],
+  "people": [
+    {
+      "name": "Michael Seeto",
+      "role": "Broker / Owner",
+      "office": "Plano",
+      "bio": "Finance degree from the University of Oklahoma, five years managing multi-million-dollar portfolios at Smith Barney, and Relocation Director at Prudential Ultima before founding Seeto Realty in 2010."
+    },
+    {
+      "name": "David Seeto",
+      "role": "Associate Broker",
+      "office": "Houston",
+      "bio": "Leads the Houston division, focused on HUD, distressed, residential and commercial acquisition. Twenty-plus years across finance and real estate, specialising in undervalued property."
+    }
+  ],
+  "capabilities": [
+    "Residential buy & sell",
+    "Foreclosures & HUD",
+    "REO & distressed",
+    "Investment strategy",
+    "Property management",
+    "Leasing",
+    "Renovation & construction",
+    "In-house legal counsel"
   ]
 }
