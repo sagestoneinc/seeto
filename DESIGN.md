@@ -474,3 +474,22 @@ Both now have tests.
 - `test/css-tokens.test.js` — `var(--roofline-ink)` against a token named `--ink` resolved to
   nothing, rendering a full-width Ink band transparent with invisible text. Also asserts the
   brand hex values have not drifted and that no blue/purple hex is introduced.
+
+
+## 23. Default avatar
+
+Three agents (Mio Yamada, Sharon Bartlett, Carlos Figueroa) have no headshot on the live
+site. They use `images/team/_default-avatar.jpg` — the roofline silhouette from the brand
+mark, recoloured to Stone at 55% on Sand.
+
+Stone rather than Seeto Red, and muted rather than full strength, so it reads as an absent
+photograph rather than company branding stamped onto a person. 2.5 KB, one file shared by
+all three.
+
+An earlier pass used per-person initials plates. Switched on client instruction
+(2026-08-08) to a single default avatar. If distinguishing the three matters more than
+consistency later, initials remain the better pattern.
+
+The roster no longer carries an "incomplete" flag for photographs — a default avatar is a
+finished state, not a gap. The outstanding-item note now covers only the missing TREC
+licence numbers, which is a real compliance gap rather than a cosmetic one.

@@ -203,28 +203,25 @@
       "name": "Mio Yamada",
       "role": "Houston Agent",
       "market": "Houston",
-      "photo": "/images/team/mio_yamada.jpg",
+      "photo": "/images/team/_default-avatar.jpg",
       "photoW": 480,
-      "photoH": 480,
-      "photoPlaceholder": true
+      "photoH": 480
     },
     {
       "name": "Sharon Bartlett",
       "role": "DFW Agent",
       "market": "DFW",
-      "photo": "/images/team/sharon_bartlett.jpg",
+      "photo": "/images/team/_default-avatar.jpg",
       "photoW": 480,
-      "photoH": 480,
-      "photoPlaceholder": true
+      "photoH": 480
     },
     {
       "name": "Carlos Figueroa",
       "role": "DFW Agent",
       "market": "DFW",
-      "photo": "/images/team/carlos_figueroa.jpg",
+      "photo": "/images/team/_default-avatar.jpg",
       "photoW": 480,
-      "photoH": 480,
-      "photoPlaceholder": true
+      "photoH": 480
     }
   ],
   "capabilities": [
@@ -262,7 +259,7 @@
       "context": "Buyer"
     },
     {
-      "quote": "Natalie is just wonderful and helped us locate our rental home. She was great with helping us book showings and keeping us posted on new properties as they came on the market.",
+      "quote": "… helped us locate our rental home. She was great with helping us book showings and keeping us posted on new properties as they came on the market.",
       "name": "Dezaree Taylor",
       "source": "Google",
       "rating": "5",
