@@ -1,6 +1,6 @@
 # Placeholder content inventory
 
-The site builds 50 pages and passes verification, but the items below are unverified,
+The site builds 55 pages and passes verification, but the items below are unverified,
 illustrative, or not yet connected to a data source. Resolve them before launch.
 
 ## Blockers — must be resolved before this site goes live
@@ -11,7 +11,6 @@ illustrative, or not yet connected to a data source. Resolve them before launch.
 | Contact form is not wired | `contact.html` | The form posts nowhere. Submissions are silently lost. Connect a backend or form service. |
 | Legal pages are not lawyer-reviewed | `privacy.html`, `terms.html` | Both are placeholder text carrying a visible "Sample" tag. A Texas attorney must draft or approve them, including TREC-required disclosures. |
 | TREC disclosures missing | site-wide | Texas Real Estate Commission requires the Information About Brokerage Services notice and Consumer Protection Notice. Neither is published yet. |
-| `og:image` does not exist | all pages | `/images/og-home.jpg` is referenced by Open Graph tags but the file is absent. Create it at 1200x630 or social shares render without a preview card. |
 
 ## Unverified business data
 
@@ -19,7 +18,7 @@ illustrative, or not yet connected to a data source. Resolve them before launch.
 |---|---|---|
 | Email | info@seetorealty.com | Not confirmed on the live site. Assumed. |
 | Geo coordinates | 33.0709, -96.7350 | Approximate for the Plano office. Confirm before submitting to Google Business Profile. |
-| Houston office street address | Named but no address | **The brand kit confirms the Houston office is real** ("offices in Plano and Houston"), correcting the earlier assumption that Houston was only a served market. The kit gives no Houston street address, so the office is named in copy but carries no address in schema. Supply it to add a second `LocalBusiness` entity and win a second map-pack listing. |
+| Houston presence | Division, not an office | **Client-confirmed 2026-08-08: there is one office, in Plano.** The brand kit's "offices in Plano and Houston" is superseded — its own business card carries only the Plano address. Houston is a division staffed by two agents (Chao Gao, Mio Yamada). Do not reinstate a second address without a real one. |
 | One phone line | 972-509-7100 | The brand kit flags three numbers in circulation (972-509-7100, 214-228-2281, 844-898-9903) and says to settle on one. This site uses 972-509-7100 throughout. Confirm that is the right main line. |
 
 ## Verified business data
@@ -33,7 +32,7 @@ founder Michael Seeto, operating since 2010.
 | Item | Where | Note |
 |---|---|---|
 | City price ranges | all 32 city pages | Carry a visible "Sample" tag and a sentence stating they are not live market data. Replace with MLS-derived figures. |
-| Headshots and TREC licence numbers | `team.html` | Michael Seeto and David Seeto are listed with real bios from the brand kit. Photographs and TREC licence numbers are still missing — the brand kit names these as the site's absent trust signals. |
+| Agent TREC licence numbers | `team.html` | The broker's licence (496025-B, active since 2002) is published and TREC-verified. Individual numbers for the other twelve agents are still outstanding. Three agents show a default avatar pending photographs. |
 | Blog topics | `blog.html` | Planned topics, not published articles. Deliberately not links, since no article pages exist. |
 
 City facts that are **not** placeholders: county, school district, and neighborhood names
@@ -70,11 +69,12 @@ Colour, type, and voice now follow `Seeto-BrandKit.pdf`:
 
 Facts the kit corrected, which had been assumptions before:
 
-- The Houston office **is real**. Earlier builds treated Houston as a served market only.
+- Houston is a **division, not an office** — the kit's wording was superseded by the client.
 - **David Seeto** leads the Houston division as Associate Broker. Earlier the roster was
   Michael Seeto alone and flagged as incomplete.
 - Michael Seeto's background (University of Oklahoma, Smith Barney, Prudential Ultima) is
   now on the site rather than a generic bio.
 - The firm handles **eight** capability areas, not five — leasing, renovation and
   construction, and in-house legal counsel had been missing.
-- "20+ years combined" replaces the invented "13+ years" figure.
+- TREC-verified credentials replaced the invented "13+ years": broker licence 496025-B,
+  active, originally issued 2002, no disciplinary actions on record.

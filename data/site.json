@@ -98,8 +98,16 @@
       "href": "/search.html"
     },
     {
-      "label": "Featured listings",
-      "href": "/listings.html"
+      "label": "Advanced search",
+      "href": "/search-advanced.html"
+    },
+    {
+      "label": "Owner services",
+      "href": "/owners.html"
+    },
+    {
+      "label": "Resident portal",
+      "href": "/residents.html"
     },
     {
       "label": "Mortgage calculator",

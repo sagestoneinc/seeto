@@ -827,3 +827,16 @@ a.service-card { text-decoration: none; display: block; }
   p > a:only-child { display: inline-flex; align-items: center; min-height: 44px; }
   .faq-item summary { display: flex; align-items: center; min-height: 44px; }
 }
+
+/* --- Advanced search filter groups --- */
+.filter-group { border: 0; padding: 0; margin: 0; }
+.filter-group + .filter-group { margin-top: var(--space-4); }
+.filter-group legend {
+  font-family: var(--font-display);
+  font-size: var(--text-label);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--stone);
+  padding: 0 0 var(--space-2);
+}

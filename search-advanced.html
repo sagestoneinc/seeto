@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Search Homes for Sale in DFW &amp; Houston | Seeto Realty</title>
-<meta name="description" content="Search homes for sale across Dallas-Fort Worth and Houston. Filter by city, price, bedrooms, and property type with Seeto Realty.">
-<link rel="canonical" href="https://seetorealty.vercel.app/search.html">
+<title>Advanced Property Search | Seeto Realty</title>
+<meta name="description" content="Filter Texas property by city, price, type, bedrooms, bathrooms and square footage. Advanced search from Seeto Realty across DFW and Greater Houston.">
+<link rel="canonical" href="https://seetorealty.vercel.app/search-advanced.html">
 <meta name="robots" content="noindex, nofollow">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Seeto Realty">
-<meta property="og:title" content="Search Homes for Sale in DFW &amp; Houston | Seeto Realty">
-<meta property="og:description" content="Search homes for sale across Dallas-Fort Worth and Houston. Filter by city, price, bedrooms, and property type with Seeto Realty.">
-<meta property="og:url" content="https://seetorealty.vercel.app/search.html">
+<meta property="og:title" content="Advanced Property Search | Seeto Realty">
+<meta property="og:description" content="Filter Texas property by city, price, type, bedrooms, bathrooms and square footage. Advanced search from Seeto Realty across DFW and Greater Houston.">
+<meta property="og:url" content="https://seetorealty.vercel.app/search-advanced.html">
 <meta property="og:image" content="https://seetorealty.vercel.app/images/og-home.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Search Homes for Sale in DFW &amp; Houston | Seeto Realty">
-<meta name="twitter:description" content="Search homes for sale across Dallas-Fort Worth and Houston. Filter by city, price, bedrooms, and property type with Seeto Realty.">
+<meta name="twitter:title" content="Advanced Property Search | Seeto Realty">
+<meta name="twitter:description" content="Filter Texas property by city, price, type, bedrooms, bathrooms and square footage. Advanced search from Seeto Realty across DFW and Greater Houston.">
 <meta name="twitter:image" content="https://seetorealty.vercel.app/images/og-home.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -75,87 +75,142 @@
 <main id="main">
 <section class="hero">
   <div class="container stack">
-    <p class="eyebrow">Property search</p>
-    <h1>Search homes across Texas</h1>
-    <p class="lede">Filter by city, price, and property type across both metros.</p>
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span aria-hidden="true">/</span>
+      <a href="/search.html">Property search</a> <span aria-hidden="true">/</span>
+      <span>Advanced</span>
+    </nav>
+    <p class="eyebrow">Advanced search</p>
+    <h1>Narrow it down.</h1>
+    <p class="lede">
+      More filters than the quick search, for when you already know what you are looking for.
+    </p>
   </div>
 </section>
 
 <section class="section-alt">
   <div class="container">
     <form class="search-form stack" action="/search.html" method="get">
-      <h2>Search filters</h2>
-      <div class="bento">
-        <div class="field">
-          <label for="s-location">Location</label>
-          <input type="text" id="s-location" name="location" placeholder="City, neighborhood, or ZIP">
+      <h2 class="section-rule">Filters</h2>
+
+      <fieldset class="filter-group">
+        <legend>Location and type</legend>
+        <div class="bento">
+          <div class="field">
+            <label for="a-location">City, neighborhood or ZIP</label>
+            <input type="text" id="a-location" name="location" placeholder="Plano, Katy, 75023" autocomplete="address-level2">
+          </div>
+          <div class="field">
+            <label for="a-metro">Metro</label>
+            <select id="a-metro" name="metro">
+              <option value="">Either metro</option>
+              <option value="dfw">Dallas-Fort Worth</option>
+              <option value="houston">Greater Houston</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="a-type">Property type</label>
+            <select id="a-type" name="type">
+              <option value="">Any type</option>
+              <option value="house">House</option>
+              <option value="condo">Condo</option>
+              <option value="townhouse">Townhouse</option>
+              <option value="multi-family">Multi-family</option>
+              <option value="land">Land</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="a-status">Listing status</label>
+            <select id="a-status" name="status">
+              <option value="">Any status</option>
+              <option value="for-sale">For sale</option>
+              <option value="for-rent">For rent</option>
+              <option value="foreclosure">Foreclosure / REO</option>
+            </select>
+          </div>
         </div>
-        <div class="field">
-          <label for="s-type">Property type</label>
-          <select id="s-type" name="type">
-            <option value="">Any type</option>
-            <option value="house">House</option>
-            <option value="condo">Condo</option>
-            <option value="townhouse">Townhouse</option>
-            <option value="land">Land</option>
-          </select>
+      </fieldset>
+
+      <fieldset class="filter-group">
+        <legend>Price and size</legend>
+        <div class="bento">
+          <div class="field">
+            <label for="a-min">Minimum price</label>
+            <input type="number" id="a-min" name="min" min="0" step="5000" placeholder="200000" inputmode="numeric">
+          </div>
+          <div class="field">
+            <label for="a-max">Maximum price</label>
+            <input type="number" id="a-max" name="max" min="0" step="5000" placeholder="600000" inputmode="numeric">
+          </div>
+          <div class="field">
+            <label for="a-sqft">Minimum square feet</label>
+            <input type="number" id="a-sqft" name="sqft" min="0" step="100" placeholder="1500" inputmode="numeric">
+          </div>
+          <div class="field">
+            <label for="a-lot">Minimum lot size (acres)</label>
+            <input type="number" id="a-lot" name="lot" min="0" step="0.05" placeholder="0.25" inputmode="decimal">
+          </div>
         </div>
-        <div class="field">
-          <label for="s-price">Price range</label>
-          <select id="s-price" name="price">
-            <option value="">Any price</option>
-            <option value="0-300000">Under $300K</option>
-            <option value="300000-500000">$300K - $500K</option>
-            <option value="500000-750000">$500K - $750K</option>
-            <option value="750000+">$750K+</option>
-          </select>
+      </fieldset>
+
+      <fieldset class="filter-group">
+        <legend>Rooms and age</legend>
+        <div class="bento">
+          <div class="field">
+            <label for="a-beds">Bedrooms</label>
+            <select id="a-beds" name="beds">
+              <option value="">Any</option>
+              <option value="1">1+</option><option value="2">2+</option>
+              <option value="3">3+</option><option value="4">4+</option><option value="5">5+</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="a-baths">Bathrooms</label>
+            <select id="a-baths" name="baths">
+              <option value="">Any</option>
+              <option value="1">1+</option><option value="2">2+</option>
+              <option value="3">3+</option><option value="4">4+</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="a-garage">Garage spaces</label>
+            <select id="a-garage" name="garage">
+              <option value="">Any</option>
+              <option value="1">1+</option><option value="2">2+</option><option value="3">3+</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="a-year">Built after</label>
+            <input type="number" id="a-year" name="year" min="1900" max="2026" step="1" placeholder="1990" inputmode="numeric">
+          </div>
         </div>
-        <div class="field">
-          <label for="s-beds">Bedrooms</label>
-          <select id="s-beds" name="beds">
-            <option value="">Any</option>
-            <option value="2">2+</option>
-            <option value="3">3+</option>
-            <option value="4">4+</option>
-            <option value="5">5+</option>
-          </select>
-        </div>
+      </fieldset>
+
+      <div class="row">
+        <button type="submit" class="btn btn-primary btn-lg">Search</button>
+        <button type="reset" class="btn btn-outline">Reset filters</button>
       </div>
-      <div class="row"><button type="submit" class="btn btn-primary">Search</button>
-        <a href="/search-advanced.html" class="btn btn-outline">Advanced search</a></div>
     </form>
   </div>
 </section>
 
 <section>
   <div class="container stack-lg">
-    <h2>Results <span class="tag tag-sample">Sample</span></h2>
+    <h2 class="section-rule">Results <span class="tag tag-sample">No feed connected</span></h2>
     <div class="panel stack">
       <p>
-        This site is not connected to an MLS or IDX feed yet, so this search does not return
-        live properties. Filters are wired and functional; only the data source is missing.
+        These filters are wired and submit to the search page, but no MLS or IDX feed is
+        connected yet, so no for-sale results are returned. Showing invented properties
+        under a real brokerage's name would misrepresent available inventory.
       </p>
       <p class="muted">
-        Showing invented properties for a real brokerage would misrepresent available
-        inventory, so nothing is displayed until a feed is connected.
+        <strong>Rentals are live.</strong> Current rental inventory comes from our property
+        management system and is available now.
       </p>
     </div>
     <div class="row">
-      <a href="/contact.html" class="btn btn-primary">Ask what is available</a>
-      <a href="/areas.html" class="btn btn-outline">Browse by city</a>
-    </div>
-  </div>
-</section>
-
-<section class="section-alt">
-  <div class="container center stack-lg">
-    <div class="stack">
-      <h2>Cannot find what you are looking for?</h2>
-      <p>Tell us the area and budget and we will search on your behalf.</p>
-    </div>
-    <div class="row row-center">
-      <a href="/contact.html" class="btn btn-primary">Talk to an agent</a>
-      <a href="/search.html" class="btn btn-outline">Browse listings</a>
+      <a href="/rentals.html" class="btn btn-primary">See available rentals</a>
+      <a href="/contact.html" class="btn btn-outline">Tell us what you're looking for</a>
     </div>
   </div>
 </section>

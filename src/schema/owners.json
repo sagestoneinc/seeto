@@ -1,0 +1,74 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "{{{site.baseUrl}}}/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Property management",
+          "item": "{{{site.baseUrl}}}/property-management.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Owners",
+          "item": "{{{site.baseUrl}}}/owners.html"
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "name": "Property management for owners",
+      "description": "Leasing, tenant screening, maintenance coordination and owner reporting for rental property in Texas.",
+      "serviceType": "Property management",
+      "provider": {
+        "@id": "{{{site.baseUrl}}}/#organization"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What does management cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Management fees are typically a percentage of collected rent, with a separate leasing fee when a new tenant is placed. Both are quoted in writing for your specific property before you commit — we do not publish a single rate because unit type, condition and location genuinely change the work involved."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who approves repairs?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You set a dollar threshold. Work below it proceeds so routine issues do not stall; anything above it comes to you for approval first."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens if a tenant stops paying?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We follow the notice and escalation process Texas law requires, keep you informed at each stage, and coordinate counsel if it proceeds to eviction. Consistent documentation from move-in is what makes that process work."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you manage properties outside Dallas-Fort Worth?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Seeto Realty works across both the Dallas-Fort Worth and Greater Houston markets, with agents covering the Houston side."
+          }
+        }
+      ]
+    }
+  ]
+}
