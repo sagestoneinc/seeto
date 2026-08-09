@@ -167,31 +167,11 @@ window.addEventListener('scroll', function() {
     lastScrollTop = scrollTop;
 });
 
-// Animation on Scroll
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver(function(entries) {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
-    });
-}, observerOptions);
-
-document.addEventListener('DOMContentLoaded', function() {
-    const animatedElements = document.querySelectorAll('.service-card, .listing-card, .testimonial-card, .feature-item');
-    
-    animatedElements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(el);
-    });
-});
+// Scroll reveal is handled entirely in CSS via animation-timeline: view().
+// A JS/IntersectionObserver version was removed: when the observer failed to fire,
+// seven of nine sections stayed at opacity 0 and most of the page was blank. CSS
+// scroll-driven animation degrades to "content simply visible" where unsupported,
+// so it cannot strand anything.
 
 // Search Form Enhancement
 document.addEventListener('DOMContentLoaded', function() {

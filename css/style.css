@@ -865,3 +865,183 @@ a.service-card { text-decoration: none; display: block; }
 .form-status[data-state="success"] { border-left-color: #346538; }
 .form-status[data-state="error"]   { border-left-color: var(--seeto-red); }
 .form-status[data-state="pending"] { border-left-color: var(--prairie-gold); }
+
+/* ===========================================================
+   Structural pass — Ownwell's discipline, Seeto's brand.
+   One message per section, one CTA, large honest figures,
+   generous space. Colour and type stay on the brand kit.
+   =========================================================== */
+
+/* Section intros are centred and narrow so each section states one thing. */
+.container.narrow { max-width: 46rem; }
+.section-sub { font-size: var(--text-lg); color: var(--stone); }
+.center .section-sub, .center p { margin-inline: auto; }
+.section-sub-invert { font-size: var(--text-lg); color: rgba(245, 241, 234, 0.82); }
+.centered-link { margin-top: var(--space-4); }
+
+/* --- Centred hero --- */
+.hero-centered { text-align: center; }
+.hero-centered-inner { max-width: 46rem; }
+.hero-centered .lede {
+  margin-inline: auto;
+  max-width: 40ch;
+  color: rgba(245, 241, 234, 0.92);
+}
+.hero-centered h1 { margin-block: var(--space-2); }
+/* Centred text sits over the middle of the frame, so the scrim is uniform rather than
+   a left-weighted gradient. 0.80 measured 8.86:1 for Bone on the brightest pixel. */
+.hero-centered .hero-photo-scrim {
+  background: linear-gradient(
+    180deg,
+    rgba(23, 19, 15, 0.74) 0%,
+    rgba(23, 19, 15, 0.82) 45%,
+    rgba(23, 19, 15, 0.88) 100%
+  );
+}
+
+.hero-search {
+  display: flex;
+  gap: var(--space-1);
+  max-width: 34rem;
+  margin: var(--space-4) auto 0;
+  padding: var(--space-1);
+  background: var(--surface);
+  border-radius: var(--radius);
+}
+.hero-search input {
+  flex: 1;
+  min-width: 0;
+  padding: 0.875rem 1rem;
+  font: inherit;
+  font-size: var(--text-sm);
+  color: var(--ink);
+  background: transparent;
+  border: 0;
+}
+.hero-search input:focus { outline: none; }
+.hero-search:focus-within { outline: 2px solid var(--prairie-gold); outline-offset: 2px; }
+.hero-alt-action {
+  margin: var(--space-3) auto 0;
+  font-size: var(--text-sm);
+  color: rgba(245, 241, 234, 0.78);
+}
+.hero-alt-action a { color: var(--bone); }
+
+/* --- Stats band: the figure is the visual anchor --- */
+.stats-band { padding-block: var(--space-6); background: var(--surface); border-bottom: 1px solid var(--border); }
+/* Four stats, so the column count is explicit rather than auto-fit — auto-fit left a
+   3 + 1 orphan at tablet width. */
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+  list-style: none;
+}
+@media (min-width: 560px)  { .stats-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1000px) { .stats-grid { grid-template-columns: repeat(4, 1fr); } }
+.stat { display: grid; gap: 0.25rem; align-content: start; }
+.stat-figure {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--seeto-red);
+}
+.stat-label {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--ink);
+}
+.stat-note { font-size: var(--text-label); color: var(--stone); }
+
+/* --- Trust bar --- */
+.trust-bar { padding-block: var(--space-4); background: var(--sand); }
+.trust-bar-label {
+  max-width: none;
+  margin-bottom: var(--space-2);
+  font-family: var(--font-display);
+  font-size: var(--text-label);
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--stone);
+  text-align: center;
+}
+.trust-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-2) var(--space-4);
+  list-style: none;
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--ink);
+}
+.trust-list li { display: flex; align-items: center; gap: var(--space-1); }
+.trust-list li::before {
+  content: "";
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--seeto-red);
+}
+
+/* --- Numbered steps --- */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-4);
+  margin-top: var(--space-5);
+  list-style: none;
+  counter-reset: none;
+}
+.step { display: grid; gap: var(--space-1); align-content: start; padding-top: var(--space-3); border-top: 2px solid var(--seeto-red); }
+.step-n {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--prairie-gold);
+}
+.step h3 { font-size: 1.25rem; }
+.step p { font-size: var(--text-sm); }
+
+/* Grids that follow a centred intro need their own top gap. */
+.pathways, .bento, .quotes { margin-top: var(--space-5); }
+
+/* --- Micro-interactions: lift on hover, restore on press --- */
+.btn { will-change: transform; }
+.btn-primary:hover, .btn-outline:hover { transform: translateY(-2px); }
+.service-card, .pathway, .quote { transition: transform 200ms var(--ease), box-shadow 200ms var(--ease); }
+.service-card:hover, .pathway:hover { transform: translateY(-2px); box-shadow: var(--shadow-hover); }
+
+/* --- Scroll reveal ---
+   CSS scroll-driven animation only. Content is visible by default and the animation
+   is additive, so a browser without support (or with the feature disabled) simply
+   shows the page. Nothing can be left stranded at opacity 0. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    main > section + section {
+      animation: sectionIn linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 45%;
+    }
+  }
+}
+@keyframes sectionIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: none; }
+}
+
+@media (max-width: 640px) {
+  .hero-search { flex-direction: column; }
+  .hero-search .btn { justify-content: center; }
+  .trust-list { gap: var(--space-1) var(--space-3); font-size: var(--text-label); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-primary:hover, .btn-outline:hover,
+  .service-card:hover, .pathway:hover { transform: none !important; }
+}

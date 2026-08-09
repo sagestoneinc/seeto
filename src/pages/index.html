@@ -5,7 +5,7 @@
   "ogImage": "/images/og-home.jpg",
   "schema": "home"
 }-->
-<section class="hero-photo">
+<section class="hero-photo hero-centered">
   <picture>
     <source type="image/webp"
       srcset="/images/hero/dallas-skyline-480.webp 480w, /images/hero/dallas-skyline-768.webp 768w, /images/hero/dallas-skyline-1280.webp 1280w, /images/hero/dallas-skyline-1920.webp 1920w"
@@ -14,54 +14,106 @@
       src="/images/hero/dallas-skyline-1920.jpg"
       srcset="/images/hero/dallas-skyline-480.jpg 480w, /images/hero/dallas-skyline-768.jpg 768w, /images/hero/dallas-skyline-1280.jpg 1280w, /images/hero/dallas-skyline-1920.jpg 1920w"
       sizes="100vw"
-      alt="The Dallas skyline at sunset, seen from the west with the Reunion Tower and the Margaret Hunt Hill Bridge in view"
+      alt="The Dallas skyline at sunset, seen from the west with Reunion Tower and the Margaret Hunt Hill Bridge in view"
       width="1920" height="751" fetchpriority="high" decoding="async">
   </picture>
   <div class="hero-photo-scrim" aria-hidden="true"></div>
-  <div class="container hero-photo-inner">
-    <div class="hero-copy stack reveal-hero">
-      <p class="eyebrow eyebrow-invert">{{site.descriptor}}</p>
-      <h1>The deal behind the door.</h1>
-      <p class="lede">
-        Anyone can show you a house. We read the numbers underneath it — what it's worth,
-        what it costs to fix, and what it earns.
-      </p>
-      <div class="row">
-        <a href="/contact.html" class="btn btn-primary btn-lg">Talk to the broker</a>
-        <a href="/rentals.html" class="btn btn-ghost btn-lg">See available rentals</a>
-      </div>
-    </div>
+  <div class="container hero-centered-inner reveal-hero">
+    <p class="eyebrow eyebrow-invert">{{site.descriptor}}</p>
+    <h1>The deal behind the door.</h1>
+    <p class="lede">
+      Anyone can show you a house. We read the numbers underneath it — what it's
+      worth, what it costs to fix, and what it earns.
+    </p>
+    <form class="hero-search" action="/search.html" method="get" role="search">
+      <label class="visually-hidden" for="hero-location">City, neighborhood or ZIP</label>
+      <input type="text" id="hero-location" name="location"
+             placeholder="Plano, Katy, 75023…" autocomplete="address-level2">
+      <button type="submit" class="btn btn-primary">Search homes</button>
+    </form>
+    <p class="hero-alt-action">
+      Renting instead? <a href="/rentals.html">See available rentals</a> &middot;
+      Or call <a href="tel:{{site.phoneHref}}">{{site.phone}}</a>
+    </p>
   </div>
 </section>
 
-<section class="contact-band">
-  <div class="container contact-band-inner">
-    <div class="contact-band-item">
-      <h4>Office</h4>
-      <p>{{site.address.street}}, {{site.address.locality}}, {{site.address.region}} {{site.address.postalCode}}</p>
-    </div>
-    <div class="contact-band-item">
-      <h4>Call</h4>
-      <p><a href="tel:{{site.phoneHref}}">{{site.phone}}</a></p>
-    </div>
-    <div class="contact-band-item">
-      <h4>Email</h4>
-      <p><a href="mailto:{{site.email}}">{{site.email}}</a></p>
-    </div>
-    <div class="contact-band-item">
-      <h4>Licensed</h4>
-      <p>TREC #{{site.license.number}} &middot; since {{site.license.since}}</p>
-    </div>
+<section class="stats-band">
+  <div class="container">
+    <ul class="stats-grid">
+      <li class="stat">
+        <span class="stat-figure">{{site.license.since}}</span>
+        <span class="stat-label">Texas broker since</span>
+        <span class="stat-note">TREC #{{site.license.number}}, active, no disciplinary actions</span>
+      </li>
+      <li class="stat">
+        <span class="stat-figure">{{site.founded}}</span>
+        <span class="stat-label">Firm founded in Plano</span>
+        <span class="stat-note">Owner-operated ever since</span>
+      </li>
+      <li class="stat">
+        <span class="stat-figure">13</span>
+        <span class="stat-label">Agents across two metros</span>
+        <span class="stat-note">Dallas-Fort Worth and Greater Houston</span>
+      </li>
+      <li class="stat">
+        <span class="stat-figure">32</span>
+        <span class="stat-label">Cities served</span>
+        <span class="stat-note">With a local page for each</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="trust-bar">
+  <div class="container">
+    <p class="trust-bar-label">Licensed, credentialed and accountable</p>
+    <ul class="trust-list">
+      <li>TREC Licence #{{site.license.number}}</li>
+      <li>{{site.license.type}}</li>
+      <li>NTREIS Member</li>
+      <li>REALTOR&reg;</li>
+      <li>Equal Housing Opportunity</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="container narrow center stack-lg">
+    <h2>How working with us goes</h2>
+    <p class="section-sub">Three steps, and the numbers come before the tour.</p>
+  </div>
+  <div class="container">
+    <ol class="steps">
+      <li class="step">
+        <span class="step-n">01</span>
+        <h3>We talk first</h3>
+        <p>Budget, timeline, and what you're actually trying to accomplish. No tour before that conversation.</p>
+      </li>
+      <li class="step">
+        <span class="step-n">02</span>
+        <h3>You see the numbers</h3>
+        <p>Closed comparables, carrying costs and repair estimates in writing, before an offer exists.</p>
+      </li>
+      <li class="step">
+        <span class="step-n">03</span>
+        <h3>We negotiate the whole deal</h3>
+        <p>Price is one term. Option period, financing, closing date and repairs decide what you actually net.</p>
+      </li>
+    </ol>
   </div>
 </section>
 
 <section class="section-alt">
-  <div class="container stack-lg">
-    <h2 class="section-rule">Start where you are</h2>
+  <div class="container narrow center stack-lg">
+    <h2>Start where you are</h2>
+    <p class="section-sub">Four ways in, depending on what you're holding.</p>
+  </div>
+  <div class="container">
     <div class="pathways">
       <a class="pathway" href="/buy.html">
         <h3>I'm buying</h3>
-        <p>A straight read on what your budget actually buys, submarket by submarket.</p>
+        <p>A straight read on what your budget buys, submarket by submarket.</p>
         <span class="pathway-go">Buying &rarr;</span>
       </a>
       <a class="pathway" href="/sell.html">
@@ -74,7 +126,7 @@
         <p>Rent comps, carrying costs and capex modelled before you offer.</p>
         <span class="pathway-go">Investing &rarr;</span>
       </a>
-      <a class="pathway" href="/property-management.html">
+      <a class="pathway" href="/owners.html">
         <h3>I own a rental</h3>
         <p>Leasing, maintenance and reporting handled by the management division.</p>
         <span class="pathway-go">Owner services &rarr;</span>
@@ -84,14 +136,14 @@
 </section>
 
 <section>
-  <div class="container stack-lg">
-    <div class="stack">
-      <h2 class="section-rule">The work most brokerages hand off</h2>
-      <p class="lede">
-        Foreclosures, HUD, REO and distressed acquisition are handled in-house — not
-        referred out to someone you have never met.
-      </p>
-    </div>
+  <div class="container narrow center stack-lg">
+    <h2>The work most brokerages hand off</h2>
+    <p class="section-sub">
+      Foreclosures, HUD, REO and distressed acquisition are handled in-house — not
+      referred out to someone you've never met.
+    </p>
+  </div>
+  <div class="container">
     <div class="bento">
       <article class="service-card">
         <h3>Foreclosures &amp; HUD</h3>
@@ -112,21 +164,12 @@
   </div>
 </section>
 
-<section class="band-invert">
-  <div class="container stack-lg">
-    <h2 class="section-rule-invert">How it goes</h2>
-    <ol class="process">
-      <li><span class="process-n">01</span><h3>We talk first</h3><p>Budget, timeline, and what you are actually trying to accomplish. No tour before that.</p></li>
-      <li><span class="process-n">02</span><h3>We show you the numbers</h3><p>Comps, carrying costs, and repair estimates in writing, before an offer exists.</p></li>
-      <li><span class="process-n">03</span><h3>We negotiate the whole deal</h3><p>Price is one term. Option period, financing, closing date and repairs decide what you net.</p></li>
-      <li><span class="process-n">04</span><h3>We stay after closing</h3><p>Management and leasing if you are holding the asset, not a handshake at the title company.</p></li>
-    </ol>
+<section class="section-alt">
+  <div class="container narrow center stack-lg">
+    <h2>What clients say</h2>
+    <p class="section-sub">Verbatim from our Google Business Profile.</p>
   </div>
-</section>
-
-<section>
-  <div class="container stack-lg">
-    <h2 class="section-rule">What clients say</h2>
+  <div class="container">
     <div class="quotes">
       {{#each site.testimonials}}<figure class="quote">
         <p class="quote-stars" aria-label="{{this.rating}} out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
@@ -137,48 +180,26 @@
   </div>
 </section>
 
-<section class="section-alt">
-  <div class="container stack-lg">
-    <div class="stack">
-      <h2 class="section-rule">Where we work</h2>
-      <p>Thirty-two cities across both metros. One office, in {{site.address.locality}}.</p>
-    </div>
+<section>
+  <div class="container narrow center stack-lg">
+    <h2>Where we work</h2>
+    <p class="section-sub">Thirty-two cities across both metros. One office, in Plano.</p>
+  </div>
+  <div class="container">
     <div class="bento bento-tight">
       <a class="service-card" href="/homes-for-sale/plano-tx/"><h3>Plano</h3><p class="muted">Collin County</p></a>
       <a class="service-card" href="/homes-for-sale/frisco-tx/"><h3>Frisco</h3><p class="muted">Collin &amp; Denton County</p></a>
       <a class="service-card" href="/homes-for-sale/dallas-tx/"><h3>Dallas</h3><p class="muted">Dallas County</p></a>
       <a class="service-card" href="/homes-for-sale/houston-tx/"><h3>Houston</h3><p class="muted">Harris County</p></a>
     </div>
-    <p><a href="/areas.html">See all 32 areas we serve</a></p>
-  </div>
-</section>
-
-<section>
-  <div class="container stack-lg">
-    <h2 class="section-rule">Common questions</h2>
-    <div class="panel">
-      <details class="faq-item">
-        <summary>Where is Seeto Realty located?</summary>
-        <p>Seeto Realty works from a single office at 700 W Spring Creek Pkwy #212, Plano, TX 75023, and serves both the Dallas-Fort Worth and Greater Houston markets. The office line is 972-509-7100.</p>
-      </details>
-      <details class="faq-item">
-        <summary>Is Seeto Realty licensed in Texas?</summary>
-        <p>Yes. Michael Seeto holds Texas Real Estate Commission broker licence #496025-B, originally issued in 2002 and currently active, with no disciplinary actions on record.</p>
-      </details>
-      <details class="faq-item">
-        <summary>Does Seeto Realty handle distressed property?</summary>
-        <p>Yes. Foreclosure, HUD and REO work is handled in-house rather than referred out, alongside investment acquisition and property management.</p>
-      </details>
-    </div>
+    <p class="center centered-link"><a href="/areas.html">See all 32 areas we serve</a></p>
   </div>
 </section>
 
 <section class="band-invert">
-  <div class="container center stack-lg">
-    <div class="stack">
-      <h2>Tell us what you're trying to do.</h2>
-      <p>We'll come back with the numbers, not a brochure.</p>
-    </div>
+  <div class="container narrow center stack-lg">
+    <h2>Tell us what you're trying to do.</h2>
+    <p class="section-sub-invert">We'll come back with the numbers, not a brochure.</p>
     <div class="row row-center">
       <a href="/contact.html" class="btn btn-primary btn-lg">Talk to the broker</a>
       <a href="tel:{{site.phoneHref}}" class="btn btn-ghost btn-lg">{{site.phone}}</a>
