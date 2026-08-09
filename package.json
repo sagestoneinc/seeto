@@ -7,5 +7,8 @@
   "scripts": {
     "build": "node build/index.js",
     "test": "node --test test/*.test.js"
+  },
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
   }
 }
